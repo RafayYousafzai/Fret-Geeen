@@ -1,0 +1,192 @@
+// Advantages Section Styles
+// Adapted from user provided Figma CSS
+
+.advantages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 20px;
+    gap: 56px;
+    background: #FFFFFF;
+    text-align: center;
+
+    .advantages-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        max-width: 800px;
+
+        h2 {
+            font-family: $font-heading; // Using project font 'Outfit'
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.2;
+            color: #2A3541;
+            margin: 0;
+        }
+
+        p {
+            font-family: $font-main; // Using project font 'Inter'
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #546476;
+            max-width: 672px;
+        }
+    }
+
+    .advantages-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px; // Adjusted gap for better spacing
+        width: 100%;
+        max-width: 1300px;
+    }
+
+    .advantage-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        width: 280px; // Fixed width to match design consistency
+        padding: 0 10px;
+
+        .icon-circle {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+
+            img {
+                width: 50px;
+                height: 50px;
+                object-fit: contain;
+            }
+
+            // Variants based on design
+            &.blue {
+                background-color: #D6EBFF;
+            }
+
+            &.pink {
+                background-color: #FBDBDE;
+            }
+
+            &.orange {
+                background-color: #FFE8CC;
+            }
+
+            &.green {
+                background-color: #D1F5E7;
+            }
+        }
+
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+
+            h3 {
+                font-family: $font-heading;
+                font-weight: 700;
+                font-size: 24px;
+                color: #3D4E60;
+                margin: 0;
+
+                // Highlight styles for specific words
+                span.highlight {
+                    padding: 0 5px;
+                    border-radius: 4px;
+
+                    &.blue {
+                        background-color: #D6EBFF;
+                        color: #3399FF;
+                    }
+
+                    // Adjusted text color for contrast if needed, or keep dark
+                    &.pink {
+                        background-color: #FBDBDE;
+                        color: #EC495D;
+                    }
+
+                    &.orange {
+                        background-color: #FFE8CC;
+                        color: #FF8A00;
+                    }
+
+                    &.green {
+                        background-color: #D1F5E7;
+                        color: #1ACE86;
+                    }
+                }
+
+                // Fixing text color inside highlight based on design request
+                // The design shows the highlight BEHIND the text, but usually text on top.
+                // The CSS provided shows specific backgrounds.
+
+                span.blue-text {
+                    color: #3399FF;
+                    background: #D6EBFF;
+                    padding: 2px 5px;
+                }
+
+                span.pink-text {
+                    color: #EC495D;
+                    background: #FBDBDE;
+                    padding: 2px 5px;
+                }
+
+                span.orange-text {
+                    color: #FF8A00;
+                    background: #FFE8CC;
+                    padding: 2px 5px;
+                }
+
+                span.green-text {
+                    color: #1ACE86;
+                    background: #D1F5E7;
+                    padding: 2px 5px;
+                }
+            }
+
+            p {
+                font-family: $font-main;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 1.5;
+                color: #546476;
+                text-align: center;
+            }
+        }
+    }
+
+    .cta-btn-large {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 480px;
+        height: 64px;
+        background: #EC495D;
+        border-radius: 6px;
+        color: #FFFFFF;
+        font-family: $font-main;
+        font-weight: 400;
+        font-size: 24px;
+        margin-top: 20px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        text-decoration: none;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(236, 73, 93, 0.3);
+        }
+    }
+}
