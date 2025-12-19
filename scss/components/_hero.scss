@@ -1,5 +1,112 @@
 // Hero Styles
+
 .hero {
-    padding: 4rem 2rem;
-    text-align: center;
+    position: relative;
+    padding: 4rem 2rem 8rem;
+    overflow: visible; // Allow truck to overlap if needed
+
+    .hero-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 2rem;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    .hero-content {
+        flex: 1;
+        max-width: 600px;
+        z-index: 2;
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: $secondary-color;
+            margin-bottom: 1rem;
+            font-weight: 800;
+
+            @media (max-width: 768px) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .subtitle {
+            font-family: 'Caveat', cursive; // Fallback or need to import? Let's stick to base font + italic/color for now
+            color: $accent-color;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            font-style: italic;
+        }
+
+        .description {
+            color: $text-color;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: $primary-color;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 6px -1px rgba($primary-color, 0.3);
+
+            &:hover {
+                background-color: lighten($primary-color, 5%);
+                transform: translateY(-2px);
+            }
+        }
+
+        .trust-badges {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+
+            @media (max-width: 768px) {
+                justify-content: center;
+            }
+
+            .badge {
+                background: white;
+                padding: 0.5rem 1rem;
+                border: 1px solid #e2e8f0;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                font-size: 0.8rem;
+                font-weight: 600;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+                img {
+                    height: 20px;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .hero-image {
+        flex: 1.2;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: auto;
+            transform: scale(1.1); // Make it pop a bit
+            filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.15));
+        }
+    }
 }
