@@ -1,0 +1,72 @@
+// Eco Banner Section Styles
+
+.eco-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: #FFFFFF; // Or #F9F9F9 if needed to distinguish, but image looks white/clean
+    width: 100%;
+
+    .banner-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        max-width: 900px;
+        text-align: left;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+    }
+
+    .icon-wrapper {
+        flex-shrink: 0;
+
+        img {
+            width: 80px; // Estimated size
+            height: 80px;
+            object-fit: contain;
+        }
+    }
+
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        h3 {
+            font-family: $font-heading; // 'Lato' or 'Outfit'
+            font-weight: 700;
+            font-size: 28px;
+            color: #3D4E60; // Dark Blue/Grey
+            margin: 0;
+
+            @media (max-width: 768px) {
+                font-size: 24px;
+            }
+        }
+
+        p {
+            font-family: $font-main;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #546476;
+            margin: 0;
+
+            a {
+                color: #EC495D; // Primary Red
+                font-weight: 700;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

@@ -1020,6 +1020,71 @@ img {
   width: auto;
 }
 
+.eco-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: #FFFFFF;
+  width: 100%;
+}
+.eco-banner .banner-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  max-width: 900px;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .eco-banner .banner-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+.eco-banner .icon-wrapper {
+  flex-shrink: 0;
+}
+.eco-banner .icon-wrapper img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+.eco-banner .text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.eco-banner .text-content h3 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #3D4E60;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .eco-banner .text-content h3 {
+    font-size: 24px;
+  }
+}
+.eco-banner .text-content p {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #546476;
+  margin: 0;
+}
+.eco-banner .text-content p a {
+  color: #EC495D;
+  font-weight: 700;
+  text-decoration: none;
+}
+.eco-banner .text-content p a:hover {
+  text-decoration: underline;
+}
+
 .footer {
   padding: 2rem;
   text-align: center;
