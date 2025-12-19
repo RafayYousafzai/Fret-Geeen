@@ -448,6 +448,67 @@ img {
   box-shadow: 0 10px 20px rgba(236, 73, 93, 0.3);
 }
 
+.stats {
+  padding: 70px 20px;
+  background-color: #f8fafc;
+  text-align: center;
+}
+.stats .stats-header {
+  margin-bottom: 50px;
+}
+.stats .stats-header h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  color: #0f172a;
+}
+.stats .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.stats .stat-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 40px 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+.stats .stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.stats .stat-card .icon-wrapper {
+  height: 60px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stats .stat-card .icon-wrapper img {
+  max-height: 100%;
+  width: auto;
+}
+.stats .stat-card .stat-number {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: #0f172a;
+  line-height: 1.2;
+}
+.stats .stat-card .stat-label {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 400;
+}
+
 .footer {
   padding: 2rem;
   text-align: center;
