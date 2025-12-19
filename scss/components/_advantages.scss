@@ -37,13 +37,20 @@
     }
 
     .advantages-grid {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px; // Adjusted gap for better spacing
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
         width: 100%;
         max-width: $container-width;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
     }
 
     .advantage-item {
@@ -51,7 +58,7 @@
         flex-direction: column;
         align-items: center;
         gap: 25px;
-        width: 280px; // Fixed width to match design consistency
+        width: 100%; // Let grid control width
         padding: 0 10px;
 
         .icon-circle {
