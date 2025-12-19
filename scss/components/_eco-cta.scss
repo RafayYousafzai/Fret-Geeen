@@ -1,0 +1,153 @@
+// Eco-CTA Section Styles
+// Adapted from user provided Figma CSS
+
+.eco-cta {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px;
+    gap: 32px;
+    width: 100%;
+
+    // Background with linear gradient overlay and image
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('../assets/eco-truck-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media (max-width: 768px) {
+        padding: 50px 20px;
+    }
+
+    .cta-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        gap: 10px;
+        text-align: center;
+        z-index: 2; // Ensure text is readable above bg
+    }
+
+    // Figma Frame 5860 container logic
+    .cta-content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 1140px;
+        z-index: 2;
+
+        .cta-card-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 932px;
+        }
+
+        // The White Card (Frame 5844)
+        .cta-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            gap: 42px;
+            width: 100%;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 34px rgba(0, 0, 0, 0.21);
+            border-radius: 12px;
+            text-align: center;
+
+            @media (max-width: 768px) {
+                padding: 30px 20px;
+                gap: 30px;
+            }
+
+            // Top section with Icon
+            .icon-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+
+                img {
+                    width: 86px;
+                    height: 79px;
+                    object-fit: contain;
+                }
+            }
+
+            // Text Content (Frame 6090)
+            .text-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+
+                h2 {
+                    font-family: $font-heading; // 'Lato'
+                    font-weight: 700;
+                    font-size: 32px;
+                    line-height: 1.1;
+                    color: #1A2B40; // Dark Blue/Grey
+                    margin: 0;
+                    max-width: 100%; // Changed from 780px to allow full width for single line
+
+                    @media (max-width: 768px) {
+                        font-size: 26px;
+                    }
+                }
+
+                p {
+                    font-family: $font-main; // 'Lato'
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 1.9;
+                    color: #1A2B40;
+                    margin: 0;
+                    max-width: 100%; // Changed from 717px to allow full width
+
+                    @media (max-width: 768px) {
+                        font-size: 16px;
+                        line-height: 1.5;
+                    }
+                }
+            }
+
+            // Button (cta-btn)
+            .btn-action-large {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                padding: 9px 40px 11px;
+                width: 100%;
+                max-width: 480px;
+                height: 64px;
+                background: #E34A5E;
+                border-radius: 6px;
+                color: #FFFFFF;
+                font-family: $font-main; // 'Lato'
+                font-weight: 400;
+                font-size: 24px;
+                text-decoration: none;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+                &:hover {
+                    background-color: lighten(#E34A5E, 5%);
+                    transform: translateY(-2px);
+                    box-shadow: 0 8px 20px rgba(227, 74, 94, 0.3);
+                }
+
+                @media (max-width: 768px) {
+                    font-size: 18px;
+                    height: 50px;
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}

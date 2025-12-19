@@ -1,0 +1,105 @@
+// Media Section Styles
+// Adapted from user provided Figma CSS
+
+.media-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    gap: 62px;
+    width: 100%;
+    background: #FFFFFF;
+    text-align: center;
+
+    .media-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        width: 100%;
+        max-width: 1200px;
+
+        .subtitle {
+            font-family: $font-heading; // 'Lato'
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #546476; // Grey
+        }
+
+        h2 {
+            font-family: $font-heading; // 'Lato'
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 1.2;
+            text-align: center;
+            color: #3D4E60;
+            margin: 0;
+
+            @media (max-width: 768px) {
+                font-size: 28px;
+            }
+        }
+    }
+
+    .media-logos {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; // Allow wrapping on small screens
+        justify-content: center;
+        align-items: center;
+        gap: 40px 76px; // Vertical gap 40px, Horizontal gap 76px from design
+        width: 100%;
+        max-width: 1200px;
+
+        @media (max-width: 768px) {
+            gap: 30px 40px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            max-height: 50px; // Constraint height to keep uniformity
+            object-fit: contain;
+            filter: grayscale(0%); // Can add grayscale(100%) if we want them bw initially
+            opacity: 0.9;
+            transition: all 0.2s ease;
+
+            &:hover {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+
+        // Specific sizing constraints from CSS if needed, 
+        // but max-height usually handles this cleaner in RWD.
+        .logo-tf1 {
+            height: 38px;
+        }
+
+        .logo-france2 {
+            height: 32px;
+        }
+
+        .logo-france3 {
+            height: 32px;
+        }
+
+        .logo-m6 {
+            height: 63px;
+        }
+
+        .logo-bfmtv {
+            height: 26px;
+        }
+
+        .logo-europe1 {
+            height: 50px;
+        }
+    }
+}
