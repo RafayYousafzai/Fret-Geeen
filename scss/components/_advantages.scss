@@ -43,7 +43,7 @@
         justify-content: center;
         gap: 30px; // Adjusted gap for better spacing
         width: 100%;
-        max-width: 1300px;
+        max-width: $container-width;
     }
 
     .advantage-item {
@@ -96,7 +96,7 @@
             h3 {
                 font-family: $font-heading;
                 font-weight: 700;
-                font-size: 24px;
+                font-size: 20px;
                 color: #3D4E60;
                 margin: 0;
 

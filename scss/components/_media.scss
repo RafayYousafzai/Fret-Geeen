@@ -17,7 +17,7 @@
         align-items: center;
         gap: 6px;
         width: 100%;
-        max-width: 1200px;
+        max-width: $container-width;
 
         .subtitle {
             font-family: $font-heading; // 'Lato'
@@ -55,7 +55,7 @@
         align-items: center;
         gap: 40px 76px; // Vertical gap 40px, Horizontal gap 76px from design
         width: 100%;
-        max-width: 1200px;
+        max-width: $container-width;
 
         @media (max-width: 768px) {
             gap: 30px 40px;

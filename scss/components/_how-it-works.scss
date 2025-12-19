@@ -17,13 +17,13 @@
             color: #000000;
             line-height: 1.2;
             margin: 0 auto;
-            max-width: 1153px;
+            max-width: $container-width;
         }
     }
 
     .steps-container {
         position: relative;
-        max-width: 1153px;
+        max-width: $container-width;
         margin: 0 auto 60px;
         display: flex;
         justify-content: space-between;

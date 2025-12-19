@@ -49,7 +49,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   gap: 2rem;
 }
@@ -151,7 +151,7 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 .features .feature-card {
@@ -208,7 +208,7 @@ img {
   justify-content: center;
   align-items: center;
   gap: 70px;
-  max-width: 1380px;
+  max-width: 1280px;
   width: 100%;
 }
 @media (max-width: 1024px) {
@@ -330,7 +330,7 @@ img {
   justify-content: center;
   gap: 30px;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1280px;
 }
 .advantages .advantage-item {
   display: flex;
@@ -375,7 +375,7 @@ img {
 .advantages .advantage-item .text-content h3 {
   font-family: "Outfit", sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
   color: #3D4E60;
   margin: 0;
 }
@@ -465,11 +465,11 @@ img {
   color: #000000;
   line-height: 1.2;
   margin: 0 auto;
-  max-width: 1153px;
+  max-width: 1280px;
 }
 .how-it-works .steps-container {
   position: relative;
-  max-width: 1153px;
+  max-width: 1280px;
   margin: 0 auto 60px;
   display: flex;
   justify-content: space-between;
@@ -618,23 +618,19 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 .stats .stat-card {
   background: #FFFFFF;
   border-radius: 16px;
-  padding: 40px 20px;
+  padding: 100px 20px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
   transition: transform 0.3s ease;
-}
-.stats .stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 .stats .stat-card .icon-wrapper {
   height: 60px;
@@ -689,20 +685,47 @@ img {
   gap: 10px;
   text-align: center;
   z-index: 2;
+  margin-bottom: 20px;
+}
+.eco-cta .cta-header h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  color: #3D4E60;
+  margin: 0;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .eco-cta .cta-header h2 {
+    font-size: 32px;
+  }
+}
+.eco-cta .cta-header p {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: #3D4E60;
+  margin: 0;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .eco-cta .cta-header p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
 }
 .eco-cta .cta-content-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1140px;
+  max-width: 1280px;
   z-index: 2;
 }
 .eco-cta .cta-content-container .cta-card-wrapper {
   display: flex;
   justify-content: center;
   width: 100%;
-  max-width: 932px;
+  max-width: 1280px;
 }
 .eco-cta .cta-content-container .cta-card {
   display: flex;
@@ -775,7 +798,7 @@ img {
   align-items: center;
   padding: 9px 40px 11px;
   width: 100%;
-  max-width: 480px;
+  max-width: 580px;
   height: 64px;
   background: #E34A5E;
   border-radius: 6px;
@@ -815,7 +838,7 @@ img {
   align-items: center;
   gap: 6px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
 }
 .media-section .media-header .subtitle {
   font-family: "Outfit", sans-serif;
@@ -851,7 +874,7 @@ img {
   align-items: center;
   gap: 40px 76px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
 }
 @media (max-width: 768px) {
   .media-section .media-logos {
@@ -907,7 +930,7 @@ img {
   padding: 10px;
   gap: 10px;
   text-align: center;
-  max-width: 1420px;
+  max-width: 1280px;
 }
 .app-download .section-header h2 {
   font-family: "Outfit", sans-serif;
@@ -940,7 +963,7 @@ img {
   align-items: center;
   gap: 79px;
   width: 100%;
-  max-width: 1420px;
+  max-width: 1280px;
 }
 @media (max-width: 1024px) {
   .app-download .content-container {

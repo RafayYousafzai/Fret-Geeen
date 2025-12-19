@@ -30,6 +30,33 @@
         gap: 10px;
         text-align: center;
         z-index: 2; // Ensure text is readable above bg
+        margin-bottom: 20px;
+
+        h2 {
+            font-family: $font-heading;
+            font-weight: 700;
+            font-size: 42px;
+            color: #3D4E60;
+            margin: 0;
+            line-height: 1.2;
+
+            @media (max-width: 768px) {
+                font-size: 32px;
+            }
+        }
+
+        p {
+            font-family: $font-main;
+            font-size: 20px;
+            color: #3D4E60; // Matching the dark text from image
+            margin: 0;
+            font-weight: 400;
+
+            @media (max-width: 768px) {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+        }
     }
 
     // Figma Frame 5860 container logic
@@ -38,14 +65,14 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        max-width: 1140px;
+        max-width: $container-width;
         z-index: 2;
 
         .cta-card-wrapper {
             display: flex;
             justify-content: center;
             width: 100%;
-            max-width: 932px;
+            max-width: $container-width;
         }
 
         // The White Card (Frame 5844)
@@ -125,7 +152,7 @@
                 align-items: center;
                 padding: 9px 40px 11px;
                 width: 100%;
-                max-width: 480px;
+                max-width: 580px;
                 height: 64px;
                 background: #E34A5E;
                 border-radius: 6px;
