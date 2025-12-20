@@ -1,26 +1,31 @@
-// Media Section Styles
-// Adapted from user provided Figma CSS
+// Variables
+$font-lato: 'Lato', sans-serif;
+$color-subtitle: #546476;
+$color-title: #3D4E60;
+$color-bg: #FFFFFF;
 
 .media-section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    // Figma 1520: padding: 50px 0px; 
+    // We keep 20px horizontal padding for safety on small screens
     padding: 50px 20px;
-    gap: 62px;
+    gap: 62px; // Exact Figma Gap
     width: 100%;
-    background: #FFFFFF;
-    text-align: center;
+    background: $color-bg;
 
+    // --- HEADER ---
     .media-header {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 6px;
+        gap: 6px; // Exact Figma Gap
         width: 100%;
-        max-width: $container-width;
+        max-width: 1520px;
 
         .subtitle {
-            font-family: $font-heading; // 'Lato'
+            font-family: $font-lato;
             font-style: normal;
             font-weight: 500;
             font-size: 12px;
@@ -28,78 +33,99 @@
             text-align: center;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #546476; // Grey
+            color: $color-subtitle;
         }
 
         h2 {
-            font-family: $font-heading; // 'Lato'
+            font-family: $font-lato;
             font-style: normal;
             font-weight: 700;
             font-size: 36px;
-            line-height: 1.2;
+            line-height: 43px;
             text-align: center;
-            color: #3D4E60;
+            color: $color-title;
             margin: 0;
+            width: 100%;
+            max-width: 1520px; // Full width per desktop dump
 
-            @media (max-width: 768px) {
-                font-size: 28px;
+            @media (max-width: 576px) {
+                // Figma 576: Title container height grows to 86px (text wraps)
+                // Font size stays 36px per Figma dump
+                max-width: 576px;
             }
         }
     }
 
+    // --- LOGOS CONTAINER (Frame 5886) ---
     .media-logos {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap; // Allow wrapping on small screens
         justify-content: center;
         align-items: center;
-        gap: 40px 76px; // Vertical gap 40px, Horizontal gap 76px from design
-        width: 100%;
-        max-width: $container-width;
 
-        @media (max-width: 768px) {
-            gap: 30px 40px;
+        // 1. DESKTOP (1520/1200)
+        gap: 76px;
+        width: 100%;
+        max-width: 1169px; // Exact width of Frame 5886
+
+        // 2. TABLET (1079px)
+        @media (max-width: 1100px) {
+            // Figma 1079: Gap drops to 30px
+            gap: 30px;
+            max-width: 1079px;
+            flex-wrap: wrap; // Figma 1079 and 576 enable wrapping
+
         }
+
+        // 3. MOBILE (576px)
+        @media (max-width: 600px) {
+            // Figma 576: Gap increases to 40px
+            gap: 40px;
+            align-items: flex-start; // Per Figma 576
+            flex-wrap: wrap; // Figma 1079 and 576 enable wrapping
+
+        }
+
+        // --- INDIVIDUAL LOGO SIZING ---
+        // To be pixel perfect, we apply exact W/H from the dump.
+        // img { object-fit: contain; } ensures they don't stretch.
 
         img {
-            max-width: 100%;
-            height: auto;
-            max-height: 50px; // Constraint height to keep uniformity
             object-fit: contain;
-            filter: grayscale(0%); // Can add grayscale(100%) if we want them bw initially
-            opacity: 0.9;
-            transition: all 0.2s ease;
-
-            &:hover {
-                opacity: 1;
-                transform: scale(1.05);
-            }
+            // Optional: Grayscale to Color hover effect (common in these designs)
+            // opacity: 0.8; 
+            // transition: 0.2s;
+            // &:hover { opacity: 1; }
         }
 
-        // Specific sizing constraints from CSS if needed, 
-        // but max-height usually handles this cleaner in RWD.
         .logo-tf1 {
+            width: 104px;
             height: 38px;
         }
 
         .logo-france2 {
+            width: 170px;
             height: 32px;
         }
 
         .logo-france3 {
+            width: 170px;
             height: 32px;
         }
 
         .logo-m6 {
-            height: 63px;
+            width: 84px;
+            height: 63px; // Note: This is taller than the others
         }
 
         .logo-bfmtv {
-            height: 26px;
+            width: 126px;
+            height: 26px; // 26.02px in Figma rounded
         }
 
         .logo-europe1 {
-            height: 50px;
+            width: 135px;
+            height: 50px; // 50.19px in Figma rounded
         }
     }
 }

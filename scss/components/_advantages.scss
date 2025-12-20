@@ -1,65 +1,115 @@
-// Advantages Section Styles
-// Adapted from user provided Figma CSS
+// Variables
+$container-width: 1520px;
+$font-heading: 'Lato', sans-serif;
+$font-main: 'Lato', sans-serif;
 
 .advantages {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #FFFFFF;
+
+    // Figma 1520: padding: 70px 100px;
     padding: 70px 20px;
     gap: 56px;
-    background: #FFFFFF;
-    text-align: center;
 
+    @media (min-width: 1520px) {
+        padding: 70px 100px;
+    }
+
+    // --- HEADER SECTION ---
     .advantages-header {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        max-width: 800px;
+        width: 100%;
 
         h2 {
-            font-family: $font-heading; // Using project font 'Outfit'
+            font-family: $font-heading;
             font-weight: 700;
             font-size: 36px;
-            line-height: 1.2;
+            line-height: 43px;
+            text-align: center;
             color: #2A3541;
             margin: 0;
+            max-width: 700px;
+            width: 100%;
         }
 
         p {
-            font-family: $font-main; // Using project font 'Inter'
-            font-weight: 400;
+            font-family: $font-main;
+            font-weight: 700;
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 26px;
+            text-align: center;
             color: #546476;
+            margin: 0;
             max-width: 672px;
+            width: 100%;
+
+            @media (max-width: 576px) {
+                max-width: 496px;
+            }
         }
     }
 
+    // --- GRID SECTION ---
     .advantages-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
+        justify-content: center;
         width: 100%;
-        max-width: $container-width;
 
-        @media (max-width: 1024px) {
-            grid-template-columns: repeat(2, 1fr);
+        // 1. DESKTOP / 1520px View
+        // 311.5px * 4 + 18px gap * 3 = ~1300px content width
+        grid-template-columns: repeat(4, 311.5px);
+        gap: 18px;
+
+        // 2. LAPTOP / 1200px View
+        // FIX: We trigger this when screen is smaller than the 1520 layout
+        @media (max-width: 1500px) {
+            // Figma 1200: Items are exactly 300px. 
+            // 300px * 4 = 1200px.
+            // CRITICAL: gap MUST be 0px here, or it will wrap.
+            grid-template-columns: repeat(4, 300px);
+            gap: 0px;
+            padding: 0;
+
+            // Optional: Ensure container doesn't overflow if screen is exactly 1200
+            max-width: 1200px;
         }
 
-        @media (max-width: 600px) {
-            grid-template-columns: repeat(2, 1fr);
+        // 3. TABLET / 1079px View
+        @media (max-width: 1199px) {
+            // Switch to 2 columns
+            grid-template-columns: repeat(2, 420px);
+            row-gap: 25px; // Vertical gap from Figma
+            column-gap: 0px; // Reset col gap or adjust if needed
+        }
+
+        // 4. MOBILE / 576px View
+        @media (max-width: 880px) {
+            // Figma 576: Cards are 250px wide. Fits 2 per row.
+            grid-template-columns: repeat(2, 250px);
             gap: 15px;
+        }
+
+        // 5. SMALL MOBILE (Safety fallback)
+        @media (max-width: 550px) {
+            grid-template-columns: 1fr;
+            padding: 0 20px;
         }
     }
 
+    // --- CARD ITEM ---
     .advantage-item {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 25px;
-        width: 100%; // Let grid control width
         padding: 0 10px;
+        gap: 25px;
+        min-height: 302px;
+        border-radius: 16px;
 
         .icon-circle {
             width: 105px;
@@ -68,15 +118,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 10px;
+            position: relative;
 
             img {
-                width: 50px;
-                height: 50px;
-                object-fit: contain;
+                width: auto;
+                height: auto;
+                max-width: 50px;
             }
 
-            // Variants based on design
             &.blue {
                 background-color: #D6EBFF;
             }
@@ -99,67 +148,47 @@
             flex-direction: column;
             align-items: center;
             gap: 15px;
+            text-align: center;
 
             h3 {
                 font-family: $font-heading;
                 font-weight: 700;
-                font-size: 20px;
                 color: #3D4E60;
                 margin: 0;
 
-                // Highlight styles for specific words
-                span.highlight {
-                    padding: 0 5px;
-                    border-radius: 4px;
+                // Desktop size
+                font-size: 24px;
+                line-height: 29px;
 
-                    &.blue {
-                        background-color: #D6EBFF;
-                        color: #3399FF;
-                    }
-
-                    // Adjusted text color for contrast if needed, or keep dark
-                    &.pink {
-                        background-color: #FBDBDE;
-                        color: #EC495D;
-                    }
-
-                    &.orange {
-                        background-color: #FFE8CC;
-                        color: #FF8A00;
-                    }
-
-                    &.green {
-                        background-color: #D1F5E7;
-                        color: #1ACE86;
-                    }
+                // Figma 1200/1079 size
+                @media (max-width: 1500px) {
+                    font-size: 20px;
+                    line-height: 24px;
                 }
+            }
 
-                // Fixing text color inside highlight based on design request
-                // The design shows the highlight BEHIND the text, but usually text on top.
-                // The CSS provided shows specific backgrounds.
+            span {
+                padding: 2px 8px;
+                border-radius: 4px;
 
-                span.blue-text {
-                    color: #3399FF;
+                &.blue-text {
                     background: #D6EBFF;
-                    padding: 2px 5px;
+                    color: #3D4E60;
                 }
 
-                span.pink-text {
-                    color: #EC495D;
+                &.pink-text {
                     background: #FBDBDE;
-                    padding: 2px 5px;
+                    color: #3D4E60;
                 }
 
-                span.orange-text {
-                    color: #FF8A00;
+                &.orange-text {
                     background: #FFE8CC;
-                    padding: 2px 5px;
+                    color: #3D4E60;
                 }
 
-                span.green-text {
-                    color: #1ACE86;
+                &.green-text {
                     background: #D1F5E7;
-                    padding: 2px 5px;
+                    color: #3D4E60;
                 }
             }
 
@@ -167,33 +196,48 @@
                 font-family: $font-main;
                 font-weight: 400;
                 font-size: 16px;
-                line-height: 1.5;
+                line-height: 24px;
                 color: #546476;
-                text-align: center;
+                margin: 0;
+
+                // Text width controls based on breakpoint
+                max-width: 251px; // Default
+
+                @media (max-width: 1199px) {
+                    max-width: 360px; // Tablet text width
+                }
+
+                @media (max-width: 880px) {
+                    max-width: 190px; // Mobile text width
+                }
             }
         }
     }
 
+    // --- CTA BUTTON ---
     .cta-btn-large {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
-        max-width: 420px;
-        height: 50px;
         background: #EC495D;
         border-radius: 6px;
         color: #FFFFFF;
         font-family: $font-main;
         font-weight: 400;
-        font-size: 18px;
-        margin-top: 20px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
         text-decoration: none;
+        transition: all 0.2s ease;
+        width: 480px;
+        height: 64px;
+        font-size: 24px;
+
+        @media (max-width: 576px) {
+            height: 80px;
+            max-width: 90%;
+        }
 
         &:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(236, 73, 93, 0.3);
+            transform: translateY(-2px);
+            opacity: 0.95;
         }
     }
 }

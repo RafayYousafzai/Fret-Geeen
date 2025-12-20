@@ -1,36 +1,42 @@
-// Features Section Styles
+// Features Section Styles (Pixel Perfect from Figma)
 
 .features {
-    padding: 4rem 2rem;
-    background-color: $bg-color;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
 
     .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        max-width: $container-width;
-        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .feature-card {
-        background: #fff;
-        padding: 2rem;
-        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.68);
         box-shadow: 0px 8px 47px rgba(0, 0, 0, 0.07);
-        transition: $transition-smooth;
+        border-radius: 16px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 1rem;
-        border: 1px solid transparent;
 
-
+        // Reset flex order/grow/shrink
+        flex: none;
+        order: 0;
+        flex-grow: 1;
 
         .icon-wrapper {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
 
             img {
                 width: 100%;
@@ -40,21 +46,157 @@
         }
 
         h3 {
-            color: $secondary-color;
-            font-size: 1.25rem;
+            font-family: 'Lato', sans-serif; // Assumes Lato is loaded or falls back
+            font-style: normal;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+            color: #3D4E60;
+            margin: 0;
+            width: 100%;
+            flex: none;
+            order: 1;
+            align-self: stretch;
+            flex-grow: 0;
         }
 
         p {
-            color: $text-color;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            max-width: 300px;
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            color: #546476;
+            margin: 0;
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+        }
+    }
+
+    // -------------------------------------------------------------
+    // Breakpoint: Mobile / Up to 1078px (Uses 576px Spec logic)
+    // -------------------------------------------------------------
+    @media (max-width: 1078px) {
+        // Frame 6138
+        padding: 10px;
+        gap: 10px;
+        max-width: 576px; // Constrain width on mobile as per spec
+
+        .features-grid {
+            // Frame 6137
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 15px;
+            width: 100%;
+            // max-width: 556px;
         }
 
-        strong {
-            color: $accent-color;
+        .feature-card {
+            // Spec says 538px, but we need to fit in screen
+            width: 100%;
+            max-width: 538px;
+            // Height 260px in spec
+            min-height: 260px;
+            padding: 10px 45px;
+            gap: 25px;
+
+            .icon-wrapper {
+                width: 90px;
+                height: 56px;
+            }
+        }
+    }
+
+    // -------------------------------------------------------------
+    // Breakpoint: Tablet / 1079px - 1199px
+    // -------------------------------------------------------------
+    @media (min-width: 1079px) and (max-width: 1199px) {
+        // Frame 6062 (1079px)
+        padding: 10px 30px;
+        gap: 10px;
+        width: 1079px; // Enforce exact width if container allows, or max-width
+
+        .features-grid {
+            // Frame 6060
+            flex-direction: row;
+            gap: 15px;
+            width: 1019px;
+            height: 315px;
+        }
+
+        .feature-card {
+            width: 329.67px;
+            height: 315px;
+            padding: 25px 45px;
+            gap: 25px;
+
+            .icon-wrapper {
+                width: 90px;
+                height: 62px;
+            }
+        }
+    }
+
+    // -------------------------------------------------------------
+    // Breakpoint: Desktop / 1200px - 1519px
+    // -------------------------------------------------------------
+    @media (min-width: 1200px) and (max-width: 1519px) {
+        // Frame 6062 (1200px)
+        padding: 10px 30px;
+        gap: 10px;
+        width: 1200px;
+
+        .features-grid {
+            // Frame 6060 (1200px)
+            flex-direction: row;
+            gap: 15px;
+            width: 1140px;
+            height: 315px;
+        }
+
+        .feature-card {
+            width: 370px;
+            height: 315px;
+            padding: 25px 45px;
+            gap: 25px;
+
+            .icon-wrapper {
+                width: 90px;
+                height: 62px;
+            }
+        }
+    }
+
+    // -------------------------------------------------------------
+    // Breakpoint: Large Desktop / 1520px+
+    // -------------------------------------------------------------
+    @media (min-width: 1520px) {
+        // Frame 6062 (1520px)
+        padding: 10px 100px;
+        gap: 10px;
+        width: 1520px;
+
+        .features-grid {
+            // Frame 6060 (1520px)
+            flex-direction: row;
+            gap: 30px;
+            width: 1320px;
+            height: 382px;
+        }
+
+        .feature-card {
+            width: 420px;
+            height: 382px;
+            padding: 25px 45px;
+            gap: 25px;
+
+            .icon-wrapper {
+                width: 110px;
+                height: 76px;
+            }
         }
     }
 }

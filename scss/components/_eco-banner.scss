@@ -1,70 +1,122 @@
-// Eco Banner Section Styles
+// Variables
+$font-lato: 'Lato', sans-serif;
+$color-title: #3D4E60;
+$color-text: #546476;
+$color-bg: #FFFFFF;
 
 .eco-banner {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 20px;
-    background: #FFFFFF; // Or #F9F9F9 if needed to distinguish, but image looks white/clean
+    background: $color-bg;
     width: 100%;
 
+    // Figma 1520: Height 183px, Padding 40px 0px
+    // Using min-height to prevent content cutting on zoom/resize
+    min-height: 183px;
+    padding: 40px 0;
+
+    // Figma 576: Height 410px, Padding 40px 0px
+    @media (max-width: 600px) {
+        min-height: 410px;
+        padding: 40px 0;
+    }
+
+    // --- INNER CONTAINER (Frame 5893 -> Frame 6141) ---
     .banner-content {
         display: flex;
-        flex-direction: row;
+        flex-direction: row; // Desktop Default
+        justify-content: center;
         align-items: center;
-        gap: 30px;
-        max-width: 900px;
-        text-align: left;
 
-        @media (max-width: 768px) {
+        // Figma Gap: 34px (Consistent across 1520, 1200, 1079, 576)
+        gap: 34px;
+
+        // Width Handling
+        width: 100%;
+        max-width: 1520px;
+
+        // Mobile Layout (Figma 576)
+        // Transition to column when space is tight or at mobile breakpoint
+        @media (max-width: 950px) {
             flex-direction: column;
-            text-align: center;
-            gap: 20px;
+            // Frame 6141 padding
+            padding: 0 25px;
         }
     }
 
+    // --- ICON (Frame) ---
     .icon-wrapper {
         flex-shrink: 0;
+        // Figma: 102px Width, 103px Height
+        width: 102px;
+        height: 103px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         img {
-            width: 80px; // Estimated size
-            height: 80px;
+            width: 100%;
+            height: 100%;
             object-fit: contain;
         }
     }
 
+    // --- TEXT CONTENT (Frame 4411) ---
     .text-content {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        // Figma Gap: 11px
+        gap: 11px;
+
+        // Figma Desktop Width: 867px
+        width: 867px;
+        align-items: flex-start; // Desktop alignment
+
+        // Responsive Text Width
+        @media (max-width: 1100px) {
+            width: 100%;
+            max-width: 867px;
+            padding-right: 20px; // Safety padding
+        }
+
+        @media (max-width: 950px) {
+            // Figma 576 Text Width: 526px
+            max-width: 526px;
+            align-items: center; // Mobile alignment centered
+            text-align: center;
+            padding-right: 0;
+        }
 
         h3 {
-            font-family: $font-heading; // 'Lato' or 'Outfit'
+            font-family: $font-lato;
             font-weight: 700;
-            font-size: 28px;
-            color: #3D4E60; // Dark Blue/Grey
+            // Figma: 36px Size, 43px Line-height (Desktop & Mobile)
+            font-size: 36px;
+            line-height: 43px;
+            color: $color-title;
             margin: 0;
-
-            @media (max-width: 768px) {
-                font-size: 24px;
-            }
+            width: 100%;
         }
 
         p {
-            font-family: $font-main;
+            font-family: $font-lato;
             font-weight: 400;
-            font-size: 16px;
-            line-height: 1.5;
-            color: #546476;
+            // Figma: 18px Size, 24px Line-height (Desktop & Mobile)
+            font-size: 18px;
+            line-height: 24px;
+            color: $color-text;
             margin: 0;
+            width: 100%;
 
             a {
-                color: #EC495D; // Primary Red
+                // Assuming standard link style or bold as per typical content
+                color: $color-text;
+                text-decoration: underline;
                 font-weight: 700;
-                text-decoration: none;
 
                 &:hover {
-                    text-decoration: underline;
+                    color: darken($color-text, 15%);
                 }
             }
         }

@@ -1,75 +1,167 @@
-// Stats/Results Section Styles
+// Variables
+$font-heading: 'Lato', sans-serif;
+$font-main: 'Lato', sans-serif;
+$bg-color: #F5F5F5;
+$text-dark: #6d7a88;
+$text-gray: #546476;
 
 .stats {
-    padding: 70px 20px;
-    background-color: $light-gray; // Using the light gray variable we defined earlier
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bg-color;
 
+    // Figma 1520/1200/1079: padding: 70px 30px
+    padding: 70px 30px;
+    gap: 50px;
+
+    @media (max-width: 576px) {
+        // Figma 576: padding: 70px 10px
+        padding: 70px 10px;
+    }
+
+    // --- HEADER ---
     .stats-header {
-        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
 
         h2 {
-            font-family: $font-heading; // 'Outfit'
+            font-family: $font-heading;
             font-weight: 700;
             font-size: 36px;
-            color: $secondary-color; // #0f172a
+            line-height: 43px;
+            text-align: center;
+            color: $text-dark;
+            margin: 0;
+            max-width: 700px;
         }
     }
 
+    // --- GRID ---
     .stats-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-        max-width: $container-width;
-        margin: 0 auto;
+        justify-content: center;
+        width: 100%;
 
-        @media (max-width: 1024px) {
-            grid-template-columns: repeat(2, 1fr);
+        // 1. DESKTOP (1520px & 1200px Data)
+        // Card width: 266.25px | Gap: 25px
+        // Total width: ~1140px
+        grid-template-columns: repeat(4, 266.25px);
+        gap: 25px;
+
+        // 2. TABLET / COMPACT LAPTOP (1079px Data)
+        // When screen gets smaller than the desktop layout (~1150px)
+        // Figma switches card size to 230px to keep 4 columns
+        @media (max-width: 1180px) {
+            grid-template-columns: repeat(4, 230px);
         }
 
-        @media (max-width: 600px) {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+        // 3. TABLET PORTRAIT (< 1020px)
+        // The 4 columns of 230px (920px + gaps) will break here.
+        // We switch to 2 columns.
+        @media (max-width: 1020px) {
+            grid-template-columns: repeat(2, 266.25px); // Revert to comfortable size
+            gap: 25px;
+        }
+
+        // 4. MOBILE (576px Data)
+        // Figma 576: Cards are 240px wide.
+        // This fits perfectly as 2 columns on a standard mobile width.
+        @media (max-width: 576px) {
+            grid-template-columns: repeat(2, 240px);
+            gap: 25px; // Figma 576 grid gap
+        }
+
+        // 5. TINY MOBILE (iPhone SE, etc)
+        @media (max-width: 510px) {
+            grid-template-columns: 1fr; // Stack them
         }
     }
 
+    // --- CARD ---
     .stat-card {
-        background: #FFFFFF;
-        border-radius: 16px;
-        padding: 100px 20px;
-        box-shadow: 0px 8px 47px rgba(0, 0, 0, 0.07);
         display: flex;
         flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        justify-content: center; // Vertical center
+        align-items: center; // Horizontal center
+        background: #FFFFFF;
+        box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
         transition: transform 0.3s ease;
 
+        // 1. DESKTOP SPECS
+        width: 100%; // Controlled by grid
+        height: 330px; // Fixed height per Figma 1520
+        padding: 50px 30px;
+        gap: 30px;
+
+        // 2. TABLET SPECS (1079px Data)
+        @media (max-width: 1180px) {
+            height: 260px; // Height shrinks
+            // Padding stays 50px 30px per Figma 1079
+        }
+
+        // 3. MOBILE SPECS (576px Data)
+        @media (max-width: 576px) {
+            height: 250px; // Height shrinks further
+            padding: 20px 15px; // Padding shrinks significantly
+            gap: 20px;
+        }
+
         .icon-wrapper {
-            height: 60px;
-            margin-bottom: 10px;
+            // Flexible height to accommodate different icon aspect ratios
+            // while keeping the layout centered
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 70px; // Average height of icon frames in Figma
+            margin-bottom: 0;
 
             img {
+                max-width: 100%;
                 max-height: 100%;
-                width: auto;
+                object-fit: contain;
             }
         }
+
+        // Wrapper for text to ensure alignment
+        // (Assuming you might wrap number/label in a div, if not, flex gap handles it)
 
         .stat-number {
             font-family: $font-heading;
             font-weight: 700;
-            font-size: 32px;
-            color: $secondary-color;
+            text-align: center;
+            color: $text-gray;
             line-height: 1.2;
+
+            // Desktop (1520px): 40px
+            font-size: 40px;
+
+            // Tablet (1079px): Drops to 32px
+            @media (max-width: 1180px) {
+                font-size: 32px;
+            }
+
+            // Mobile (576px): Back up to 40px per Figma
+            @media (max-width: 576px) {
+                font-size: 40px;
+            }
         }
 
         .stat-label {
             font-family: $font-main;
-            font-size: 14px;
-            color: $text-color;
-            font-weight: 400;
+            font-weight: 700; // Figma indicates bold for some labels?
+            font-size: 16px; // Estimated, usually smaller than header
+            text-align: center;
+            color: $text-gray;
+
+            // To ensure multi-line text wraps correctly like "de la Terre..."
+            max-width: 100%;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
         }
     }
 }

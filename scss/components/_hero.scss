@@ -1,112 +1,255 @@
-// Hero Styles
+// Variables
+$font-lato: 'Lato', sans-serif;
+$color-h1: #111C28;
+$color-subtitle: #3E8635;
+$color-btn: #EC495D;
 
 .hero {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     position: relative;
-    padding: 4rem 2rem 8rem;
-    overflow: visible; // Allow truck to overlap if needed
+    overflow: hidden;
+    background-color: #FFFFFF; // Base fallback
+    object-fit: cover;
+
+    // --- RESPONSIVE BACKGROUND IMAGES ---
+    // Desktop (1520)
+    height: 571px;
+    background: url('../assets/hero/1520.png') no-repeat center right;
+    background-size: cover;
+
+    // Laptop (1200)
+    @media (max-width: 1519px) {
+        height: 571px; // Maintains desktop height per your dump
+        background-image: url('../assets/hero/1200.png');
+    }
+
+    // Tablet (1079)
+    @media (max-width: 1199px) {
+        height: 571px; // Maintains desktop height per your dump
+        background-image: url('../assets/hero/1079.png');
+    }
+
+    // Mobile (576)
+    @media (max-width: 700px) {
+        height: 753px; // Figma Mobile Height
+        background: url('../assets/hero/576.png') no-repeat center bottom;
+        background-size: cover;
+    }
 
     .hero-container {
+        width: 100%;
+        max-width: 1520px;
+        padding: 70px 100px; // Exact Figma Padding
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        max-width: $container-width;
-        margin: 0 auto;
-        gap: 2rem;
 
-        @media (max-width: 768px) {
-            flex-direction: column;
-            text-align: center;
+        @media (max-width: 600px) {
+            padding: 45px 20px;
+            align-items: flex-start;
         }
     }
 
     .hero-content {
-        flex: 1;
-        max-width: 600px;
-        z-index: 2;
+        width: 674px;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px; // Gap from Figma Auto-layout
+
+        @media (max-width: 600px) {
+            width: 100%;
+            align-items: center;
+            text-align: center;
+        }
 
         h1 {
-            font-size: 3rem;
-            line-height: 1.2;
-            color: $secondary-color;
-            margin-bottom: 1rem;
-            font-weight: 800;
+            width: 620px;
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 58px;
+            color: $color-h1;
+            margin: 0;
 
-            @media (max-width: 768px) {
-                font-size: 2.5rem;
+            @media (max-width: 600px) {
+                width: 100%;
+                font-size: 40px; // Scaled for mobile fit
+                line-height: 1.2;
             }
         }
 
         .subtitle {
-            font-family: 'Caveat', cursive; // Fallback or need to import? Let's stick to base font + italic/color for now
-            color: $accent-color;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            display: block;
+            width: 533px;
+            font-family: $font-lato;
             font-style: italic;
-        }
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 24px;
+            color: $color-subtitle;
+            display: block;
 
-        .description {
-            color: $text-color;
-            margin-bottom: 2rem;
-            font-size: 1rem;
+            @media (max-width: 600px) {
+                width: 100%;
+            }
         }
 
         .btn-primary {
-            display: inline-block;
-            background-color: $primary-color;
-            color: white;
-            padding: 9px 40px 11px;
+            width: 480px;
+            height: 64px;
+            background: $color-btn;
             border-radius: 6px;
-            font-weight: 400;
-            font-size: 18px;
-            box-shadow: 0 4px 6px -1px rgba($primary-color, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #FFFFFF;
+            font-family: $font-lato;
+            font-size: 24px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: transform 0.2s;
+
+            @media (max-width: 600px) {
+                width: 480px;
+                height: 80px;
+            }
 
             &:hover {
-                background-color: lighten($primary-color, 5%);
                 transform: translateY(-2px);
             }
         }
 
+        // --- TRUST BADGES ---
         .trust-badges {
-            margin-top: 3rem;
             display: flex;
-            gap: 1rem;
+            flex-direction: row;
             align-items: center;
+            padding: 0px;
+            gap: 20px;
+            margin-top: 40px;
 
-            @media (max-width: 768px) {
+            // Mobile (576px)
+            @media (max-width: 600px) {
+                flex-direction: column;
                 justify-content: center;
+                align-items: center;
+                width: 100%;
+                gap: 20px;
             }
 
             .badge {
-                background: white;
-                padding: 0.5rem 1rem;
-                border: 1px solid #e2e8f0;
-                border-radius: 8px;
                 display: flex;
+                flex-direction: row;
                 align-items: center;
-                gap: 0.5rem;
-                font-size: 0.8rem;
-                font-weight: 600;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                padding: 10px 15px;
+                gap: 20px;
+                background: rgba(255, 255, 255, 0.9);
+                box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.07);
+                border-radius: 8px;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
 
-                img {
-                    height: 20px;
-                    width: auto;
+                &.google {
+                    width: 228px;
+                    height: 61px;
+
+                    @media (max-width: 600px) {
+                        width: 285px;
+                        height: 61px;
+                    }
+
+                    img {
+                        width: 41px;
+                        height: 41px;
+                        // border-radius: 267px; // From "image 16" if needed, though usually redundant for transparent PNGs
+                        box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.15); // Specific to Google icon in dump
+                        border-radius: 50%; // Assuming circular icon based on radius 267px
+                    }
+
+                    .badge-text {
+                        gap: 8px;
+                        width: 137px; // Frame 5839 width
+
+                        @media (max-width: 600px) {
+                            width: 194px; // Mobile width
+                        }
+
+                        p {
+                            font-family: 'Lato';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 14px;
+                            line-height: 17px;
+                            color: #3D4E60;
+                            margin: 0;
+                        }
+
+                        .stars {
+                            display: block; // Frame for stars
+                            width: 88px;
+                            height: 16px;
+                            font-size: 10px; // Resetting standard text size
+                            // Using text representation for stars to keep DOM clean, 
+                            // ensuring color matches the requested #FBBC04
+                            color: #FBBC04;
+                            letter-spacing: 2px;
+                        }
+                    }
+                }
+
+                &.axa {
+                    width: 286px;
+                    height: 60px;
+
+                    @media (max-width: 600px) {
+                        width: 286px;
+                        height: 60px;
+                    }
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 2px;
+                    }
+
+                    .badge-text {
+                        gap: 3px;
+                        width: 189px; // Frame 5840 width
+
+                        p {
+                            width: 100%;
+                            font-family: 'Lato';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 14px;
+                            line-height: 18px;
+                            color: #213683;
+                            margin: 0;
+                        }
+
+                        span {
+                            width: 100%;
+                            font-family: 'Lato';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 12px;
+                            line-height: 18px;
+                            color: #213683;
+                            display: block;
+                        }
+                    }
+                }
+
+                .badge-text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 0px;
                 }
             }
-        }
-    }
-
-    .hero-image {
-        flex: 1.2;
-        position: relative;
-
-        img {
-            width: 100%;
-            height: auto;
-            transform: scale(1.1); // Make it pop a bit
-            filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.15));
         }
     }
 }

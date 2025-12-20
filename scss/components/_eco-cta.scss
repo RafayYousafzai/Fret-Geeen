@@ -35,19 +35,17 @@
         h2 {
             font-family: $font-heading;
             font-weight: 700;
-            font-size: 42px;
+            font-size: 48px;
             color: #3D4E60;
             margin: 0;
             line-height: 1.2;
 
-            @media (max-width: 768px) {
-                font-size: 32px;
-            }
+
         }
 
         p {
             font-family: $font-main;
-            font-size: 20px;
+            font-size: 24px;
             color: #3D4E60; // Matching the dark text from image
             margin: 0;
             font-weight: 400;
@@ -65,8 +63,31 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        max-width: $container-width;
         z-index: 2;
+
+        // Gap between the Header (Frame 5778) and the Card (Frame 5860)
+        // Figma Dump: "gap: 32px"
+        gap: 32px;
+
+        // --- RESPONSIVE MAX-WIDTHS (from Figma Dumps) ---
+
+        // 1520px Breakpoint: Frame h2 width is 1420px
+        max-width: 1220px;
+
+        @media (max-width: 1200px) {
+            // 1200px Breakpoint: Frame h2 width is 1100px
+            max-width: 1100px;
+        }
+
+        @media (max-width: 1079px) {
+            // 1079px Breakpoint: Frame h2 width is 979px
+            max-width: 979px;
+        }
+
+        @media (max-width: 576px) {
+            // 576px Breakpoint: Frame h2 width is 556px
+            max-width: 556px;
+        }
 
         .cta-card-wrapper {
             display: flex;

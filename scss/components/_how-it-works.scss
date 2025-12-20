@@ -1,94 +1,136 @@
-// How It Works Section Styles
-// Adapted from user provided Figma CSS
+// Variables
+$font-heading: 'Lato', sans-serif;
+$font-main: 'Lato', sans-serif;
+$primary-color: #EC495D; // Red
+$text-dark: #3D4E60;
+$text-light: #546476;
+$bg-white: #FFFFFF;
 
 .how-it-works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $bg-white;
+    // Figma 1520: padding: 80px 70px;
     padding: 80px 20px;
-    background: #FFFFFF;
-    text-align: center;
-    overflow: hidden;
+    gap: 40px;
 
+    @media (min-width: 1520px) {
+        padding: 80px 70px;
+    }
+
+    @media (max-width: 576px) {
+        // Figma 576: padding: 80px 20px;
+        padding: 80px 20px;
+    }
+
+    // --- HEADER ---
     .section-header {
-        margin-bottom: 50px;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px; // Visual adjustment
 
         h2 {
-            font-family: $font-heading; // 'Lato' in Figma, using project heading font
+            font-family: $font-heading;
             font-weight: 700;
             font-size: 36px;
+            line-height: 43px;
+            text-align: center;
             color: #000000;
-            line-height: 1.2;
             margin: 0 auto;
-            max-width: $container-width;
+            max-width: 1153px;
         }
     }
 
+    // --- STEPS CONTAINER ---
     .steps-container {
         position: relative;
-        max-width: $container-width;
-        margin: 0 auto 60px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: flex-start;
-        padding-top: 40px; // Space for the images floating above
+        width: 100%;
+        max-width: 1153px; // Figma content width
 
-        @media (max-width: 1024px) {
-            flex-direction: column;
-            align-items: center;
+        // Figma 1520: padding: 29px 190px; gap: 140px;
+        // Since we are using a max-width container, we handle spacing with gap/flex
+        padding-top: 30px;
+
+        // 1. DESKTOP GAP
+        gap: 140px;
+
+        // 2. LAPTOP/TABLET ADJUSTMENT
+        // The 140px gap is too wide for 1200px and 1079px screens.
+        // We shrink it to fit 3 cards (approx 261px each) in a row.
+        @media (max-width: 1300px) {
             gap: 60px;
         }
 
-        // The progress bar line behind the steps
-        &::before {
-            content: '';
-            position: absolute;
-            top: 190px; // Adjusted to align with the circles
-            left: 50px;
-            right: 50px;
-            height: 8px;
-            background: #546476;
-            opacity: 0.1;
-            border-radius: 8px;
-            z-index: 1;
-
-            @media (max-width: 1024px) {
-                display: none; // Hide horizontal line on mobile
-            }
+        @media (max-width: 1100px) {
+            gap: 30px;
         }
 
-        // The active progress bar (Red)
-        &::after {
-            content: '';
-            position: absolute;
-            top: 190px;
-            left: 50px;
-            width: 40%; // Roughly covering the first step and a half
-            height: 8px;
-            background: #EC495D;
-            border-radius: 8px;
-            z-index: 2;
+        // 3. MOBILE STACK
+        @media (max-width: 900px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 60px; // Vertical gap
+        }
 
-            @media (max-width: 1024px) {
-                display: none;
+        // --- PROGRESS LINES (Background) ---
+        // Hidden on Mobile
+        @media (min-width: 901px) {
+
+            // The Grey Background Line
+            &::before {
+                content: '';
+                position: absolute;
+                // Calculation:
+                // Image (130px) + Gap (24px) + Half Circle (24px) + Container Padding (approx 30px)
+                // Figma says line is at top: 209px relative to frame.
+                top: 209px;
+                left: 10%; // Start slightly inside
+                right: 10%; // End slightly inside
+                height: 8px;
+                background: rgba(84, 100, 118, 0.1); // #546476 opacity 0.1
+                border-radius: 8px;
+                z-index: 0;
+            }
+
+            // The Red Active Line (Partial)
+            &::after {
+                content: '';
+                position: absolute;
+                top: 209px;
+                left: 10%; // Match start of grey line
+                width: 38%; // approximate length to cover step 1 to halfway step 2
+                height: 8px;
+                background: $primary-color;
+                border-radius: 8px;
+                z-index: 0;
             }
         }
     }
 
+    // --- STEP CARD ---
     .step-card {
-        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        text-align: center;
         position: relative;
-        z-index: 3; // Above the line
-        max-width: 300px;
+        z-index: 1;
+
+        // Figma Layout: Width ~261px
+        width: 261px;
+        gap: 15px; // Reduced slightly to keep title and text tighter
 
         .image-wrapper {
+            width: 180px;
             height: 130px;
-            width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 10px; // Spacing between image and number/title
 
             img {
                 max-width: 100%;
@@ -104,69 +146,87 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Lato', sans-serif;
+
+            font-family: $font-heading;
             font-weight: 700;
             font-size: 20px;
             color: #FFFFFF;
+            margin-bottom: 5px;
+
+            // White border to cut the line behind it
+            // box-shadow: 0 0 0 10px #FFFFFF;
 
             &.active {
-                background: #E34A5E;
-                box-shadow: 0 0 0 5px #FFFFFF; // White ring around it
+                background-color: $primary-color; // Red
             }
 
             &.inactive {
-                background: #546476;
+                background-color: $text-light;
+                // border: 2px solid $text-light;
+                color: $bg-white;
             }
         }
 
         h3 {
+            // Updated Typography based on visual hierarchy
             font-family: $font-heading;
-            font-weight: 400; // Regular weight as per Figma
-            font-size: 20px;
-            color: #3D4E60;
+            font-weight: 400; // Base text is regular
+            font-size: 16px; // Increased from 16px
+            line-height: 1;
+            text-align: center;
+            color: $text-light;
             margin: 0;
-            min-height: 50px; // Reserve vertical space for 2 lines
-            // display: flex; // Removed to allow <br> to work properly
-            // align-items: flex-end; 
+            width: 100%;
 
+            // Target the <strong> tag specifically for the "Big & Bold" look
             strong {
                 font-weight: 700;
-                display: block; // Keep block to force new line if <br> is removed, or inline-block if <br> is used.
-                // With <br> present in HTML, block might cause double break if not careful, 
-                // but usually empty buffer. Let's make it inline-block to respect <br>
-                display: inline;
-                font-size: 24px;
+                font-size: 32px; // Larger than the surrounding text
+                display: inline-block;
+                margin-top: 2px; // Visual balance
+                color: $text-dark;
             }
         }
 
         p {
             font-family: $font-main;
             font-weight: 400;
-            font-size: 14px;
-            line-height: 1.5;
-            color: #546476;
-            max-width: 260px;
+            font-size: 14px; // Matches Figma exactly
+            line-height: 20px; // Matches Figma exactly (143%)
+            text-align: center;
+            color: $text-light;
+            margin: 0;
+            width: 100%;
         }
     }
 
+    // --- CTA BUTTON ---
     .btn-action {
-        display: inline-flex;
+        display: flex;
         justify-content: center;
         align-items: center;
-        padding: 9px 40px 11px;
-        background: #E34A5E;
+        background: #E34A5E; // Figma specific red
         border-radius: 6px;
         color: #FFFFFF;
         font-family: $font-main;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 24px;
         text-decoration: none;
-        transition: $transition-smooth;
+        transition: all 0.2s ease;
+        margin-top: 20px;
+
+        // Figma 1520/1200/1079: 311px width, 64px height
+        width: 311px;
+        height: 64px;
+
+        // Figma 576 (Mobile): 311px width, 80px height
+        @media (max-width: 576px) {
+            height: 80px;
+        }
 
         &:hover {
-            background-color: lighten(#E34A5E, 5%);
+            background-color: darken(#E34A5E, 5%);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(227, 74, 94, 0.3);
         }
     }
 }
