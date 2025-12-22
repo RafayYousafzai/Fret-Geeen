@@ -1,0 +1,167 @@
+// Payments Section SCSS
+
+.payments-section {
+    // Outer container
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 50px;
+    gap: 20px;
+
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    background: #F5F5F5; // Light grey background
+    border-radius: 0px; // Explicit from CSS
+
+    @media (max-width: 1200px) {
+        padding: 60px 20px;
+        height: auto;
+    }
+
+    .payments-header {
+        // Frame 5778 wrapper area logic
+        width: 100%;
+        max-width: 1400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        // height: 125px; // Let height be flexible to avoid overflow
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
+
+        h2 {
+            // width: 700px; // Max width constraints
+            max-width: 700px;
+            width: 100%;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 43px;
+            text-align: center;
+            color: #2A3541;
+            margin: 0;
+
+            @media (max-width: 600px) {
+                font-size: 28px;
+            }
+        }
+
+        p {
+            // width: 672px;
+            max-width: 672px;
+            width: 100%;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700; // Figma says 700? Usually body is 400. Sticking to spec.
+            font-size: 16px;
+            line-height: 26px; // 162%
+            text-align: center;
+            color: #546476;
+            margin: 0;
+        }
+    }
+
+    .payments-grid {
+        // Frame 5859 (vertical wrapper) -> Frame 5861 (horizontal row)
+        // We can simplify to just one grid container
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        // padding: 0px 25px; // from Frame 5859
+        gap: 40px; // from Frame 5861
+
+        width: 100%;
+        max-width: 1140px;
+        // height: 249.66px; // Flexible height better
+
+        @media (max-width: 900px) {
+            flex-direction: column;
+            width: 100%;
+            gap: 20px;
+        }
+
+        .payment-card {
+            width: 525px;
+            // height: 249.66px;
+            min-height: 250px;
+            border-radius: 12px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+
+            @media (max-width: 600px) {
+                width: 100%;
+                padding: 30px;
+            }
+
+            // Card Header (Logo + Title)
+            .card-header {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start; // Figma says flex-start
+                gap: 20px;
+                width: 100%;
+
+                @media (max-width: 600px) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .logo-placeholder {
+                    // Group 5747 / Group 16
+                    width: auto;
+                    height: 43px; // roughly
+
+                    // Use img tag inside in HTML
+                    img {
+                        height: 100%;
+                        width: auto;
+                        object-fit: contain;
+                        border-radius: 4px;
+                    }
+
+
+                }
+
+                h3 {
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 34px; // 142%
+                    color: #FFFFFF;
+                    margin: 0;
+                    flex: 1;
+                }
+            }
+
+            p {
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 34px; // 212%
+                color: #FFFFFF;
+                margin: 0;
+                width: 100%;
+            }
+
+            // Variant: Stripe (Purple)
+            &.stripe {
+                background: #625AFE;
+                // Add specific vector details if complex background needed later
+            }
+
+            // Variant: Floa (Blue)
+            &.floa {
+                background: #009FFF;
+            }
+        }
+    }
+}
