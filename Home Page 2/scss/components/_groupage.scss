@@ -1,0 +1,250 @@
+// Groupage Loading Section SCSS
+
+// Common Styles
+$font-lato: 'Lato', sans-serif;
+$color-h-dark: #3D4E60; // For "Share the Load"
+$color-h-darker: #2A3541; // For Main Header usually (checking spec) -> Spec says #3D4E60 for "Share the Load" h2? No, h2 says #3D4E60.
+// Wait, Top H2 says #3D4E60. 
+// "Share the Load" H3 says #3D4E60.
+// "Benefits" H3 says #283C52.
+$color-text-grey: #546476;
+
+.groupage-section {
+    width: 100%;
+    // Wrapper for the whole thing potentially, but we might split slightly for full-width bg
+
+    // Part 1: Top (White Background)
+    .groupage-intro {
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 70px 0; // Vertical padding
+        gap: 50px;
+        width: 100%;
+        max-width: 1500px;
+        margin: 0 auto;
+
+        @media (max-width: 1200px) {
+            padding: 50px 20px;
+        }
+
+        .intro-header {
+            text-align: center;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h2 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 43px;
+                color: $color-h-dark; // #3D4E60
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 28px;
+                }
+            }
+
+            p {
+                font-family: $font-lato;
+                font-weight: 700; // Spec says 700
+                font-size: 16px;
+                line-height: 26px;
+                color: $color-text-grey;
+                margin: 0;
+            }
+        }
+
+        .intro-content {
+            // Frame 5874
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            width: 100%;
+            max-width: 1292px;
+
+            @media (max-width: 1000px) {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .text-block {
+                // Frame 5878
+                width: 572px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+
+                @media (max-width: 1000px) {
+                    width: 100%;
+                    align-items: center;
+                }
+
+                h3 {
+                    font-family: $font-lato;
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 43px;
+                    color: $color-h-dark;
+                    margin: 0;
+                }
+
+                p {
+                    font-family: $font-lato;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 26px;
+                    color: $color-text-grey;
+                    margin: 0;
+                    max-width: 478px;
+                }
+            }
+
+            .visual-block {
+                // Frame 5881 Placeholder
+                width: 600px; // Sizing reasonably rather than 1292px from buggy CSS
+                height: 350px;
+                background: url('../assets/groupage-loading.png') no-repeat center center;
+                background-size: contain;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                    height: 250px;
+                }
+            }
+        }
+    }
+
+    // Part 2: Bottom (Gray Background)
+    .groupage-benefits {
+        background: #F5F5F5;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 70px 0; // 100px in spec, but 70px safe
+
+        // This makes sure the grey background spans full width if parent is full width
+        // If .groupage-section is restricted to 1500px margin auto, we might need a workaround for full-bleed grey.
+        // For now, assuming the section might be wrapped in a main container. 
+        // If main.css has a max-width container, we'd need to break out. 
+        // Assuming body -> section flow. 
+    }
+}
+
+// Breaking out the benefit card styling to be unrelated to the wrapper constraint if needed
+.benefit-card-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+
+    .benefit-card {
+        // The Big Card
+        width: 1300px;
+        height: 420px;
+        border-radius: 12px;
+        background: #FFFFFF; // Fallback
+
+        // Gradient + Image
+        // Asset placeholder: happy-employee.png or similar
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%), url('../assets/groupage-employee.png'), #FFFFFF;
+        background-size: 100% 100%, auto 100%; // Gradient covers all, Image fits height
+        background-position: center center, right center;
+        background-repeat: no-repeat;
+
+        box-shadow: 0px -3px 28px rgba(0, 0, 0, 0.09), 0px 124px 54px -110px rgba(0, 0, 0, 0.45);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 70px; // Left padding for text
+
+        @media (max-width: 1000px) {
+            height: auto;
+            padding: 40px;
+            background: #FFFFFF; // Reset gradient on mobile for readability
+            align-items: center;
+            text-align: center;
+        }
+
+        .card-content {
+            width: 717px;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            @media (max-width: 1000px) {
+                align-items: center;
+            }
+
+            h3 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 50px;
+                color: #283C52;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 32px;
+                    line-height: 1.2;
+                }
+            }
+
+            p {
+                font-family: $font-lato;
+                font-weight: 300; // Light weight
+                font-size: 24px;
+                line-height: 36px; // 150%
+                color: #283C52;
+                margin: 0;
+
+                strong {
+                    font-weight: 700;
+                }
+
+                @media (max-width: 600px) {
+                    font-size: 18px;
+                }
+            }
+
+            .btn-save-space {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 326px;
+                height: 66px;
+                background: #EC495D;
+                border-radius: 6px;
+                margin-top: 10px;
+                text-decoration: none;
+
+                font-family: $font-lato;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 40px;
+                color: #FFFFFF;
+
+                transition: transform 0.2s;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                @media (max-width: 600px) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
