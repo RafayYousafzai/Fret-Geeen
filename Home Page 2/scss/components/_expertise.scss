@@ -1,0 +1,155 @@
+// Expertise Section SCSS
+
+$font-lato: 'Lato', sans-serif;
+$color-h3: #2A3541;
+$color-p: #3D4E60;
+$color-btn: #EC495D;
+
+.expertise {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // Frame height 477px + vertical padding if box-sizing border-box?? 
+    // Figma CSS says height: 477px and padding: 70px. 
+    // Usually means total height or content height? 
+    // Let's assume total section height is flexible but padding is 70px.
+    padding: 70px 0;
+    background: linear-gradient(269.54deg, rgba(255, 255, 255, 0) 40.81%, rgba(255, 255, 255, 0.9) 59.47%, #FFFFFF 73.26%);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    @media (max-width: 1200px) {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    .expertise-container {
+        // Frame 5874 wrapping content
+        width: 1292px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; // wraps on small screens
+        justify-content: center;
+        align-items: center;
+        gap: 70px;
+
+        @media (max-width: 1200px) {
+            gap: 40px;
+            flex-direction: column-reverse; // Image on top or text on top? Design usually Text -> Image or Image -> Text. 
+            // Figma Order: Text is Order 0, Image is Frame 5875 Order 1.
+            // visual: Text Left, Image Right. 
+            // Mobile: Text Top, Image Bottom usually.
+            flex-direction: column;
+        }
+    }
+
+    .expertise-content {
+        // Frame 5873
+        width: 544px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            align-items: center;
+            text-align: center;
+        }
+
+        h3 {
+            width: 100%;
+            max-width: 502px;
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 49px;
+            color: $color-h3;
+            margin: 0;
+
+            @media (max-width: 600px) {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+        }
+
+        p {
+            width: 100%;
+            max-width: 464px;
+            font-family: $font-lato;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-p;
+            margin: 0;
+        }
+
+        .btn-expertise {
+            // Frame 11 details
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // Width from Figma: 340px
+            width: 340px;
+            height: 66px; // Button height
+            background: $color-btn;
+            border-radius: 6px;
+            text-decoration: none;
+
+            // Text font
+            font-family: $font-lato;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 40px;
+            color: #FFFFFF;
+
+            transition: transform 0.2s ease;
+            margin-top: 10px; // spacing
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+
+            @media (max-width: 600px) {
+                width: 100%;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .expertise-visual {
+        width: 604px;
+        position: relative;
+        height: 477px; // Matching section height as requested
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            height: auto;
+            min-height: 300px;
+        }
+
+        .van-image {
+            height: 100%; // Fill the container height
+            width: auto; // Maintain aspect ratio
+            max-width: none; // Allow it to exceed container width if needed
+            object-fit: contain; // Ensure full truck is visible
+
+            // Adjust position if it needs to overflow visually?
+            // User just said height same as section. 
+            // If the truck is 477px high, it will be quite large.
+
+            @media (max-width: 768px) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+
+}
