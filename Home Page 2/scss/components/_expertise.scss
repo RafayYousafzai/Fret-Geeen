@@ -31,8 +31,8 @@ $color-btn: #EC495D;
         /* Frame 5874 */
         /* Auto layout */
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap; // Kept wrap for responsiveness
+        flex-direction: row; // Default row
+        flex-wrap: wrap; // Kept wrap but try to fit
         justify-content: center;
         align-items: center;
         align-content: center;
@@ -42,15 +42,14 @@ $color-btn: #EC495D;
 
         width: 100%;
         max-width: 1292px; // Figma value
-        // height: 337px; // Removed fixed height
 
         @media (min-width: 1201px) {
             flex-wrap: nowrap;
         }
 
-        @media (max-width: 1200px) {
+        @media (max-width: 900px) {
             gap: 40px;
-            flex-direction: column;
+            flex-direction: column; // Stack only below 900px
         }
     }
 
@@ -63,11 +62,13 @@ $color-btn: #EC495D;
         padding: 0px;
         gap: 20px; // Figma value
 
-        width: 100%;
-        max-width: 544px; // Figma value
-        // height: 337px; // Removed fixed height
+        // Flexible width for mid screens
+        width: 45%;
+        min-width: 300px;
+        max-width: 544px; // Figma value as upper limit
 
-        @media (max-width: 1200px) {
+        @media (max-width: 900px) {
+            width: 100%;
             align-items: center;
             text-align: center;
             max-width: 800px;
@@ -86,6 +87,10 @@ $color-btn: #EC495D;
             /* or 117% */
             color: $color-h3;
             margin: 0;
+
+            @media (max-width: 1200px) {
+                font-size: 36px; // Adjust for mid screens
+            }
 
             @media (max-width: 600px) {
                 font-size: 32px;
@@ -163,12 +168,19 @@ $color-btn: #EC495D;
         padding: 0px;
         gap: 70px; // Figma value
 
-        width: 100%;
+        // Flexible width for mid screens
+        width: 48%;
+        min-width: 300px;
         max-width: 604px; // Figma value
-        // height: 66px; // Ignored height as it seems incorrect for the visual container in the context of the image
 
         position: relative;
         height: auto;
+
+        @media (max-width: 900px) {
+            width: 100%;
+            flex: 1 1 auto;
+            justify-content: center;
+        }
 
         @media (max-width: 768px) {
             width: 100%;
@@ -183,9 +195,14 @@ $color-btn: #EC495D;
 
             @media (min-width: 1201px) {
                 // Maintained custom height adjustment to match user preference/visual requirement not fully captured by "Frame 5875 height: 66px" which is likely just a wrapper or sub-element in Figma
-                height: 480px;
+                height: 420px;
                 width: auto;
                 max-width: none;
+            }
+
+            // Ensure image respects flexible container on mid-screens
+            @media (min-width: 901px) and (max-width: 1200px) {
+                max-height: 400px; // Reasonable height for mid-screens
             }
         }
     }

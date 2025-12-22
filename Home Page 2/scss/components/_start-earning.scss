@@ -23,7 +23,6 @@
     }
 
     .earning-container {
-        // Frame 5874
         width: 1292px;
         max-width: 100%;
         display: flex;
@@ -32,16 +31,16 @@
         justify-content: center;
         align-items: center;
         align-content: center;
-        gap: 116px; // Large gap from Figma
+        gap: 80px; // Adjusted for better fit
 
-        @media (max-width: 1200px) {
+        @media (max-width: 900px) {
             gap: 50px;
             flex-direction: column; // Stack on mobile
         }
 
         .earning-content {
-            // Frame 5873
-            width: 493px;
+            width: 45%;
+            min-width: 300px;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -62,6 +61,10 @@
                 color: #2A3541;
                 margin: 0;
 
+                @media (max-width: 1200px) {
+                    font-size: 36px;
+                }
+
                 @media (max-width: 600px) {
                     font-size: 32px;
                     line-height: 1.2;
@@ -77,8 +80,6 @@
                 color: #546476;
                 margin: 0;
 
-                // For the "Register Your Transporter Account - Free & Fast" bold part
-                // The provided text block has a bold line. 
                 strong {
                     font-weight: 700;
                     color: #546476;
@@ -88,7 +89,6 @@
             }
 
             .btn-earning {
-                // cta-btn frame
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
@@ -121,19 +121,21 @@
         }
 
         .earning-visual {
-            // image 55
-            width: 672px;
-            height: 444px;
-            // Placeholder background
+            width: 48%;
+            min-width: 300px;
+            height: auto;
+            min-height: 350px;
+            aspect-ratio: 672/444;
+
             background: url('../assets/earn-smarter.png') no-repeat center center;
             background-size: contain;
 
-            flex-shrink: 0;
+            flex-shrink: 1;
 
-            @media (max-width: 768px) {
+            @media (max-width: 900px) {
                 width: 100%;
+                max-width: 672px;
                 height: 300px;
-                background-size: contain;
             }
         }
     }

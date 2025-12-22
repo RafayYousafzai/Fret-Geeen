@@ -449,7 +449,7 @@ img {
     flex-wrap: nowrap;
   }
 }
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .expertise .expertise-container {
     gap: 40px;
     flex-direction: column;
@@ -463,11 +463,13 @@ img {
   align-items: flex-start;
   padding: 0px;
   gap: 20px;
-  width: 100%;
+  width: 45%;
+  min-width: 300px;
   max-width: 544px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .expertise .expertise-content {
+    width: 100%;
     align-items: center;
     text-align: center;
     max-width: 800px;
@@ -484,6 +486,11 @@ img {
   /* or 117% */
   color: #2A3541;
   margin: 0;
+}
+@media (max-width: 1200px) {
+  .expertise .expertise-content h3 {
+    font-size: 36px;
+  }
 }
 @media (max-width: 600px) {
   .expertise .expertise-content h3 {
@@ -551,10 +558,18 @@ img {
   align-items: center;
   padding: 0px;
   gap: 70px;
-  width: 100%;
+  width: 48%;
+  min-width: 300px;
   max-width: 604px;
   position: relative;
   height: auto;
+}
+@media (max-width: 900px) {
+  .expertise .expertise-visual {
+    width: 100%;
+    flex: 1 1 auto;
+    justify-content: center;
+  }
 }
 @media (max-width: 768px) {
   .expertise .expertise-visual {
@@ -570,9 +585,14 @@ img {
 }
 @media (min-width: 1201px) {
   .expertise .expertise-visual .van-image {
-    height: 480px;
+    height: 420px;
     width: auto;
     max-width: none;
+  }
+}
+@media (min-width: 901px) and (max-width: 1200px) {
+  .expertise .expertise-visual .van-image {
+    max-height: 400px;
   }
 }
 
@@ -726,29 +746,33 @@ img {
   align-content: center;
   gap: 70px;
 }
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .job-acceptance .job-container {
     flex-direction: column;
     gap: 40px;
   }
 }
 .job-acceptance .job-container .job-visual {
-  width: 629px;
-  height: 584px;
+  width: 48%;
+  min-width: 300px;
+  height: auto;
+  min-height: 400px;
+  aspect-ratio: 629/584;
   position: relative;
   background: url("../assets/jobs.png") no-repeat center center;
   background-size: contain;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .job-acceptance .job-container .job-visual {
     width: 100%;
+    max-width: 600px;
     height: 400px;
-    background-size: contain;
   }
 }
 .job-acceptance .job-container .job-content {
-  width: 593px;
+  width: 45%;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -766,14 +790,18 @@ img {
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 42px;
-  line-height: 42px;
+  line-height: 1.2;
   color: #2A3541;
   margin: 0;
+}
+@media (max-width: 1200px) {
+  .job-acceptance .job-container .job-content h3 {
+    font-size: 36px;
+  }
 }
 @media (max-width: 600px) {
   .job-acceptance .job-container .job-content h3 {
     font-size: 32px;
-    line-height: 1.2;
   }
 }
 .job-acceptance .job-container .job-content p {
@@ -842,16 +870,17 @@ img {
   justify-content: center;
   align-items: center;
   align-content: center;
-  gap: 116px;
+  gap: 80px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .start-earning .earning-container {
     gap: 50px;
     flex-direction: column;
   }
 }
 .start-earning .earning-container .earning-content {
-  width: 493px;
+  width: 45%;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -872,6 +901,11 @@ img {
   line-height: 42px;
   color: #2A3541;
   margin: 0;
+}
+@media (max-width: 1200px) {
+  .start-earning .earning-container .earning-content h3 {
+    font-size: 36px;
+  }
 }
 @media (max-width: 600px) {
   .start-earning .earning-container .earning-content h3 {
@@ -923,17 +957,20 @@ img {
   }
 }
 .start-earning .earning-container .earning-visual {
-  width: 672px;
-  height: 444px;
+  width: 48%;
+  min-width: 300px;
+  height: auto;
+  min-height: 350px;
+  aspect-ratio: 672/444;
   background: url("../assets/earn-smarter.png") no-repeat center center;
   background-size: contain;
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .start-earning .earning-container .earning-visual {
     width: 100%;
+    max-width: 672px;
     height: 300px;
-    background-size: contain;
   }
 }
 
