@@ -19,7 +19,7 @@ $color-text-grey: #546476;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 70px 0; // Vertical padding
+        padding: 70px 20px; // Added side padding for mobile safety
         gap: 50px;
         width: 100%;
         max-width: 1500px;
@@ -46,6 +46,7 @@ $color-text-grey: #546476;
 
                 @media (max-width: 600px) {
                     font-size: 28px;
+                    line-height: 1.2;
                 }
             }
 
@@ -56,6 +57,10 @@ $color-text-grey: #546476;
                 line-height: 26px;
                 color: $color-text-grey;
                 margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 14px;
+                }
             }
         }
 
@@ -77,14 +82,14 @@ $color-text-grey: #546476;
 
             .text-block {
                 // Frame 5878
-                width: 572px;
+                width: 100%;
+                max-width: 572px; // Fixed width converted to max-width for responsiveness
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 25px;
 
                 @media (max-width: 1000px) {
-                    width: 100%;
                     align-items: center;
                 }
 
@@ -95,6 +100,11 @@ $color-text-grey: #546476;
                     line-height: 43px;
                     color: $color-h-dark;
                     margin: 0;
+
+                    @media (max-width: 600px) {
+                        font-size: 26px;
+                        line-height: 1.2;
+                    }
                 }
 
                 p {
@@ -110,14 +120,18 @@ $color-text-grey: #546476;
 
             .visual-block {
                 // Frame 5881 Placeholder
-                width: 600px; // Sizing reasonably rather than 1292px from buggy CSS
+                width: 100%;
+                max-width: 600px; // Responsive max-width
                 height: 350px;
                 background: url('../assets/groupage-loading.png') no-repeat center center;
                 background-size: contain;
 
                 @media (max-width: 768px) {
-                    width: 100%;
                     height: 250px;
+                }
+
+                @media (max-width: 480px) {
+                    height: 180px;
                 }
             }
         }
@@ -129,13 +143,7 @@ $color-text-grey: #546476;
         width: 100%;
         display: flex;
         justify-content: center;
-        padding: 70px 0; // 100px in spec, but 70px safe
-
-        // This makes sure the grey background spans full width if parent is full width
-        // If .groupage-section is restricted to 1500px margin auto, we might need a workaround for full-bleed grey.
-        // For now, assuming the section might be wrapped in a main container. 
-        // If main.css has a max-width container, we'd need to break out. 
-        // Assuming body -> section flow. 
+        padding: 70px 20px; // Added side padding for mobile
     }
 }
 
@@ -149,15 +157,15 @@ $color-text-grey: #546476;
 
     .benefit-card {
         // The Big Card
-        width: 1300px;
+        width: 100%;
+        max-width: 1300px; // Responsive width
         height: 420px;
         border-radius: 12px;
         background: #FFFFFF; // Fallback
 
         // Gradient + Image
-        // Asset placeholder: happy-employee.png or similar
         background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%), url('../assets/groupage-employee.png'), #FFFFFF;
-        background-size: 100% 100%, auto 100%; // Gradient covers all, Image fits height
+        background-size: cover, auto 100%;
         background-position: center center, right center;
         background-repeat: no-repeat;
 
@@ -170,15 +178,15 @@ $color-text-grey: #546476;
 
         @media (max-width: 1000px) {
             height: auto;
-            padding: 40px;
-            background: #FFFFFF; // Reset gradient on mobile for readability
+            padding: 40px 20px;
+            background: #FFFFFF; // Simplified background for mobile readability
             align-items: center;
             text-align: center;
         }
 
         .card-content {
-            width: 717px;
-            max-width: 100%;
+            width: 100%;
+            max-width: 717px; // Responsive max-width
             display: flex;
             flex-direction: column;
             gap: 18px;
@@ -196,8 +204,12 @@ $color-text-grey: #546476;
                 margin: 0;
 
                 @media (max-width: 600px) {
-                    font-size: 32px;
+                    font-size: 30px;
                     line-height: 1.2;
+                }
+
+                @media (max-width: 400px) {
+                    font-size: 26px;
                 }
             }
 
@@ -215,6 +227,11 @@ $color-text-grey: #546476;
 
                 @media (max-width: 600px) {
                     font-size: 18px;
+                    line-height: 1.4;
+                }
+
+                @media (max-width: 400px) {
+                    font-size: 16px;
                 }
             }
 
@@ -223,6 +240,7 @@ $color-text-grey: #546476;
                 justify-content: center;
                 align-items: center;
                 width: 326px;
+                max-width: 100%;
                 height: 66px;
                 background: #EC495D;
                 border-radius: 6px;
@@ -243,6 +261,8 @@ $color-text-grey: #546476;
 
                 @media (max-width: 600px) {
                     width: 100%;
+                    height: 56px;
+                    font-size: 18px;
                 }
             }
         }

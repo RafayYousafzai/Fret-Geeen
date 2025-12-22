@@ -410,11 +410,14 @@ img {
 }
 
 .expertise {
+  /* Auto layout */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   padding: 70px 20px;
+  gap: 50px;
+  width: 100%;
   background: linear-gradient(269.54deg, rgba(255, 255, 255, 0) 40.81%, rgba(255, 255, 255, 0.9) 59.47%, #FFFFFF 73.26%);
   background-size: cover;
   background-position: center;
@@ -427,14 +430,24 @@ img {
   }
 }
 .expertise .expertise-container {
-  width: 100%;
-  max-width: 1292px;
+  /* Frame 5874 */
+  /* Auto layout */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  align-content: center;
+  padding: 0px;
   gap: 70px;
+  isolation: isolate;
+  width: 100%;
+  max-width: 1292px;
+}
+@media (min-width: 1201px) {
+  .expertise .expertise-container {
+    flex-wrap: nowrap;
+  }
 }
 @media (max-width: 1200px) {
   .expertise .expertise-container {
@@ -443,28 +456,32 @@ img {
   }
 }
 .expertise .expertise-content {
-  flex: 1 1 400px;
-  max-width: 544px;
-  width: 100%;
+  /* Frame 5873 */
+  /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 0px;
   gap: 20px;
+  width: 100%;
+  max-width: 544px;
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .expertise .expertise-content {
     align-items: center;
     text-align: center;
-    flex-basis: auto;
+    max-width: 800px;
   }
 }
 .expertise .expertise-content h3 {
   width: 100%;
   max-width: 502px;
   font-family: "Lato", sans-serif;
+  font-style: normal;
   font-weight: 700;
   font-size: 42px;
   line-height: 49px;
+  /* or 117% */
   color: #2A3541;
   margin: 0;
 }
@@ -478,26 +495,38 @@ img {
   width: 100%;
   max-width: 464px;
   font-family: "Lato", sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
+  /* or 162% */
   color: #3D4E60;
   margin: 0;
 }
 .expertise .expertise-content .btn-expertise {
+  /* Frame 11 */
+  /* Auto layout */
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 340px;
+  padding: 3px 65px;
+  gap: 10px;
+  white-space: nowrap;
+  width: auto;
+  min-width: 340px;
   max-width: 100%;
   height: 66px;
+  /* Red */
   background: #EC495D;
   border-radius: 6px;
   text-decoration: none;
   font-family: "Lato", sans-serif;
+  font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 40px;
+  /* identical to box height, or 167% */
   color: #FFFFFF;
   transition: transform 0.2s ease;
   margin-top: 10px;
@@ -507,18 +536,24 @@ img {
 }
 @media (max-width: 600px) {
   .expertise .expertise-content .btn-expertise {
+    padding: 3px 20px;
     width: 100%;
     font-size: 20px;
   }
 }
 .expertise .expertise-visual {
-  flex: 1 1 400px;
-  max-width: 604px;
-  width: 100%;
-  position: relative;
+  /* Frame 5875 */
+  /* Auto layout */
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 0px;
+  gap: 70px;
+  width: 100%;
+  max-width: 604px;
+  position: relative;
   height: auto;
 }
 @media (max-width: 768px) {
@@ -531,8 +566,16 @@ img {
   width: 100%;
   height: auto;
   max-width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
+@media (min-width: 1201px) {
+  .expertise .expertise-visual .van-image {
+    height: 480px;
+    width: auto;
+    max-width: none;
+  }
+}
+
 .maximize {
   display: flex;
   flex-direction: column;
@@ -1042,7 +1085,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 70px 0;
+  padding: 70px 20px;
   gap: 50px;
   width: 100%;
   max-width: 1500px;
@@ -1071,6 +1114,7 @@ img {
 @media (max-width: 600px) {
   .groupage-section .groupage-intro .intro-header h2 {
     font-size: 28px;
+    line-height: 1.2;
   }
 }
 .groupage-section .groupage-intro .intro-header p {
@@ -1080,6 +1124,11 @@ img {
   line-height: 26px;
   color: #546476;
   margin: 0;
+}
+@media (max-width: 600px) {
+  .groupage-section .groupage-intro .intro-header p {
+    font-size: 14px;
+  }
 }
 .groupage-section .groupage-intro .intro-content {
   display: flex;
@@ -1098,7 +1147,8 @@ img {
   }
 }
 .groupage-section .groupage-intro .intro-content .text-block {
-  width: 572px;
+  width: 100%;
+  max-width: 572px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1106,7 +1156,6 @@ img {
 }
 @media (max-width: 1000px) {
   .groupage-section .groupage-intro .intro-content .text-block {
-    width: 100%;
     align-items: center;
   }
 }
@@ -1118,6 +1167,12 @@ img {
   color: #3D4E60;
   margin: 0;
 }
+@media (max-width: 600px) {
+  .groupage-section .groupage-intro .intro-content .text-block h3 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+}
 .groupage-section .groupage-intro .intro-content .text-block p {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -1128,15 +1183,20 @@ img {
   max-width: 478px;
 }
 .groupage-section .groupage-intro .intro-content .visual-block {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   height: 350px;
   background: url("../assets/groupage-loading.png") no-repeat center center;
   background-size: contain;
 }
 @media (max-width: 768px) {
   .groupage-section .groupage-intro .intro-content .visual-block {
-    width: 100%;
     height: 250px;
+  }
+}
+@media (max-width: 480px) {
+  .groupage-section .groupage-intro .intro-content .visual-block {
+    height: 180px;
   }
 }
 .groupage-section .groupage-benefits {
@@ -1144,7 +1204,7 @@ img {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 70px 0;
+  padding: 70px 20px;
 }
 
 .benefit-card-wrapper {
@@ -1155,12 +1215,13 @@ img {
   padding: 0 20px;
 }
 .benefit-card-wrapper .benefit-card {
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px;
   height: 420px;
   border-radius: 12px;
   background: #FFFFFF;
   background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%), url("../assets/groupage-employee.png"), #FFFFFF;
-  background-size: 100% 100%, auto 100%;
+  background-size: cover, auto 100%;
   background-position: center center, right center;
   background-repeat: no-repeat;
   box-shadow: 0px -3px 28px rgba(0, 0, 0, 0.09), 0px 124px 54px -110px rgba(0, 0, 0, 0.45);
@@ -1172,15 +1233,15 @@ img {
 @media (max-width: 1000px) {
   .benefit-card-wrapper .benefit-card {
     height: auto;
-    padding: 40px;
+    padding: 40px 20px;
     background: #FFFFFF;
     align-items: center;
     text-align: center;
   }
 }
 .benefit-card-wrapper .benefit-card .card-content {
-  width: 717px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 717px;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -1200,8 +1261,13 @@ img {
 }
 @media (max-width: 600px) {
   .benefit-card-wrapper .benefit-card .card-content h3 {
-    font-size: 32px;
+    font-size: 30px;
     line-height: 1.2;
+  }
+}
+@media (max-width: 400px) {
+  .benefit-card-wrapper .benefit-card .card-content h3 {
+    font-size: 26px;
   }
 }
 .benefit-card-wrapper .benefit-card .card-content p {
@@ -1218,6 +1284,12 @@ img {
 @media (max-width: 600px) {
   .benefit-card-wrapper .benefit-card .card-content p {
     font-size: 18px;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 400px) {
+  .benefit-card-wrapper .benefit-card .card-content p {
+    font-size: 16px;
   }
 }
 .benefit-card-wrapper .benefit-card .card-content .btn-save-space {
@@ -1225,6 +1297,7 @@ img {
   justify-content: center;
   align-items: center;
   width: 326px;
+  max-width: 100%;
   height: 66px;
   background: #EC495D;
   border-radius: 6px;
@@ -1243,6 +1316,8 @@ img {
 @media (max-width: 600px) {
   .benefit-card-wrapper .benefit-card .card-content .btn-save-space {
     width: 100%;
+    height: 56px;
+    font-size: 18px;
   }
 }
 

@@ -6,13 +6,16 @@ $color-p: #3D4E60;
 $color-btn: #EC495D;
 
 .expertise {
+    /* Auto layout */
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    padding: 70px 20px; // Maintain 20px side padding for responsiveness
+    gap: 50px;
 
-    // Changed fixed padding to flexible padding to prevent edge touching
-    padding: 70px 20px;
+    width: 100%;
+    // height: 477px; // Removed fixed height for responsiveness
 
     background: linear-gradient(269.54deg, rgba(255, 255, 255, 0) 40.81%, rgba(255, 255, 255, 0.9) 59.47%, #FFFFFF 73.26%);
     background-size: cover;
@@ -25,48 +28,62 @@ $color-btn: #EC495D;
     }
 
     .expertise-container {
-        // FIX: Changed fixed width to max-width to stop overflow
-        width: 100%;
-        max-width: 1292px;
-
+        /* Frame 5874 */
+        /* Auto layout */
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: wrap; // Kept wrap for responsiveness
         justify-content: center;
         align-items: center;
-        gap: 70px;
+        align-content: center;
+        padding: 0px;
+        gap: 70px; // Figma value
+        isolation: isolate;
+
+        width: 100%;
+        max-width: 1292px; // Figma value
+        // height: 337px; // Removed fixed height
+
+        @media (min-width: 1201px) {
+            flex-wrap: nowrap;
+        }
 
         @media (max-width: 1200px) {
             gap: 40px;
             flex-direction: column;
-            // If you want the image on top on mobile, change to column-reverse
         }
     }
 
     .expertise-content {
-        // FIX: Allow this to shrink/grow properly
-        flex: 1 1 400px;
-        max-width: 544px;
-        width: 100%;
-
+        /* Frame 5873 */
+        /* Auto layout */
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 20px;
+        padding: 0px;
+        gap: 20px; // Figma value
 
-        @media (max-width: 900px) {
+        width: 100%;
+        max-width: 544px; // Figma value
+        // height: 337px; // Removed fixed height
+
+        @media (max-width: 1200px) {
             align-items: center;
             text-align: center;
-            flex-basis: auto; // Reset flex basis on mobile
+            max-width: 800px;
         }
 
         h3 {
             width: 100%;
-            max-width: 502px;
+            max-width: 502px; // Figma value
+            // height: 98px; // Removed fixed height
+
             font-family: $font-lato;
+            font-style: normal;
             font-weight: 700;
             font-size: 42px;
             line-height: 49px;
+            /* or 117% */
             color: $color-h3;
             margin: 0;
 
@@ -78,30 +95,46 @@ $color-btn: #EC495D;
 
         p {
             width: 100%;
-            max-width: 464px;
+            max-width: 464px; // Figma value
+            // height: 108px; // Removed fixed height
+
             font-family: $font-lato;
+            font-style: normal;
             font-weight: 400;
             font-size: 16px;
             line-height: 26px;
+            /* or 162% */
             color: $color-p;
             margin: 0;
         }
 
         .btn-expertise {
+            /* Frame 11 */
+            /* Auto layout */
             display: flex;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
-            width: 340px;
-            max-width: 100%; // Ensure button doesn't overflow very small screens
-            height: 66px;
+            padding: 3px 65px; // Figma value
+            gap: 10px;
+            white-space: nowrap;
+
+            width: auto;
+            min-width: 340px; // Figma value as minimum
+            max-width: 100%;
+            height: 66px; // Figma value
+
+            /* Red */
             background: $color-btn;
             border-radius: 6px;
             text-decoration: none;
 
             font-family: $font-lato;
+            font-style: normal;
             font-weight: 400;
             font-size: 24px;
             line-height: 40px;
+            /* identical to box height, or 167% */
             color: #FFFFFF;
 
             transition: transform 0.2s ease;
@@ -112,6 +145,7 @@ $color-btn: #EC495D;
             }
 
             @media (max-width: 600px) {
+                padding: 3px 20px;
                 width: 100%;
                 font-size: 20px;
             }
@@ -119,17 +153,21 @@ $color-btn: #EC495D;
     }
 
     .expertise-visual {
-        // FIX: Allow flexible width
-        flex: 1 1 400px;
-        max-width: 604px;
-        width: 100%;
-
-        position: relative;
+        /* Frame 5875 */
+        /* Auto layout */
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; // Kept wrap
         justify-content: center;
         align-items: center;
+        padding: 0px;
+        gap: 70px; // Figma value
 
-        // Removing fixed height to allow image to scale naturally
+        width: 100%;
+        max-width: 604px; // Figma value
+        // height: 66px; // Ignored height as it seems incorrect for the visual container in the context of the image
+
+        position: relative;
         height: auto;
 
         @media (max-width: 768px) {
@@ -138,15 +176,16 @@ $color-btn: #EC495D;
         }
 
         .van-image {
-            // FIX: This ensures the image scales down instead of overflowing
             width: 100%;
             height: auto;
             max-width: 100%;
-            object-fit: contain;
+            object-fit: cover;
 
             @media (min-width: 1201px) {
-                // Optional: If you strictly want the massive size on large screens only
-                // min-width: 600px; 
+                // Maintained custom height adjustment to match user preference/visual requirement not fully captured by "Frame 5875 height: 66px" which is likely just a wrapper or sub-element in Figma
+                height: 480px;
+                width: auto;
+                max-width: none;
             }
         }
     }
