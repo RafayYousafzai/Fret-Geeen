@@ -657,4 +657,244 @@ img {
   }
 }
 
+.job-acceptance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 70px;
+  gap: 50px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  background: #FFFFFF;
+}
+@media (max-width: 1200px) {
+  .job-acceptance {
+    padding: 50px 20px;
+    height: auto;
+  }
+}
+.job-acceptance .job-container {
+  width: 1292px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 70px;
+}
+@media (max-width: 1100px) {
+  .job-acceptance .job-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.job-acceptance .job-container .job-visual {
+  width: 629px;
+  height: 584px;
+  position: relative;
+  background: url("../assets/jobs.png") no-repeat center center;
+  background-size: contain;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .job-acceptance .job-container .job-visual {
+    width: 100%;
+    height: 400px;
+    background-size: contain;
+  }
+}
+.job-acceptance .job-container .job-content {
+  width: 593px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .job-acceptance .job-container .job-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+.job-acceptance .job-container .job-content h3 {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 42px;
+  color: #2A3541;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .job-acceptance .job-container .job-content h3 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
+.job-acceptance .job-container .job-content p {
+  width: 100%;
+  max-width: 503px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #546476;
+  margin: 0;
+}
+.job-acceptance .job-container .job-content .btn-register {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 40px 11px;
+  width: 300px;
+  height: 64px;
+  background: #EC495D;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  color: #FFFFFF;
+  transition: transform 0.2s ease;
+}
+.job-acceptance .job-container .job-content .btn-register:hover {
+  transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  .job-acceptance .job-container .job-content .btn-register {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+
+.start-earning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 70px 70px;
+  gap: 25px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  background: #FFFFFF;
+}
+@media (max-width: 1200px) {
+  .start-earning {
+    padding: 50px 20px;
+    height: auto;
+  }
+}
+.start-earning .earning-container {
+  width: 1292px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 116px;
+}
+@media (max-width: 1200px) {
+  .start-earning .earning-container {
+    gap: 50px;
+    flex-direction: column;
+  }
+}
+.start-earning .earning-container .earning-content {
+  width: 493px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .start-earning .earning-container .earning-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+.start-earning .earning-container .earning-content h3 {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 42px;
+  color: #2A3541;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .start-earning .earning-container .earning-content h3 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
+.start-earning .earning-container .earning-content p {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #546476;
+  margin: 0;
+}
+.start-earning .earning-container .earning-content p strong {
+  font-weight: 700;
+  color: #546476;
+  display: block;
+  margin-top: 10px;
+}
+.start-earning .earning-container .earning-content .btn-earning {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 40px 11px;
+  width: 300px;
+  height: 64px;
+  background: #EC495D;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  color: #FFFFFF;
+  transition: transform 0.2s ease;
+  margin-top: 10px;
+}
+.start-earning .earning-container .earning-content .btn-earning:hover {
+  transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  .start-earning .earning-container .earning-content .btn-earning {
+    width: 100%;
+    font-size: 20px;
+  }
+}
+.start-earning .earning-container .earning-visual {
+  width: 672px;
+  height: 444px;
+  background: url("../assets/earn-smarter.png") no-repeat center center;
+  background-size: contain;
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .start-earning .earning-container .earning-visual {
+    width: 100%;
+    height: 300px;
+    background-size: contain;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

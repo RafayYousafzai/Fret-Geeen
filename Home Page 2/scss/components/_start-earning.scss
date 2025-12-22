@@ -1,0 +1,140 @@
+// Start Earning Section SCSS
+
+.start-earning {
+    // Frame properties
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // Padding from Figma: 0px top, 70px horizontal, 70px bottom. 
+    // Wait, previous sections had top padding. This one says 0 70 70.
+    // Maybe it relies on the previous section's whitespace? or it's visually close.
+    padding: 0px 70px 70px;
+    gap: 25px;
+
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    background: #FFFFFF;
+
+    @media (max-width: 1200px) {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    .earning-container {
+        // Frame 5874
+        width: 1292px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 116px; // Large gap from Figma
+
+        @media (max-width: 1200px) {
+            gap: 50px;
+            flex-direction: column; // Stack on mobile
+        }
+
+        .earning-content {
+            // Frame 5873
+            width: 493px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+
+            @media (max-width: 900px) {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+
+            h3 {
+                width: 100%;
+                font-family: 'Lato', sans-serif;
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 42px;
+                color: #2A3541;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 32px;
+                    line-height: 1.2;
+                }
+            }
+
+            p {
+                width: 100%;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+                color: #546476;
+                margin: 0;
+
+                // For the "Register Your Transporter Account - Free & Fast" bold part
+                // The provided text block has a bold line. 
+                strong {
+                    font-weight: 700;
+                    color: #546476;
+                    display: block; // Make it sit on its own line if needed, or inline
+                    margin-top: 10px;
+                }
+            }
+
+            .btn-earning {
+                // cta-btn frame
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 9px 40px 11px;
+                width: 300px;
+                height: 64px;
+                background: #EC495D;
+                border-radius: 6px;
+                text-decoration: none;
+
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 40px;
+                color: #FFFFFF;
+
+                transition: transform 0.2s ease;
+                margin-top: 10px;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                @media (max-width: 600px) {
+                    width: 100%;
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .earning-visual {
+            // image 55
+            width: 672px;
+            height: 444px;
+            // Placeholder background
+            background: url('../assets/earn-smarter.png') no-repeat center center;
+            background-size: contain;
+
+            flex-shrink: 0;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                height: 300px;
+                background-size: contain;
+            }
+        }
+    }
+}

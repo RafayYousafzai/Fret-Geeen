@@ -1,0 +1,138 @@
+// Job Acceptance Section SCSS
+
+.job-acceptance {
+    // Frame properties
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 70px;
+    gap: 50px;
+
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    background: #FFFFFF;
+
+    @media (max-width: 1200px) {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    .job-container {
+        // Frame 5874
+        // The CSS provided has two "Frame 5874" blocks, likely one wrapper.
+        // It says Row, Gap 70px.
+        width: 1292px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 70px;
+
+        @media (max-width: 1100px) {
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .job-visual {
+            // Group 5762 & Group 5742
+            width: 629px;
+            height: 584px;
+            position: relative;
+
+            // Using a placeholder background image for now
+            background: url('../assets/jobs.png') no-repeat center center;
+            background-size: contain;
+
+            // Ideally strict width/height on large screens
+            flex-shrink: 0;
+
+            @media (max-width: 768px) {
+                width: 100%;
+                height: 400px; // Adjust for mobile
+                background-size: contain;
+            }
+        }
+
+        .job-content {
+            // Frame 5873
+            width: 593px;
+            // Height derived from content or flexible
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+
+            @media (max-width: 900px) {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+
+            h3 {
+                width: 100%; // 593px
+                font-family: 'Lato', sans-serif;
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 42px; // 100%
+                color: #2A3541;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 32px;
+                    line-height: 1.2;
+                }
+            }
+
+            p {
+                width: 100%; // 503px max in Figma but container is 593px
+                max-width: 503px;
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px; // 162%
+                color: #546476; // Grey
+                margin: 0;
+            }
+
+            .btn-register {
+                // cta-btn frame
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 9px 40px 11px; // from CSS
+
+                width: 300px;
+                height: 64px;
+
+                background: #EC495D; // Red
+                border-radius: 6px;
+                text-decoration: none;
+                margin-top: 10px;
+
+                // Text: Register Account
+                font-family: 'Lato', sans-serif;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 40px;
+                color: #FFFFFF;
+
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                @media (max-width: 600px) {
+                    width: 100%;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
