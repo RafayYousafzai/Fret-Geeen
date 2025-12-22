@@ -1,0 +1,10 @@
+// Main SCSS Entry Point
+
+// 1. Abstracts (Variables)
+@import 'variables';
+
+// 2. Base Styles
+@import 'base';
+
+// 3. Components
+@import 'components/hero';

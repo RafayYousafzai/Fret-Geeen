@@ -1,0 +1,294 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: #334155;
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.hero {
+  width: 100%;
+  height: 685px;
+}
+@media (max-width: 900px) {
+  .hero {
+    height: auto;
+  }
+}
+.hero {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 21.5%, #FFFFFF 60.03%), url("../assets/bg-truck.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero .hero-image {
+  width: 422px;
+  height: 602px;
+  filter: drop-shadow(-10px -16px 44px rgba(42, 53, 65, 0.25));
+  object-fit: contain;
+  z-index: 1;
+  align-self: flex-end;
+  margin-bottom: -100px;
+}
+@media (max-width: 900px) {
+  .hero .hero-image {
+    width: 80%;
+    height: auto;
+    align-self: center;
+    margin-bottom: 0px;
+    margin-top: 40px;
+  }
+}
+.hero .hero-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 100px 70px;
+  gap: 100px;
+  width: 1500px;
+  max-width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 1200px) {
+  .hero .hero-container {
+    width: 100%;
+    padding: 50px;
+    gap: 50px;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 900px) {
+  .hero .hero-container {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+}
+.hero .hero-content {
+  width: 674px;
+  height: 431px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 15px;
+  order: 0;
+  z-index: 2;
+}
+@media (max-width: 900px) {
+  .hero .hero-content {
+    width: 100%;
+    height: auto;
+    align-items: center;
+  }
+}
+.hero .hero-content h1 {
+  width: 674px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  color: #111C28;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .hero .hero-content h1 {
+    width: 100%;
+    font-size: 36px;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
+.hero .hero-content .subtitle {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  color: #2C3E50;
+  margin: 0;
+  font-weight: 700;
+}
+.hero .hero-content .description {
+  width: 674px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  /* or 133% */
+  color: #2C3E50;
+  margin: 0;
+  margin-bottom: 25px;
+}
+@media (max-width: 900px) {
+  .hero .hero-content .description {
+    width: 100%;
+    text-align: center;
+  }
+}
+.hero .hero-content .btn-primary {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 40px 11px;
+  width: 300px;
+  height: 64px;
+  background: #EC495D;
+  border-radius: 6px;
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.hero .hero-content .btn-primary:hover {
+  transform: translateY(-2px);
+}
+.hero .hero-content .trust-badges {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+  margin-top: 40px;
+}
+@media (max-width: 600px) {
+  .hero .hero-content .trust-badges {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
+.hero .hero-content .trust-badges .badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+}
+.hero .hero-content .trust-badges .badge.google {
+  width: 228px;
+  height: 61px;
+}
+.hero .hero-content .trust-badges .badge.google img {
+  width: 41px;
+  height: 41px;
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+}
+.hero .hero-content .trust-badges .badge.axa {
+  width: 286px;
+  height: 60px;
+}
+.hero .hero-content .trust-badges .badge.axa img {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+}
+.hero .hero-content .trust-badges .badge .badge-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero .hero-content .trust-badges .badge .badge-text p {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #3D4E60;
+  margin: 0;
+}
+.hero .hero-content .trust-badges .badge .badge-text .stars {
+  color: #FBBC04;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.hero .hero-content .trust-badges .badge .badge-text span {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #213683;
+}
+.hero .hero-image {
+  position: absolute;
+  width: 422px;
+  height: 602px;
+  left: 906px;
+  top: 83px;
+  filter: drop-shadow(-10px -16px 44px rgba(42, 53, 65, 0.25));
+  object-fit: contain;
+  z-index: 1;
+}
+@media (max-width: 1200px) {
+  .hero .hero-image {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 50%;
+    height: auto;
+    align-self: center;
+  }
+}
+@media (max-width: 900px) {
+  .hero .hero-image {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 80%;
+    height: auto;
+    align-self: center;
+    margin-top: 40px;
+    margin-bottom: -100px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
