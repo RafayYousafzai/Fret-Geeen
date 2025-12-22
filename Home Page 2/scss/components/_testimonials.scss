@@ -14,8 +14,8 @@ $color-btn: #EC495D;
     padding: 50px 144px; // Spec: 50px 144px
     gap: 38px;
     width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
+    // max-width: 1500px;
+    margin: 0;
     background: $color-bg;
 
     @media (max-width: 1200px) {

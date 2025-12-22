@@ -163,6 +163,12 @@ img {
   margin: 0;
   margin-bottom: 25px;
 }
+@media (max-width: 1100px) {
+  .hero .hero-content .description {
+    max-width: 550px;
+    width: 100%;
+  }
+}
 @media (max-width: 900px) {
   .hero .hero-content .description {
     width: 100%;
@@ -982,8 +988,7 @@ img {
   padding: 100px 50px;
   gap: 20px;
   width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
+  margin: 0;
   background: #F5F5F5;
   border-radius: 0px;
 }
@@ -1902,8 +1907,7 @@ img {
   padding: 50px 144px;
   gap: 38px;
   width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
+  margin: 0;
   background: #F0F3F6;
 }
 @media (max-width: 1200px) {
