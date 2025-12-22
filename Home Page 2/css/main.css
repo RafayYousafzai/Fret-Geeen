@@ -536,4 +536,125 @@ img {
   }
 }
 
+.maximize {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 100px 0;
+  background: #FFFFFF;
+}
+@media (max-width: 1200px) {
+  .maximize {
+    padding: 60px 20px;
+  }
+}
+.maximize .maximize-card {
+  width: 1300px;
+  height: 420px;
+  background: linear-gradient(270deg, #FFFFFF 39.92%, rgba(255, 255, 255, 0) 85.42%), url("../assets/happy-employee.png"), #FFFFFF;
+  background-size: auto 100%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  box-shadow: 0px -14px 34px rgba(0, 0, 0, 0.04), 0px 54px 54px -40px rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 70px;
+  gap: 23px;
+}
+@media (max-width: 1200px) {
+  .maximize .maximize-card {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 30px;
+    background: #FFFFFF;
+    border: 1px solid #eee;
+  }
+}
+@media (max-width: 1200px) {
+  .maximize .maximize-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, #FFFFFF 100%), url("../assets/bg-truck.png");
+    background-size: cover;
+  }
+}
+.maximize .maximize-card .maximize-content {
+  width: 652px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+}
+@media (max-width: 900px) {
+  .maximize .maximize-card .maximize-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+.maximize .maximize-card .maximize-content h2 {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 50px;
+  color: #283C52;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .maximize .maximize-card .maximize-content h2 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
+.maximize .maximize-card .maximize-content p {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+  color: #283C52;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .maximize .maximize-card .maximize-content p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+}
+.maximize .maximize-card .maximize-content .btn-maximize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 326px;
+  height: 66px;
+  background: #EC495D;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 40px;
+  color: #FFFFFF;
+  transition: transform 0.2s ease;
+}
+.maximize .maximize-card .maximize-content .btn-maximize:hover {
+  transform: translateY(-2px);
+}
+@media (max-width: 600px) {
+  .maximize .maximize-card .maximize-content .btn-maximize {
+    width: 100%;
+    font-size: 18px;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */
