@@ -1,0 +1,143 @@
+// Process Flow Section SCSS
+
+$font-lato: 'Lato', sans-serif;
+
+.process-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // Frame 6061 Layout
+    width: 100%;
+    height: 264px;
+    background: #FFFFFF;
+    padding: 66px 0; // Top padding matches circle top relative to container
+
+    @media (max-width: 1200px) {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .process-container {
+        // Group 4121
+        width: 1170px;
+        height: 132px; // From Figma, though content might exceed 
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; // Distribute items evenly
+        align-items: flex-start;
+
+        @media (max-width: 1200px) {
+            width: 100%;
+            height: auto;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    // Connecting Lines (Vertical separators)
+    .process-line {
+        // Line 1, 2, 3 from Figma
+        // Width 120px, Rotated 90deg, Border 1px solid #546476 opacity 0.2
+        width: 120px;
+        height: 0px;
+        border: 1px solid #546476;
+        opacity: 0.2;
+        transform: rotate(90deg);
+        flex-shrink: 0; // Prevent shrinking in flex container
+
+        // Positioning: they sit between items. 
+        // Since they are rotated, they take up 120px height but displayed width is 0.
+        // We need to adjust margins to create the visual space.
+        margin: 0 -50px; // Negative margin to compensate for rotation width
+        margin-top: 50px; // Adjust vertical alignment roughly
+
+        @media (max-width: 1200px) {
+            display: none;
+        }
+    }
+
+    .process-step {
+        // ... previous styles ...
+        position: relative;
+        width: 270px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+
+        .icon-wrapper {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+
+            img {
+                width: 64px;
+                height: 64px;
+                object-fit: contain;
+            }
+
+        }
+
+        .step-content {
+            text-align: center;
+            width: 270px; // Fixed width from Figma
+
+            h3 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 24px;
+                color: #546476;
+                margin: 0;
+                margin-bottom: 4px;
+                position: relative;
+                z-index: 2;
+
+                // Highlights
+                span.highlight-blue {
+                    background: rgba(51, 153, 255, 0.1);
+                    padding: 0 4px;
+                }
+
+                span.highlight-red {
+                    background: rgba(236, 73, 93, 0.1);
+                    padding: 0 4px;
+                }
+
+                span.highlight-orange {
+                    background: rgba(255, 138, 0, 0.1);
+                    padding: 0 4px;
+                }
+
+                span.highlight-green {
+                    background: rgba(26, 206, 134, 0.1);
+                    padding: 0 4px;
+                }
+            }
+
+            p {
+                font-family: $font-lato;
+                font-weight: 400; // Using 400 for subtitle to differentiate, though Figma block says 700
+                font-size: 13px; // Slightly smaller for subtitle or standard? Figma says 16px. Let's start with 14px for hierarchy. 
+                // Actually user said pixel perfect. Figma says 16px line height 24px for the whole block.
+                // I will use 16px but lighter weight or color if needed.
+                // Let's stick to 16px 400.
+                line-height: 24px;
+                color: #546476;
+                margin: 0;
+                opacity: 0.8; // Reduce visual weight slightly if using same size
+            }
+        }
+    }
+}
