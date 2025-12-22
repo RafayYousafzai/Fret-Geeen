@@ -10,11 +10,10 @@ $color-btn: #EC495D;
     justify-content: center;
     align-items: center;
     width: 100%;
-    // Frame height 477px + vertical padding if box-sizing border-box?? 
-    // Figma CSS says height: 477px and padding: 70px. 
-    // Usually means total height or content height? 
-    // Let's assume total section height is flexible but padding is 70px.
-    padding: 70px 0;
+
+    // Changed fixed padding to flexible padding to prevent edge touching
+    padding: 70px 20px;
+
     background: linear-gradient(269.54deg, rgba(255, 255, 255, 0) 40.81%, rgba(255, 255, 255, 0.9) 59.47%, #FFFFFF 73.26%);
     background-size: cover;
     background-position: center;
@@ -26,38 +25,39 @@ $color-btn: #EC495D;
     }
 
     .expertise-container {
-        // Frame 5874 wrapping content
-        width: 1292px;
-        max-width: 100%;
+        // FIX: Changed fixed width to max-width to stop overflow
+        width: 100%;
+        max-width: 1292px;
+
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap; // wraps on small screens
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 70px;
 
         @media (max-width: 1200px) {
             gap: 40px;
-            flex-direction: column-reverse; // Image on top or text on top? Design usually Text -> Image or Image -> Text. 
-            // Figma Order: Text is Order 0, Image is Frame 5875 Order 1.
-            // visual: Text Left, Image Right. 
-            // Mobile: Text Top, Image Bottom usually.
             flex-direction: column;
+            // If you want the image on top on mobile, change to column-reverse
         }
     }
 
     .expertise-content {
-        // Frame 5873
-        width: 544px;
+        // FIX: Allow this to shrink/grow properly
+        flex: 1 1 400px;
+        max-width: 544px;
+        width: 100%;
+
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 20px;
 
-        @media (max-width: 768px) {
-            width: 100%;
+        @media (max-width: 900px) {
             align-items: center;
             text-align: center;
+            flex-basis: auto; // Reset flex basis on mobile
         }
 
         h3 {
@@ -88,18 +88,16 @@ $color-btn: #EC495D;
         }
 
         .btn-expertise {
-            // Frame 11 details
             display: flex;
             justify-content: center;
             align-items: center;
-            // Width from Figma: 340px
             width: 340px;
-            height: 66px; // Button height
+            max-width: 100%; // Ensure button doesn't overflow very small screens
+            height: 66px;
             background: $color-btn;
             border-radius: 6px;
             text-decoration: none;
 
-            // Text font
             font-family: $font-lato;
             font-weight: 400;
             font-size: 24px;
@@ -107,7 +105,7 @@ $color-btn: #EC495D;
             color: #FFFFFF;
 
             transition: transform 0.2s ease;
-            margin-top: 10px; // spacing
+            margin-top: 10px;
 
             &:hover {
                 transform: translateY(-2px);
@@ -121,35 +119,35 @@ $color-btn: #EC495D;
     }
 
     .expertise-visual {
-        width: 604px;
+        // FIX: Allow flexible width
+        flex: 1 1 400px;
+        max-width: 604px;
+        width: 100%;
+
         position: relative;
-        height: 477px; // Matching section height as requested
         display: flex;
         justify-content: center;
         align-items: center;
 
+        // Removing fixed height to allow image to scale naturally
+        height: auto;
+
         @media (max-width: 768px) {
             width: 100%;
-            height: auto;
-            min-height: 300px;
+            min-height: auto;
         }
 
         .van-image {
-            height: 100%; // Fill the container height
-            width: auto; // Maintain aspect ratio
-            max-width: none; // Allow it to exceed container width if needed
-            object-fit: contain; // Ensure full truck is visible
+            // FIX: This ensures the image scales down instead of overflowing
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
 
-            // Adjust position if it needs to overflow visually?
-            // User just said height same as section. 
-            // If the truck is 477px high, it will be quite large.
-
-            @media (max-width: 768px) {
-                width: 100%;
-                height: auto;
+            @media (min-width: 1201px) {
+                // Optional: If you strictly want the massive size on large screens only
+                // min-width: 600px; 
             }
         }
     }
-
-
 }
