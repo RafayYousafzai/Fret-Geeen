@@ -1783,4 +1783,187 @@ img {
   color: rgb(52.1881188119, 62.1287128713, 73.3118811881);
 }
 
+.testimonials-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 144px;
+  gap: 38px;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  background: #F0F3F6;
+}
+@media (max-width: 1200px) {
+  .testimonials-section {
+    padding: 50px 20px;
+    height: auto;
+  }
+}
+.testimonials-section .testimonials-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1212px;
+}
+@media (max-width: 800px) {
+  .testimonials-section .testimonials-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+.testimonials-section .testimonials-header .header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.testimonials-section .testimonials-header .header-left .sub-title {
+  font-family: "Cabinet Grotesk Variable", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #546476;
+}
+.testimonials-section .testimonials-header .header-left h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  color: #3D4E60;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .testimonials-section .testimonials-header .header-left h2 {
+    font-size: 28px;
+    line-height: normal;
+  }
+}
+.testimonials-section .testimonials-header .header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.testimonials-section .testimonials-header .header-right .review-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.testimonials-section .testimonials-header .header-right .review-info .stars {
+  display: flex;
+  gap: 2px;
+  color: #FBBC04;
+  font-size: 18px;
+}
+.testimonials-section .testimonials-header .header-right .review-info span {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  color: #3D4E60;
+}
+.testimonials-section .testimonials-header .header-right .google-logo {
+  width: 64px;
+  height: 64px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.testimonials-section .testimonials-header .header-right .google-logo img {
+  width: 40px;
+  height: 40px;
+}
+.testimonials-section .testimonials-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+}
+.testimonials-section .testimonials-grid .testimonial-card {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
+  padding: 25px;
+  gap: 12px;
+  width: 370px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@media (max-width: 400px) {
+  .testimonials-section .testimonials-grid .testimonial-card {
+    width: 100%;
+    height: auto;
+  }
+}
+.testimonials-section .testimonials-grid .testimonial-card .card-stars {
+  display: flex;
+  gap: 3px;
+  color: #FBBC04;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.testimonials-section .testimonials-grid .testimonial-card h4 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #3D4E60;
+  margin: 0;
+}
+.testimonials-section .testimonials-grid .testimonial-card p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #546476;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+.testimonials-section .testimonials-grid .testimonial-card .author {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  color: #3D4E60;
+  margin: 0;
+}
+.testimonials-section .btn-view-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 30px 11px;
+  width: 286px;
+  height: 66px;
+  background: #EC495D;
+  border-radius: 6px;
+  text-decoration: none;
+  margin-top: 10px;
+  white-space: nowrap;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 40px;
+  color: #FFFFFF;
+  transition: background 0.2s;
+}
+.testimonials-section .btn-view-all:hover {
+  background: rgb(231.1791044776, 26.8208955224, 51.8955223881);
+}
+
 /*# sourceMappingURL=main.css.map */

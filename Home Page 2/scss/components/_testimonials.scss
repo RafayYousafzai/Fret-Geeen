@@ -1,0 +1,214 @@
+// Testimonials Section SCSS
+
+$font-lato: 'Lato', sans-serif;
+$color-bg: #F0F3F6;
+$color-h-dark: #3D4E60;
+$color-text-grey: #546476;
+$color-star: #FBBC04;
+$color-btn: #EC495D;
+
+.testimonials-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 144px; // Spec: 50px 144px
+    gap: 38px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    background: $color-bg;
+
+    @media (max-width: 1200px) {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    // Top Header Row
+    .testimonials-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; // Gap is massive (202px+), so space-between handles it well
+        width: 100%;
+        max-width: 1212px;
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .header-left {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            .sub-title {
+                font-family: 'Cabinet Grotesk Variable', sans-serif; // Fallback to sans-serif
+                font-weight: 500;
+                font-size: 12px;
+                line-height: 15px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: $color-text-grey;
+            }
+
+            h2 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 43px;
+                color: $color-h-dark;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 28px;
+                    line-height: normal;
+                }
+            }
+        }
+
+        .header-right {
+            // Google Review Badge area
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .review-info {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .stars {
+                    display: flex;
+                    gap: 2px;
+                    color: $color-star;
+                    font-size: 18px;
+                }
+
+                span {
+                    font-family: $font-lato;
+                    font-weight: 300;
+                    font-size: 12px;
+                    line-height: 16px;
+                    text-align: right;
+                    color: $color-h-dark;
+                }
+            }
+
+            .google-logo {
+                width: 64px;
+                height: 64px;
+                background: #FFFFFF;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Optional polish
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+    }
+
+    // Cards Container
+    .testimonials-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        width: 100%;
+        max-width: 1200px;
+
+        .testimonial-card {
+            background: #FFFFFF;
+            box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.07);
+            border-radius: 8px;
+            padding: 25px;
+            gap: 12px;
+
+            width: 370px; // Varies slightly in spec (370/368)
+            height: 280px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            @media (max-width: 400px) {
+                width: 100%;
+                height: auto;
+            }
+
+            .card-stars {
+                display: flex;
+                gap: 3px;
+                color: $color-star;
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            h4 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 19px; // Varies in spec 16 to 19
+                color: $color-h-dark;
+                margin: 0;
+            }
+
+            p {
+                font-family: $font-lato;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px; // 150%
+                color: $color-text-grey;
+                margin: 0;
+                flex-grow: 1; // Fill space
+                display: flex;
+                align-items: center; // Vertical align
+            }
+
+            .author {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 26px;
+                color: $color-h-dark;
+                margin: 0;
+            }
+        }
+    }
+
+    // Bottom Button
+    .btn-view-all {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 9px 30px 11px;
+        width: 286px;
+        height: 66px;
+        background: $color-btn;
+        border-radius: 6px;
+        text-decoration: none;
+        margin-top: 10px;
+
+        white-space: nowrap; // Prevent text wrapping inside fixed-width button
+
+        font-family: $font-lato;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 40px;
+        color: #FFFFFF;
+
+        transition: background 0.2s;
+
+        &:hover {
+            background: darken($color-btn, 10%);
+        }
+    }
+}
