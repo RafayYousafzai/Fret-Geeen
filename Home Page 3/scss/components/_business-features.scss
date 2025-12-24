@@ -1,0 +1,124 @@
+// Variables
+$font-lato: 'Lato', sans-serif;
+$color-h2: #2A3541;
+$color-text: #546476;
+$color-bg-section: #F5F5F5;
+$color-card-bg-white: #FFFFFF;
+$color-card-bg-highlight: #FFF8F8;
+$color-highlight-text: #EC495D;
+
+.business-features-section {
+    width: 100%;
+    background: $color-bg-section;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 50px;
+    gap: 50px;
+
+    @media (max-width: 900px) {
+        padding: 50px 20px;
+        gap: 30px;
+    }
+
+    // Header
+    .features-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        max-width: 832px;
+
+        h2 {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 1;
+            color: $color-h2;
+            margin: 0;
+            text-align: center;
+
+            @media (max-width: 600px) {
+                font-size: 32px;
+            }
+        }
+
+        p {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-text;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    // Grid
+    .features-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch; // Ensure same height
+        gap: 33px;
+        width: 100%;
+        max-width: 1300px;
+
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 25px;
+            gap: 20px;
+
+            background: $color-card-bg-white;
+            box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            min-height: 300px;
+
+            // Highlighted Card Style
+            &.highlight {
+                background: $color-card-bg-highlight;
+                box-shadow: 0px 4px 44px rgba(255, 141, 141, 0.46);
+
+                p {
+                    color: $color-highlight-text;
+                }
+            }
+
+            // Icon Container
+            .icon-wrapper {
+                width: 90px;
+                height: 90px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10px;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            // Text
+            p {
+                font-family: $font-lato;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 32px;
+                text-align: center;
+                color: $color-h2;
+                margin: 0;
+            }
+        }
+    }
+}
