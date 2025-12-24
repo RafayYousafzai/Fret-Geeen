@@ -1,0 +1,245 @@
+// Variables
+$font-lato: 'Lato', sans-serif;
+$color-h2: #2A3541;
+$color-text: #546476;
+$color-btn: #EC495D;
+$bg-chip-default: rgba(61, 78, 96, 0.06);
+$bg-chip-active: rgba(236, 73, 93, 0.1);
+$color-chip-active: #EC495D;
+
+.listing-section {
+    width: 100%;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 70px 50px;
+    gap: 50px;
+
+    @media (max-width: 900px) {
+        padding: 60px 20px;
+        height: auto;
+    }
+
+    // Centered Header
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        text-align: center;
+        max-width: 832px;
+
+        h2 {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 42px;
+            color: $color-h2;
+            margin: 0;
+
+            @media (max-width: 600px) {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+        }
+
+        p {
+            font-family: $font-lato;
+            font-weight: 400; // Adjusted from 700 to 400/500 for readability based on visuals
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-text;
+            margin: 0;
+        }
+    }
+
+    // Main Content Split
+    .listing-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 70px;
+        width: 100%;
+        max-width: 1300px;
+        flex-wrap: wrap; // Responsive wrapping
+
+        @media (max-width: 1024px) {
+            flex-direction: column-reverse; // specific order: image top or bottom? usually image bottom on mobile if it's decorative, but here it's main. Let's keep distinct.
+            // Screenshot shows text on left, image on right. 
+            // On mobile, text first usually.
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        // Left Column
+        .left-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            flex: 1;
+            min-width: 300px;
+
+            @media (max-width: 1024px) {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+
+            h3 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 42px;
+                color: $color-h2;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 28px;
+                }
+            }
+
+            .desc {
+                font-family: $font-lato;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+                color: $color-text;
+                margin: 0;
+            }
+
+            .example {
+                font-family: $font-lato;
+                font-weight: 700; // Bold per CSS dump/visual
+                font-size: 16px;
+                line-height: 26px;
+                color: $color-text; // Assuming grey
+                font-style: italic; // "Example" usually implies distinct style, but css says normal. Sticking to visual cues if any.
+                // The CSS dump says: font-style: normal; font-weight: 700;
+                margin: 0;
+            }
+
+            .cat-label {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 14px;
+                color: $color-text;
+                margin-top: 10px;
+            }
+
+            // Categories Grid
+            .categories-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-top: 10px;
+
+                @media (max-width: 1024px) {
+                    justify-content: center;
+                }
+
+                .chip {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 12px 24px;
+                    border-radius: 100px;
+                    background: $bg-chip-default;
+                    cursor: pointer;
+                    transition: all 0.2s;
+
+                    font-family: $font-lato;
+                    font-weight: 700;
+                    font-size: 16px;
+                    color: $color-text;
+
+                    // Icon placeholder styles
+                    i,
+                    span.icon {
+                        display: inline-block;
+                        width: 18px;
+                        height: 18px;
+                        background: #506070; // fallback color mask
+                        mask-size: contain;
+                        mask-repeat: no-repeat;
+                        mask-position: center;
+                        -webkit-mask-size: contain;
+                        -webkit-mask-repeat: no-repeat;
+                        -webkit-mask-position: center;
+                    }
+
+                    &:hover {
+                        background: darken($bg-chip-default, 5%);
+                    }
+
+                    &.active {
+                        background: $bg-chip-active;
+                        color: $color-chip-active;
+
+                        i,
+                        span.icon {
+                            background: $color-chip-active;
+                        }
+                    }
+
+                    // Specific icon placeholders (using unicode/emoji for now if no svg provided, 
+                    // or just background block as per dump)
+                    img {
+                        height: 20px;
+                        width: auto;
+                        max-width: 30px;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            .btn-cta-listing {
+                margin-top: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0 65px;
+                height: 66px;
+                background: $color-btn;
+                border-radius: 6px;
+
+                font-family: $font-lato;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 40px;
+                color: #FFFFFF;
+                text-decoration: none;
+                transition: transform 0.2s;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                @media (max-width: 600px) {
+                    width: 100%;
+                    padding: 0 20px;
+                    font-size: 20px;
+                    height: 56px;
+                }
+            }
+        }
+
+        // Right Column
+        .right-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+        }
+    }
+}
