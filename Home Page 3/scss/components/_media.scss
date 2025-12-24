@@ -1,0 +1,131 @@
+// Variables
+$font-lato: 'Lato', sans-serif;
+$color-subtitle: #546476;
+$color-title: #3D4E60;
+$color-bg: #FFFFFF;
+
+.media-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // Figma 1520: padding: 50px 0px; 
+    // We keep 20px horizontal padding for safety on small screens
+    padding: 50px 20px;
+    gap: 62px; // Exact Figma Gap
+    width: 100%;
+    background: $color-bg;
+
+    // --- HEADER ---
+    .media-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px; // Exact Figma Gap
+        width: 100%;
+        max-width: 1520px;
+
+        .subtitle {
+            font-family: $font-lato;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: $color-subtitle;
+        }
+
+        h2 {
+            font-family: $font-lato;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 43px;
+            text-align: center;
+            color: $color-title;
+            margin: 0;
+            width: 100%;
+            max-width: 1520px; // Full width per desktop dump
+
+            @media (max-width: 576px) {
+                // Figma 576: Title container height grows to 86px (text wraps)
+                // Font size stays 36px per Figma dump
+                max-width: 576px;
+            }
+        }
+    }
+
+    // --- LOGOS CONTAINER (Frame 5886) ---
+    .media-logos {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        // 1. DESKTOP (1520/1200)
+        gap: 76px;
+        width: 100%;
+        max-width: 1169px; // Exact width of Frame 5886
+
+        // 2. TABLET (1079px)
+        @media (max-width: 1100px) {
+            // Figma 1079: Gap drops to 30px
+            gap: 30px;
+            max-width: 1079px;
+            flex-wrap: wrap; // Figma 1079 and 576 enable wrapping
+
+        }
+
+        // 3. MOBILE (576px)
+        @media (max-width: 600px) {
+            // Figma 576: Gap increases to 40px
+            gap: 40px;
+            align-items: flex-start; // Per Figma 576
+            flex-wrap: wrap; // Figma 1079 and 576 enable wrapping
+
+        }
+
+        // --- INDIVIDUAL LOGO SIZING ---
+        // To be pixel perfect, we apply exact W/H from the dump.
+        // img { object-fit: contain; } ensures they don't stretch.
+
+        img {
+            object-fit: contain;
+            // Optional: Grayscale to Color hover effect (common in these designs)
+            // opacity: 0.8; 
+            // transition: 0.2s;
+            // &:hover { opacity: 1; }
+        }
+
+        .logo-tf1 {
+            width: 104px;
+            height: 38px;
+        }
+
+        .logo-france2 {
+            width: 170px;
+            height: 32px;
+        }
+
+        .logo-france3 {
+            width: 170px;
+            height: 32px;
+        }
+
+        .logo-m6 {
+            width: 84px;
+            height: 63px; // Note: This is taller than the others
+        }
+
+        .logo-bfmtv {
+            width: 126px;
+            height: 26px; // 26.02px in Figma rounded
+        }
+
+        .logo-europe1 {
+            width: 135px;
+            height: 50px; // 50.19px in Figma rounded
+        }
+    }
+}
