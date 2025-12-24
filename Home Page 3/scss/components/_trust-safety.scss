@@ -1,0 +1,253 @@
+// Variables
+$font-lato: 'Lato', sans-serif;
+$color-h2: #3D4E60;
+$color-text: #3D4E60; // Using the same color as headers per Figma, but maybe different weight
+$color-btn: #EC495D;
+$color-footer-bg: #F5F5F5;
+$color-divider-pink: #EC495D;
+$color-divider-blue: #009FFF; // Assuming similar blue to payment section
+
+.trust-safety-section {
+    width: 100%;
+    background: #FFFFFF; // Clean white background as per screenshot
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 90px 0; // Top padding handled by content
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+
+    // Top Striped Border
+    .stripe-border-top {
+        width: 100%;
+        height: 10px;
+        background: repeating-linear-gradient(-45deg,
+                #FFFFFF,
+                #FFFFFF 4px,
+                #E0EFFF 4px,
+                #E0EFFF 8px);
+        margin-bottom: 60px;
+    }
+
+    // Dividers
+    .divider-pink {
+        width: 40px;
+        height: 3px;
+        background-color: $color-divider-pink;
+        border-radius: 2px;
+        margin: 10px auto;
+    }
+
+    .divider-blue {
+        width: 40px;
+        height: 3px;
+        background-color: $color-divider-blue;
+        border-radius: 2px;
+        margin: 10px auto;
+    }
+
+    // Header
+    .trust-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 1380px;
+        padding: 0 20px;
+
+        h2 {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 36px;
+            color: $color-h2;
+            margin: 0;
+
+            @media (max-width: 600px) {
+                font-size: 28px;
+            }
+        }
+
+        p {
+            font-family: $font-lato;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-text;
+            margin: 0;
+            max-width: 638px;
+        }
+    }
+
+    // Content Wrapper (Frame 4495)
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        padding: 40px 50px 20px;
+        gap: 80px; // Row gap
+        width: 100%;
+        max-width: 1400px;
+        margin-bottom: 20px;
+
+        @media (max-width: 1024px) {
+            padding: 20px;
+            gap: 60px;
+        }
+    }
+
+    // Features (Similar to Track Chat but specific specs)
+    .feature-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 80px;
+        width: 100%;
+        max-width: 1300px;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            gap: 40px;
+            text-align: center;
+        }
+
+        &.reverse {
+            @media (max-width: 1024px) {
+                flex-direction: column-reverse; // Put image on top on mobile if desired, or just column
+            }
+
+            // Removed desktop order swapping to maintain Text Left / Image Right
+
+            .text-block {
+                @media (max-width: 1024px) {
+                    order: initial;
+                }
+            }
+
+            .image-block {
+                @media (max-width: 1024px) {
+                    order: initial;
+                }
+            }
+        }
+
+        .text-block {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            width: 100%;
+            max-width: 580px;
+
+            @media (max-width: 1024px) {
+                align-items: center;
+            }
+
+            h3 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 32px; // Slightly smaller for better fit
+                line-height: 1.2;
+                color: $color-h2;
+                margin: 0;
+                padding-bottom: 10px;
+            }
+
+            p {
+                font-family: $font-lato;
+                font-size: 16px;
+                color: $color-text;
+                margin: 0;
+
+                // Specific styling for the insurance text
+                &.insurance-text {
+                    font-weight: 700; // Bold per visual
+                    line-height: 28px;
+                }
+
+                // Specific styling for support text
+                &.support-text {
+                    font-weight: 400; // Regular from Figma
+                    line-height: 26px;
+                }
+            }
+        }
+
+        .image-block {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                max-width: 100%;
+                height: auto;
+                max-height: 400px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    // Footer Bar (Specially styled)
+    .trust-footer-bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        gap: 20px;
+        width: 100%;
+        max-width: 970px;
+        min-height: 106px;
+        background: $color-footer-bg;
+        border-radius: 12px;
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+            height: auto;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        p {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-text;
+            margin: 0;
+            flex-grow: 1;
+            max-width: 650px;
+        }
+
+        .btn-cta-trust {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 40px;
+            width: auto;
+            min-width: 250px;
+            height: 60px;
+            background: $color-btn;
+            border-radius: 6px;
+
+            font-family: $font-lato;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 1;
+            color: #FFFFFF;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: transform 0.2s;
+
+            &:hover {
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
