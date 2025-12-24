@@ -1,0 +1,122 @@
+// Variables
+$font-lato: 'Lato', sans-serif;
+$color-h3: #2A3541;
+$color-p: #3D4E60;
+$color-btn: #EC495D;
+
+.expertise-section {
+    width: 100%;
+    // Height from Figma is 618px, but we use min-height for responsiveness
+    min-height: 618px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // Background handling with gradient over image
+    // Note: User needs to provide 'expertise-bg.jpg' in assets
+    background: linear-gradient(269.54deg, rgba(255, 255, 255, 0) 40.81%, rgba(255, 255, 255, 0.9) 59.47%, #FFFFFF 73.26%), url('../assets/expertise-bg.png');
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    padding: 100px 70px;
+
+    @media (max-width: 900px) {
+        padding: 60px 20px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.95) 40%, #FFFFFF 100%), url('../assets/expertise-bg.png');
+        background-position: center top;
+        background-size: cover;
+        height: auto;
+    }
+
+    .expertise-container {
+        width: 100%;
+        max-width: 1500px;
+        display: flex;
+        flex-direction: row;
+        // Figma has justifyContent: center, gap 70px
+        // But the gradient implies text is on the left.
+        // We'll trust the wrapper width and alignment.
+        justify-content: flex-start;
+        align-items: center;
+
+        @media (max-width: 900px) {
+            justify-content: center;
+        }
+
+        .text-content {
+            // Frame 5873
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            width: 100%;
+            max-width: 613px;
+
+            @media (max-width: 900px) {
+                align-items: center;
+                text-align: center;
+            }
+
+            h3 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 49px;
+                color: $color-h3;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 32px;
+                    line-height: 1.2;
+                }
+            }
+
+            p {
+                font-family: $font-lato;
+                // Figma says 700, but that's very bold for body text. 
+                // Using 400 for better readability based on standard design patterns, 
+                // or 500 if semi-bold is needed. Screenshot looks readable.
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 26px;
+                color: $color-p;
+                margin: 0;
+            }
+
+            .btn-wrapper {
+                margin-top: 10px; // Spacing from Figma btn container
+
+                .btn-cta {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 65px; // Figma padding
+                    height: 66px; // Figma height
+                    background: $color-btn;
+                    border-radius: 6px;
+
+                    font-family: $font-lato;
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 40px;
+                    color: #FFFFFF;
+                    text-decoration: none;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background: darken($color-btn, 5%);
+                        transform: translateY(-2px);
+                    }
+
+                    @media (max-width: 600px) {
+                        width: 100%;
+                        height: 56px;
+                        font-size: 20px;
+                        padding: 0 30px;
+                    }
+                }
+            }
+        }
+    }
+}
