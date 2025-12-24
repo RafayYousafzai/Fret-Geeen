@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -1074,6 +1075,165 @@ img {
   width: 18px;
   height: 18px;
   object-fit: contain;
+}
+
+.booking-section {
+  width: 100%;
+  background: url("../assets/booking-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px;
+  min-height: 885px;
+}
+.booking-section .booking-card {
+  background: #FFFFFF;
+  box-shadow: 0px 64px 174px rgba(0, 0, 0, 0.6);
+  border-radius: 14px;
+  padding: 50px;
+  width: 100%;
+  max-width: 594px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 600px) {
+  .booking-section .booking-card {
+    padding: 30px 20px;
+  }
+}
+.booking-section .booking-card h2 {
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 30px;
+  color: #283C52;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.booking-section .booking-card .form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.booking-section .booking-card .form-group label {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #AAB2BB;
+}
+.booking-section .booking-card .form-group .input-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 4px 15px;
+  gap: 10px;
+  width: 100%;
+  height: 54px;
+  background: #FFFFFF;
+  border: 1px solid #B1B8BF;
+  border-radius: 8px;
+  position: relative;
+}
+.booking-section .booking-card .form-group .input-wrapper:focus-within {
+  border-color: rgb(120.9718309859, 133, 145.0281690141);
+}
+.booking-section .booking-card .form-group .input-wrapper .icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  border-radius: 50%;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.booking-section .booking-card .form-group .input-wrapper .icon.icon-a {
+  background: #0082FD;
+}
+.booking-section .booking-card .form-group .input-wrapper .icon.icon-b {
+  background: #35C76F;
+}
+.booking-section .booking-card .form-group .input-wrapper .icon.icon-calendar {
+  background: transparent;
+  color: #3D4E60;
+}
+.booking-section .booking-card .form-group .input-wrapper .icon.icon-calendar img {
+  width: 100%;
+  height: auto;
+}
+.booking-section .booking-card .form-group .input-wrapper .icon.icon-flag {
+  background: transparent;
+  width: auto;
+}
+.booking-section .booking-card .form-group .input-wrapper .icon.icon-flag img {
+  height: 12px;
+  width: auto;
+}
+.booking-section .booking-card .form-group .input-wrapper input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #000;
+  background: transparent;
+}
+.booking-section .booking-card .form-group .input-wrapper input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+.booking-section .booking-card .form-group .input-wrapper .phone-prefix {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #546476;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.booking-section .booking-card .form-group .input-wrapper .phone-prefix::after {
+  content: "▼";
+  font-size: 10px;
+  margin-left: 2px;
+}
+.booking-section .booking-card .form-group .helper-text {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #3D4E60;
+  text-align: right;
+  margin-top: 5px;
+}
+.booking-section .booking-card .btn-submit {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 346px;
+  height: 66px;
+  background: #EC495D;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  color: #FFFFFF;
+}
+.booking-section .booking-card .btn-submit:hover {
+  background: rgb(233.5895522388, 49.9104477612, 72.447761194);
+  transform: translateY(-2px);
 }
 
 /*# sourceMappingURL=main.css.map */
