@@ -1,0 +1,135 @@
+// Variables
+$font-lato: 'Lato', sans-serif;
+$color-h2: #2A3541;
+$color-text: #546476;
+$color-bg-section: #F5F5F5;
+$color-card-bg-white: #FFFFFF;
+$color-card-bg-highlight: #FFF8F8; // Pinkish background for highlight
+$color-highlight-title: #EC495D; // Pink title for highlight
+
+.stats-section {
+    width: 100%;
+    background: $color-bg-section;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 70px;
+    gap: 10px; // Specs say 10px gap between header and content
+
+    @media (max-width: 900px) {
+        padding: 60px 20px;
+        height: auto;
+    }
+
+    // Header Container
+    .stats-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        margin-bottom: 30px; // Add some visual space not explicitly in flex gap
+
+        h2 {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 42px;
+            line-height: title;
+            color: $color-h2;
+            margin: 0;
+            text-align: center;
+
+            @media (max-width: 600px) {
+                font-size: 32px;
+            }
+        }
+
+        p {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-text;
+            margin: 0;
+            text-align: center;
+        }
+    }
+
+    // Cards Grid (Frame 5874)
+    .stats-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 33px;
+        width: 100%;
+        max-width: 1292px;
+
+        .stat-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0 25px;
+            gap: 17px;
+
+            width: 298px;
+            height: 300px;
+
+            background: $color-card-bg-white;
+            box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+
+            flex: 1 1 250px; // Flex-grow 1, Shrink 1, Basis 250
+            max-width: 300px;
+
+            // Highlighted Card Style (Frame 5875)
+            &.highlight {
+                background: $color-card-bg-highlight;
+                box-shadow: 0px 4px 44px rgba(255, 141, 141, 0.46);
+
+                h3 {
+                    color: $color-highlight-title;
+                }
+            }
+
+            // Icon Container
+            .icon-wrapper {
+                width: 90px;
+                height: 90px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            // Text Container (Frame 5904)
+            .text-content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 15px 0;
+                width: 100%;
+
+                h3 {
+                    font-family: $font-lato;
+                    font-weight: 400; // Regular weight
+                    font-size: 24px;
+                    line-height: 32px;
+                    text-align: center;
+                    color: $color-h2;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

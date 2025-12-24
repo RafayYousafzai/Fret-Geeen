@@ -1,0 +1,159 @@
+// FAQ Section SCSS
+
+$font-lato: 'Lato', sans-serif;
+$color-h-dark: #2A3541;
+$color-text-grey: #546476;
+$color-text-answer: #505F6F;
+$color-bg-item: #FAFAFA;
+$color-border: #D3D3D3;
+$color-icon: #657586;
+
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 70px;
+    gap: 40px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    background: #FFFFFF;
+
+    @media (max-width: 1200px) {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    .faq-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center; // Center aligned based on image/layout
+        gap: 17px;
+        width: 100%;
+        max-width: 1360px;
+        text-align: center;
+
+        .sub-title {
+            font-family: $font-lato;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: $color-text-grey;
+        }
+
+        h2 {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 43px;
+            color: $color-h-dark;
+            margin: 0;
+
+            @media (max-width: 600px) {
+                font-size: 28px;
+            }
+        }
+    }
+
+    .faq-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 17px;
+        width: 100%;
+        max-width: 1360px;
+
+        .faq-item {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1260px;
+            background: $color-bg-item;
+            border-radius: 8px;
+            overflow: hidden; // Keeps corners rounded
+
+            .faq-question {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 16px 30px; // Standard padding from qa
+                height: 70px;
+                cursor: pointer;
+                background: $color-bg-item;
+                transition: background 0.2s;
+
+                // For the expanded one (active), padding might be slightly diff in CSS dump? 
+                // "padding: 10px 30px 5px;" for expanded header Frame 5810.
+
+                h3 {
+                    font-family: $font-lato;
+                    font-weight: 400; // Most are 400
+                    font-size: 20px;
+                    line-height: 32px;
+                    color: $color-h-dark;
+                    margin: 0;
+                    flex-grow: 1;
+
+                    @media (max-width: 600px) {
+                        font-size: 16px;
+                    }
+                }
+
+                // Bold weight for specific items? CSS dump shows "Combien coûte..." has weight 700.
+                &.bold-title h3 {
+                    font-weight: 700;
+                    font-size: 18px; // From "Combien coûte" CSS
+                }
+
+                .toggle-icon {
+                    width: 16px;
+                    height: 16px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $color-icon;
+                    font-size: 24px; // Fake plus
+                    font-weight: 300;
+                }
+            }
+
+            .faq-answer {
+                display: none; // Hidden by default
+                flex-direction: column;
+                padding: 25px 35px;
+                gap: 18px;
+                background: $color-bg-item;
+                border-top: 1px solid $color-border;
+
+                p {
+                    font-family: $font-lato;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 30px;
+                    color: $color-text-answer;
+                    margin: 0;
+
+                    @media (max-width: 600px) {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            // Expanded State
+            &.expanded {
+                .faq-question {
+                    padding: 10px 30px 5px; // Matches Frame 5810 spec
+                    border-radius: 8px 8px 0 0;
+                }
+
+                .faq-answer {
+                    display: flex;
+                    border-radius: 0 0 8px 8px;
+                }
+            }
+        }
+    }
+}
