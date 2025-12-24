@@ -445,4 +445,121 @@ img {
   }
 }
 
+.process-flow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 264px;
+  background: #FFFFFF;
+  padding: 66px 0;
+}
+@media (max-width: 1200px) {
+  .process-flow {
+    height: auto;
+    padding: 40px 20px;
+  }
+}
+.process-flow .process-container {
+  width: 1170px;
+  height: 132px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media (max-width: 1200px) {
+  .process-flow .process-container {
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .process-flow .process-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.process-flow .process-line {
+  width: 120px;
+  height: 0px;
+  border: 1px solid #546476;
+  opacity: 0.2;
+  transform: rotate(90deg);
+  flex-shrink: 0;
+  margin: 0 -50px;
+  margin-top: 50px;
+}
+@media (max-width: 1200px) {
+  .process-flow .process-line {
+    display: none;
+  }
+}
+.process-flow .process-step {
+  position: relative;
+  width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+.process-flow .process-step .icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.process-flow .process-step .icon-wrapper img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.process-flow .process-step .step-content {
+  text-align: center;
+  width: 270px;
+}
+.process-flow .process-step .step-content h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #546476;
+  margin: 0;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 2;
+}
+.process-flow .process-step .step-content h3 span.highlight-blue {
+  background: rgba(51, 153, 255, 0.1);
+  padding: 0 4px;
+}
+.process-flow .process-step .step-content h3 span.highlight-red {
+  background: rgba(236, 73, 93, 0.1);
+  padding: 0 4px;
+}
+.process-flow .process-step .step-content h3 span.highlight-orange {
+  background: rgba(255, 138, 0, 0.1);
+  padding: 0 4px;
+}
+.process-flow .process-step .step-content h3 span.highlight-green {
+  background: rgba(26, 206, 134, 0.1);
+  padding: 0 4px;
+}
+.process-flow .process-step .step-content p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 24px;
+  color: #546476;
+  margin: 0;
+  opacity: 0.8;
+}
+
 /*# sourceMappingURL=main.css.map */
