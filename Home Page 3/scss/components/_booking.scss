@@ -48,7 +48,7 @@ $border-color: #B1B8BF;
         align-items: center;
         gap: 8px;
 
-        @media (max-width: 600px) {
+        @media (max-width: $bp-max-767) {
             padding: 30px 20px;
         }
 

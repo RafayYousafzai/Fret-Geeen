@@ -48,7 +48,7 @@ $color-bg: #FFFFFF;
             width: 100%;
             max-width: 1520px; // Full width per desktop dump
 
-            @media (max-width: 576px) {
+            @media (max-width: $bp-max-767) {
                 // Figma 576: Title container height grows to 86px (text wraps)
                 // Font size stays 36px per Figma dump
                 max-width: 576px;
@@ -69,7 +69,7 @@ $color-bg: #FFFFFF;
         max-width: 1169px; // Exact width of Frame 5886
 
         // 2. TABLET (1079px)
-        @media (max-width: 1100px) {
+        @media (max-width: $bp-max-1199) {
             // Figma 1079: Gap drops to 30px
             gap: 30px;
             max-width: 1079px;
@@ -78,7 +78,7 @@ $color-bg: #FFFFFF;
         }
 
         // 3. MOBILE (576px)
-        @media (max-width: 600px) {
+        @media (max-width: $bp-max-767) {
             // Figma 576: Gap increases to 40px
             gap: 40px;
             align-items: flex-start; // Per Figma 576

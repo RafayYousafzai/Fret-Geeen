@@ -15,7 +15,7 @@ $color-btn: #EC495D;
     padding: 70px 50px;
     gap: 80px;
 
-    @media (max-width: 900px) {
+    @media (max-width: $bp-max-1199) {
         padding: 50px 20px;
         gap: 50px;
     }
@@ -37,7 +37,7 @@ $color-btn: #EC495D;
             color: $color-h3;
             margin: 0;
 
-            @media (max-width: 600px) {
+            @media (max-width: $bp-max-767) {
                 font-size: 28px;
             }
         }
@@ -63,14 +63,14 @@ $color-btn: #EC495D;
         width: 100%;
         max-width: 1300px;
 
-        @media (max-width: 1024px) {
+        @media (max-width: $bp-max-1199) {
             flex-direction: column;
             gap: 40px;
             text-align: center;
         }
 
         &.reverse {
-            @media (max-width: 1024px) {
+            @media (max-width: $bp-max-1199) {
                 flex-direction: column-reverse; // Keep images on top or bottom consistently? Usually text first on mobile is better, or image between headers.
                 // Let's stick to column for mobile
                 flex-direction: column;
@@ -79,7 +79,7 @@ $color-btn: #EC495D;
             .text-block {
                 order: 2; // Default desktops
 
-                @media (max-width: 1024px) {
+                @media (max-width: $bp-max-1199) {
                     order: initial;
                 }
             }
@@ -87,7 +87,7 @@ $color-btn: #EC495D;
             .image-block {
                 order: 1;
 
-                @media (max-width: 1024px) {
+                @media (max-width: $bp-max-1199) {
                     order: initial;
                 }
             }
@@ -102,7 +102,7 @@ $color-btn: #EC495D;
             gap: 25px;
             max-width: 440px;
 
-            @media (max-width: 1024px) {
+            @media (max-width: $bp-max-1199) {
                 align-items: center;
                 max-width: 100%;
             }
@@ -152,7 +152,7 @@ $color-btn: #EC495D;
                 gap: 15px;
                 margin-top: 10px;
 
-                @media (max-width: 1024px) {
+                @media (max-width: $bp-max-1199) {
                     justify-content: center;
                 }
 
@@ -207,7 +207,7 @@ $color-btn: #EC495D;
         align-items: center;
         gap: 20px;
 
-        @media (max-width: 800px) {
+        @media (max-width: $bp-max-1199) {
             flex-direction: column;
             text-align: center;
         }

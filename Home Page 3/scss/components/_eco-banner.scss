@@ -17,7 +17,7 @@ $color-bg: #FFFFFF;
     padding: 40px 0;
 
     // Figma 576: Height 410px, Padding 40px 0px
-    @media (max-width: 600px) {
+    @media (max-width: $bp-max-767) {
         min-height: 410px;
         padding: 40px 0;
     }
@@ -38,7 +38,7 @@ $color-bg: #FFFFFF;
 
         // Mobile Layout (Figma 576)
         // Transition to column when space is tight or at mobile breakpoint
-        @media (max-width: 950px) {
+        @media (max-width: $bp-max-1199) {
             flex-direction: column;
             // Frame 6141 padding
             padding: 0 25px;
@@ -74,13 +74,13 @@ $color-bg: #FFFFFF;
         align-items: flex-start; // Desktop alignment
 
         // Responsive Text Width
-        @media (max-width: 1100px) {
+        @media (max-width: $bp-max-1199) {
             width: 100%;
             max-width: 867px;
             padding-right: 20px; // Safety padding
         }
 
-        @media (max-width: 950px) {
+        @media (max-width: $bp-max-1199) {
             // Figma 576 Text Width: 526px
             max-width: 526px;
             align-items: center; // Mobile alignment centered

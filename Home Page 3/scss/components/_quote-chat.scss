@@ -14,7 +14,7 @@ $chip-bg: rgba(61, 78, 96, 0.06);
     height: auto;
     min-height: 720px;
 
-    @media (max-width: 900px) {
+    @media (max-width: $bp-max-1199) {
         padding: 50px 20px;
     }
 
@@ -28,7 +28,7 @@ $chip-bg: rgba(61, 78, 96, 0.06);
         max-width: 1292px;
         flex-wrap: wrap;
 
-        @media (max-width: 1024px) {
+        @media (max-width: $bp-max-1199) {
             gap: 50px;
             flex-direction: column; // Image top, text bottom usually, or user might prefer text top. design implies 50/50 split.
             // Screenshot shows Image Left, Text Right. 
@@ -56,7 +56,7 @@ $chip-bg: rgba(61, 78, 96, 0.06);
             width: 100%;
             max-width: 440px;
 
-            @media (max-width: 1024px) {
+            @media (max-width: $bp-max-1199) {
                 align-items: center;
                 text-align: center;
                 max-width: 100%;
@@ -70,7 +70,7 @@ $chip-bg: rgba(61, 78, 96, 0.06);
                 color: $color-h3;
                 margin: 0;
 
-                @media (max-width: 600px) {
+                @media (max-width: $bp-max-767) {
                     font-size: 32px;
                     line-height: 1.2;
                 }
@@ -98,7 +98,7 @@ $chip-bg: rgba(61, 78, 96, 0.06);
                 margin-top: 10px;
                 // Width 440px in Figma, height 156px
 
-                @media (max-width: 1024px) {
+                @media (max-width: $bp-max-1199) {
                     justify-content: center;
                 }
 

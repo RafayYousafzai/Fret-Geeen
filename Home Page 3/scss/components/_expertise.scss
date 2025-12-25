@@ -50,7 +50,7 @@ $color-btn: #EC495D;
 
     padding: 100px 70px;
 
-    @media (max-width: 900px) {
+    @media (max-width: $bp-max-1199) {
         padding: 60px 20px;
         height: auto;
 
@@ -79,7 +79,7 @@ $color-btn: #EC495D;
         justify-content: flex-start;
         align-items: center;
 
-        @media (max-width: 900px) {
+        @media (max-width: $bp-max-1199) {
             justify-content: center;
         }
 
@@ -92,7 +92,7 @@ $color-btn: #EC495D;
             width: 100%;
             max-width: 613px;
 
-            @media (max-width: 900px) {
+            @media (max-width: $bp-max-1199) {
                 align-items: center;
                 text-align: center;
             }
@@ -105,7 +105,7 @@ $color-btn: #EC495D;
                 color: $color-h3;
                 margin: 0;
 
-                @media (max-width: 600px) {
+                @media (max-width: $bp-max-767) {
                     font-size: 32px;
                     line-height: 1.2;
                 }
@@ -148,7 +148,7 @@ $color-btn: #EC495D;
                         transform: translateY(-2px);
                     }
 
-                    @media (max-width: 600px) {
+                    @media (max-width: $bp-max-767) {
                         width: 100%;
                         height: 56px;
                         font-size: 20px;

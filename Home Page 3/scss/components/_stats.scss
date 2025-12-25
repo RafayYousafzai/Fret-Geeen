@@ -17,7 +17,7 @@ $color-highlight-title: #EC495D; // Pink title for highlight
     padding: 80px 70px;
     gap: 10px; // Specs say 10px gap between header and content
 
-    @media (max-width: 900px) {
+    @media (max-width: $bp-max-1199) {
         padding: 60px 20px;
         height: auto;
     }
@@ -40,7 +40,7 @@ $color-highlight-title: #EC495D; // Pink title for highlight
             margin: 0;
             text-align: center;
 
-            @media (max-width: 600px) {
+            @media (max-width: $bp-max-767) {
                 font-size: 32px;
             }
         }

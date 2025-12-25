@@ -65,7 +65,7 @@ $color-divider-blue: #009FFF; // Assuming similar blue to payment section
             color: $color-h2;
             margin: 0;
 
-            @media (max-width: 600px) {
+            @media (max-width: $bp-max-767) {
                 font-size: 28px;
             }
         }
@@ -95,7 +95,7 @@ $color-divider-blue: #009FFF; // Assuming similar blue to payment section
         max-width: 1400px;
         margin-bottom: 20px;
 
-        @media (max-width: 1024px) {
+        @media (max-width: $bp-max-1199) {
             padding: 20px;
             gap: 60px;
         }
@@ -111,27 +111,27 @@ $color-divider-blue: #009FFF; // Assuming similar blue to payment section
         width: 100%;
         max-width: 1300px;
 
-        @media (max-width: 1024px) {
+        @media (max-width: $bp-max-1199) {
             flex-direction: column;
             gap: 40px;
             text-align: center;
         }
 
         &.reverse {
-            @media (max-width: 1024px) {
+            @media (max-width: $bp-max-1199) {
                 flex-direction: column-reverse; // Put image on top on mobile if desired, or just column
             }
 
             // Removed desktop order swapping to maintain Text Left / Image Right
 
             .text-block {
-                @media (max-width: 1024px) {
+                @media (max-width: $bp-max-1199) {
                     order: initial;
                 }
             }
 
             .image-block {
-                @media (max-width: 1024px) {
+                @media (max-width: $bp-max-1199) {
                     order: initial;
                 }
             }
@@ -145,7 +145,7 @@ $color-divider-blue: #009FFF; // Assuming similar blue to payment section
             width: 100%;
             max-width: 580px;
 
-            @media (max-width: 1024px) {
+            @media (max-width: $bp-max-1199) {
                 align-items: center;
             }
 
@@ -207,7 +207,7 @@ $color-divider-blue: #009FFF; // Assuming similar blue to payment section
         background: $color-footer-bg;
         border-radius: 12px;
 
-        @media (max-width: 800px) {
+        @media (max-width: $bp-max-1199) {
             flex-direction: column;
             height: auto;
             text-align: center;

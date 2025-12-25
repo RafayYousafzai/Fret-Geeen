@@ -12,7 +12,7 @@ $font-lato: 'Lato', sans-serif;
     background: #FFFFFF;
     padding: 66px 0; // Top padding matches circle top relative to container
 
-    @media (max-width: 1200px) {
+    @media (max-width: $bp-max-1199) {
         height: auto;
         padding: 40px 20px;
     }
@@ -27,7 +27,7 @@ $font-lato: 'Lato', sans-serif;
         justify-content: space-between; // Distribute items evenly
         align-items: flex-start;
 
-        @media (max-width: 1200px) {
+        @media (max-width: $bp-max-1199) {
             width: 100%;
             height: auto;
             flex-wrap: wrap;
@@ -35,7 +35,7 @@ $font-lato: 'Lato', sans-serif;
             gap: 40px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: $bp-max-767) {
             flex-direction: column;
             align-items: center;
         }
@@ -58,7 +58,7 @@ $font-lato: 'Lato', sans-serif;
         margin: 0 -50px; // Negative margin to compensate for rotation width
         margin-top: 50px; // Adjust vertical alignment roughly
 
-        @media (max-width: 1200px) {
+        @media (max-width: $bp-max-1199) {
             display: none;
         }
     }

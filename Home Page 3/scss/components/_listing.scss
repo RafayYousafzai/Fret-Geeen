@@ -16,7 +16,7 @@ $color-chip-active: #EC495D;
     padding: 100px 70px 50px;
     gap: 50px;
 
-    @media (max-width: 900px) {
+    @media (max-width: $bp-max-1199) {
         padding: 60px 20px;
         height: auto;
     }
@@ -38,7 +38,7 @@ $color-chip-active: #EC495D;
             color: $color-h2;
             margin: 0;
 
-            @media (max-width: 600px) {
+            @media (max-width: $bp-max-767) {
                 font-size: 32px;
                 line-height: 1.2;
             }
@@ -65,7 +65,7 @@ $color-chip-active: #EC495D;
         max-width: 1300px;
         flex-wrap: wrap; // Responsive wrapping
 
-        @media (max-width: 1024px) {
+        @media (max-width: $bp-max-1199) {
             flex-direction: column-reverse; // specific order: image top or bottom? usually image bottom on mobile if it's decorative, but here it's main. Let's keep distinct.
             // Screenshot shows text on left, image on right. 
             // On mobile, text first usually.
@@ -82,7 +82,7 @@ $color-chip-active: #EC495D;
             flex: 1;
             min-width: 300px;
 
-            @media (max-width: 1024px) {
+            @media (max-width: $bp-max-1199) {
                 width: 100%;
                 align-items: center;
                 text-align: center;
@@ -96,7 +96,7 @@ $color-chip-active: #EC495D;
                 color: $color-h2;
                 margin: 0;
 
-                @media (max-width: 600px) {
+                @media (max-width: $bp-max-767) {
                     font-size: 28px;
                 }
             }
@@ -137,7 +137,7 @@ $color-chip-active: #EC495D;
                 gap: 15px;
                 margin-top: 10px;
 
-                @media (max-width: 1024px) {
+                @media (max-width: $bp-max-1199) {
                     justify-content: center;
                 }
 
@@ -218,7 +218,7 @@ $color-chip-active: #EC495D;
                     transform: translateY(-2px);
                 }
 
-                @media (max-width: 600px) {
+                @media (max-width: $bp-max-767) {
                     width: 100%;
                     padding: 0 20px;
                     font-size: 20px;

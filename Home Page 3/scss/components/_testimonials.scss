@@ -18,7 +18,7 @@ $color-btn: #EC495D;
     margin: 0;
     background: $color-bg;
 
-    @media (max-width: 1200px) {
+    @media (max-width: $bp-max-1199) {
         padding: 50px 20px;
         height: auto;
     }
@@ -32,7 +32,7 @@ $color-btn: #EC495D;
         width: 100%;
         max-width: 1212px;
 
-        @media (max-width: 800px) {
+        @media (max-width: $bp-max-1199) {
             flex-direction: column;
             gap: 20px;
             text-align: center;
@@ -61,7 +61,7 @@ $color-btn: #EC495D;
                 color: $color-h-dark;
                 margin: 0;
 
-                @media (max-width: 600px) {
+                @media (max-width: $bp-max-767) {
                     font-size: 28px;
                     line-height: normal;
                 }
