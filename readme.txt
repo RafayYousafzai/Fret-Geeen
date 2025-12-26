@@ -6,14 +6,10 @@ If you already have Node.js:
 Verify:
 	sass --version
 
-
 Then your command works:
 	sass --watch scss/main.scss:css/main.css
 
-
 OR
-
-Use npx (no global install)
 
 If Node.js is installed but you don’t want global installs:
 	npx sass --watch scss/main.scss:css/main.css
