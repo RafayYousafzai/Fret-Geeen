@@ -1,0 +1,25 @@
+// SCSS Variables
+
+// Colors
+$primary-color: #e11d48; // Red for CTA
+$secondary-color: #0f172a; // Dark text
+$accent-color: #16a34a; // Green for eco branding
+$bg-color: #ffffff;
+$text-color: #334155;
+$light-gray: #f8fafc;
+
+// Fonts
+// Fonts
+$font-lato: 'Lato', sans-serif;
+$font-main: $font-lato;
+$font-heading: $font-lato;
+
+// Transitions
+$transition-smooth: all 0.3s ease;
+
+// Layout
+$container-width: 1280px;
+
+// Breakpoints (Standardized per Supervisor)
+$bp-max-1199: 1199px;
+$bp-max-767: 767px;

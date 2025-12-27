@@ -1,0 +1,842 @@
+// Single SCSS File
+
+// =========================================
+// 1. Variables & Config
+// =========================================
+
+// Colors
+$primary-color: #e11d48;
+$secondary-color: #0f172a;
+$accent-color: #16a34a;
+$bg-color: #ffffff;
+$text-color: #334155;
+$light-gray: #f8fafc;
+
+// Colors from Components (Merged)
+$color-h-dark: #3D4E60;
+$color-h-darker: #2A3541;
+$color-text-grey: #546476;
+$color-h2: #2A3541;
+$color-bg-section: #F5F5F5;
+$color-stripe: #625AFE;
+$color-floa: #009FFF;
+$color-btn: #EC495D; // Used in multiple places
+$color-h3: #2A3541;
+$color-p: #546476;
+$color-text: #546476;
+
+// Fonts
+$font-lato: 'Lato', sans-serif;
+$font-main: $font-lato;
+$font-heading: $font-lato;
+
+// Transitions & Layout
+$transition-smooth: all 0.3s ease;
+$container-width: 1280px;
+
+// Breakpoints
+$bp-max-1199: 1199px;
+$bp-max-767: 767px;
+
+// =========================================
+// 2. Base Styles
+// =========================================
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    color: $text-color;
+    background-color: $bg-color;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-heading;
+    color: $secondary-color;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: $transition-smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+// Supervisor's Specific Container Rules
+@media (min-width: 1801px) and (max-width: 3440px) {
+    .fluid-page .container {
+        max-width: 80%;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1800px) {
+    .fluid-page .container {
+        max-width: 95%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .container {
+        width: auto;
+    }
+}
+
+// Banner Styles (Placeholder)
+.banner-wrap {
+    width: 100%;
+}
+
+// Utility Classes for Background Pictures
+.bg-picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none; // Allow clicks to pass through if needed
+}
+
+// =========================================
+// 3. Components
+// =========================================
+
+// --- Maximize Section ---
+.maximize {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+    background: #FFFFFF;
+
+    @media (max-width: 1200px) {
+        padding: 60px 20px;
+    }
+
+    .maximize-card {
+        width: 1300px;
+        height: 420px;
+        position: relative; // For absolute children
+        overflow: hidden; // Contain image
+        background-color: #FFFFFF; // Fallback color
+
+        box-shadow: 0px -14px 34px rgba(0, 0, 0, 0.04), 0px 54px 54px -40px rgba(0, 0, 0, 0.35);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 70px;
+        gap: 23px;
+
+        .gradient-overlay {
+            background: linear-gradient(270deg, #FFFFFF 39.92%, rgba(255, 255, 255, 0) 85.42%);
+        }
+
+        @media (max-width: 1200px) {
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 30px;
+            background: #FFFFFF;
+            border: 1px solid #eee;
+
+            // Adjust gradient for mobile if needed, or hide image
+            .bg-picture {
+                display: none;
+            }
+
+            // Often better to hide rigorous background images on mobile or adjust
+            .gradient-overlay {
+                display: none;
+            }
+        }
+
+        .maximize-content {
+            width: 652px;
+            position: relative;
+            z-index: 3; // Above overlay
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 18px;
+
+            @media (max-width: 900px) {
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+
+            h2 {
+                width: 100%;
+                font-family: 'Lato', sans-serif;
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 50px;
+                color: #283C52;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 32px;
+                    line-height: 1.2;
+                }
+            }
+
+            p {
+                width: 100%;
+                font-family: 'Lato', sans-serif;
+                font-weight: 300;
+                font-size: 24px;
+                line-height: 36px;
+                color: #283C52;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 18px;
+                    line-height: 1.5;
+                }
+            }
+
+            .btn-maximize {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 326px;
+                height: 66px;
+                background: #EC495D;
+                border-radius: 6px;
+                text-decoration: none;
+                margin-top: 10px;
+                font-family: 'Lato', sans-serif;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 40px;
+                color: #FFFFFF;
+                transition: transform 0.2s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                @media (max-width: 600px) {
+                    width: 100%;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+// --- Payments Section ---
+.payments-section {
+    width: 100%;
+    background: $color-bg-section;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+    gap: 40px;
+
+    @media (max-width: $bp-max-1199) {
+        padding: 60px 20px;
+        gap: 40px;
+    }
+
+    .payments-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 1380px;
+        text-align: center;
+
+        h2 {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 43px;
+            color: $color-h2;
+            margin: 0;
+            max-width: 700px;
+
+            @media (max-width: $bp-max-767) {
+                font-size: 28px;
+            }
+        }
+
+        p {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-text;
+            margin: 0;
+            max-width: 752px;
+            padding: 0 20px;
+        }
+    }
+
+    .payments-grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        gap: 40px;
+        width: 100%;
+        flex-wrap: wrap;
+
+        .payment-card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 40px;
+            gap: 20px;
+            width: 100%;
+            max-width: 525px;
+            min-height: 250px;
+            border-radius: 12px;
+            color: white;
+
+            &.stripe {
+                background: $color-stripe;
+            }
+
+            &.floa {
+                background: $color-floa;
+            }
+
+            .card-header {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start; // Align top
+                gap: 20px;
+                width: 100%;
+
+                @media (max-width: 480px) {
+                    flex-direction: column;
+                }
+
+                .logo-placeholder {
+                    width: auto;
+                    height: 43px; // Approx from frame height
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        height: 100%;
+                        width: auto;
+                        filter: drop-shadow(5px -6px 15px rgba(0, 0, 0, 0.1));
+                    }
+                }
+
+                h3 {
+                    font-family: $font-lato;
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 34px;
+                    margin: 0;
+                    color: white;
+                }
+            }
+
+            p {
+                font-family: $font-lato;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 34px;
+                margin: 0;
+                color: white;
+            }
+        }
+    }
+}
+
+// --- Groupage Section ---
+.groupage-section {
+    width: 100%;
+
+    .groupage-intro {
+        background: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 70px 20px;
+        gap: 50px;
+        width: 100%;
+        max-width: 1500px;
+        margin: 0 auto;
+
+        @media (max-width: 1200px) {
+            padding: 50px 20px;
+        }
+
+        .intro-header {
+            text-align: center;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h2 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 43px;
+                color: $color-h-dark;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 28px;
+                    line-height: 1.2;
+                }
+            }
+
+            p {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 26px;
+                color: $color-text-grey;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .intro-content {
+            // Frame 5874
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            width: 100%;
+            max-width: 1292px;
+
+            @media (max-width: 1000px) {
+                flex-direction: column;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .text-block {
+                // Frame 5878
+                width: 100%;
+                max-width: 572px; // Fixed width converted to max-width for responsiveness
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 25px;
+
+                @media (max-width: 1000px) {
+                    align-items: center;
+                }
+
+                h3 {
+                    font-family: $font-lato;
+                    font-weight: 700;
+                    font-size: 36px;
+                    line-height: 43px;
+                    color: $color-h-dark;
+                    margin: 0;
+
+                    @media (max-width: 600px) {
+                        font-size: 26px;
+                        line-height: 1.2;
+                    }
+                }
+
+                p {
+                    font-family: $font-lato;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 26px;
+                    color: $color-text-grey;
+                    margin: 0;
+                    max-width: 478px;
+                }
+            }
+
+            .visual-block {
+                // Frame 5881 Placeholder
+                width: 100%;
+                max-width: 600px; // Responsive max-width
+                height: 350px;
+                // Removed background-image to use inner Picture tag
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+                @media (max-width: 768px) {
+                    height: 250px;
+                }
+
+                @media (max-width: 480px) {
+                    height: 180px;
+                }
+            }
+        }
+    }
+
+    .groupage-benefits {
+        background: #F5F5F5;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 70px 20px;
+    }
+}
+
+.benefit-card-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+
+    .benefit-card {
+        width: 100%;
+        max-width: 1300px;
+        height: 420px;
+        border-radius: 12px;
+        background-color: #FFFFFF; // Fallback
+        position: relative;
+        overflow: hidden;
+
+        box-shadow: 0px -3px 28px rgba(0, 0, 0, 0.09), 0px 124px 54px -110px rgba(0, 0, 0, 0.45);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 70px;
+
+        .gradient-overlay {
+            background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%);
+        }
+
+        @media (max-width: 1000px) {
+            height: auto;
+            padding: 40px 20px;
+            background: #FFFFFF;
+            align-items: center;
+            text-align: center;
+
+            .bg-picture {
+                display: none;
+            }
+
+            .gradient-overlay {
+                display: none;
+            }
+        }
+
+        // Fix for "zoomed up" background image
+        // Align image to the right and prevent it from covering the whole width
+        .bg-picture {
+            display: flex;
+            justify-content: flex-end;
+
+            img {
+                width: auto;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .card-content {
+            width: 100%;
+            max-width: 717px;
+            position: relative;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+
+            @media (max-width: 1000px) {
+                align-items: center;
+            }
+
+            h3 {
+                font-family: $font-lato;
+                font-weight: 700;
+                font-size: 42px;
+                line-height: 50px;
+                color: #283C52;
+                margin: 0;
+
+                @media (max-width: 600px) {
+                    font-size: 30px;
+                    line-height: 1.2;
+                }
+
+                @media (max-width: 400px) {
+                    font-size: 26px;
+                }
+            }
+
+            p {
+                font-family: $font-lato;
+                font-weight: 300;
+                font-size: 24px;
+                line-height: 36px;
+                color: #283C52;
+                margin: 0;
+
+                strong {
+                    font-weight: 700;
+                }
+
+                @media (max-width: 600px) {
+                    font-size: 18px;
+                    line-height: 1.4;
+                }
+
+                @media (max-width: 400px) {
+                    font-size: 16px;
+                }
+            }
+
+            .btn-save-space {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 326px;
+                max-width: 100%;
+                height: 66px;
+                background: #EC495D;
+                border-radius: 6px;
+                margin-top: 10px;
+                text-decoration: none;
+                font-family: $font-lato;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 40px;
+                color: #FFFFFF;
+                transition: transform 0.2s;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                @media (max-width: 600px) {
+                    width: 100%;
+                    height: 56px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+// --- Platform Needs Section ---
+.platform-needs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    gap: 57px;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    background: #FFFFFF;
+
+    @media (max-width: 1200px) {
+        padding: 50px 20px;
+        height: auto;
+    }
+
+    .platform-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        max-width: 832px;
+        text-align: center;
+
+        h2 {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 42px;
+            color: $color-h3;
+            margin: 0;
+
+            @media (max-width: 600px) {
+                font-size: 32px;
+                line-height: 1.2;
+            }
+        }
+
+        p {
+            font-family: $font-lato;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 26px;
+            color: $color-p;
+            margin: 0;
+        }
+    }
+
+    .needs-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 33px;
+        width: 100%;
+        max-width: 1292px;
+
+        @media (max-width: 1100px) {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        .need-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 15px;
+            gap: 17px;
+            width: 298.25px;
+            min-height: 412px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
+            border-radius: 12px;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            .card-icon {
+                height: 96px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img,
+                svg {
+                    max-width: 90px;
+                    max-height: 63px;
+                    object-fit: contain;
+                }
+            }
+
+            .card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                flex-grow: 1;
+
+                h3 {
+                    font-family: $font-lato;
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 29px;
+                    text-align: center;
+                    color: $color-h3;
+                    margin: 0;
+                    min-height: 58px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                p {
+                    font-family: $font-lato;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 26px;
+                    text-align: center;
+                    color: $color-p;
+                    margin: 0;
+                }
+            }
+
+            .btn-action {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 191px;
+                height: 48px;
+                background: $color-btn;
+                border-radius: 6px;
+                text-decoration: none;
+                font-family: $font-lato;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 40px;
+                color: #FFFFFF;
+                transition: background 0.2s;
+
+                &:hover {
+                    background: lighten($color-btn, 10%);
+                }
+            }
+        }
+    }
+}

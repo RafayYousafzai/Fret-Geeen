@@ -1,0 +1,63 @@
+// Base Styles & Reset
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    color: $text-color;
+    background-color: $bg-color;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-heading;
+    color: $secondary-color;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: $transition-smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+// Supervisor's Specific Container Rules
+@media (min-width: 1801px) and (max-width: 3440px) {
+    .fluid-page .container {
+        max-width: 80%;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1800px) {
+    .fluid-page .container {
+        max-width: 95%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .container {
+        width: auto;
+    }
+}
