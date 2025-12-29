@@ -119,13 +119,12 @@ img {
 }
 .maximize .maximize-card .bg-picture {
   z-index: 0;
-  display: flex;
-  justify-content: flex-start;
+  display: block;
 }
 .maximize .maximize-card .bg-picture img {
-  width: auto;
+  width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .maximize .maximize-card .gradient-overlay {
   display: none;
@@ -190,14 +189,12 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
+  padding: 3px 65px;
   gap: 10px;
-  min-width: 280px;
-  width: auto;
+  width: 280px;
   height: 66px;
   background: #EC495D;
   border-radius: 6px;
-  white-space: nowrap;
   font-family: "Lato", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -310,20 +307,17 @@ img {
 .payments-section .payments-grid .payment-card .card-header {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   padding: 0px;
   gap: 20px;
   width: 100%;
 }
 .payments-section .payments-grid .payment-card .card-header .logo-placeholder {
-  width: 100px;
+  width: 81px;
   display: flex;
   align-items: center;
 }
-.payments-section .payments-grid .payment-card .card-header .logo-placeholder img,
 .payments-section .payments-grid .payment-card .card-header .logo-placeholder svg {
-  width: 100%;
-  height: auto;
   filter: drop-shadow(5px -6px 15px rgba(0, 0, 0, 0.1));
 }
 .payments-section .payments-grid .payment-card .card-header h3 {
@@ -499,29 +493,17 @@ img {
 .groupage-section .groupage-benefits .benefit-card .card-content p strong {
   font-weight: 700;
 }
-.groupage-section .groupage-benefits .benefit-card .card-content p .benefits-details {
-  font-size: 16px;
-  display: block;
-  line-height: 24px;
-  font-weight: 700;
-  margin-top: 15px;
-}
-.groupage-section .groupage-benefits .benefit-card .card-content p .benefits-details strong {
-  color: #00D084;
-}
 .groupage-section .groupage-benefits .benefit-card .card-content .btn-save-space {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
+  padding: 3px 65px;
   gap: 10px;
-  min-width: 382px;
-  width: auto;
+  width: 382px;
   height: 66px;
   background: #EC495D;
   border-radius: 6px;
-  white-space: nowrap;
   margin-top: 10px;
   font-family: "Lato", sans-serif;
   font-style: normal;
@@ -607,7 +589,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 30px 15px;
+  padding: 0px 15px;
   gap: 17px;
   width: 100%;
   max-width: 298.25px;
@@ -633,7 +615,7 @@ img {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 100%;
+  width: 170px;
   height: 96px;
 }
 .platform-needs .needs-grid .need-card .card-icon img,
@@ -641,12 +623,12 @@ img {
   width: auto;
   height: auto;
   max-width: 90px;
-  max-height: 63px;
+  max-height: 70px;
 }
 .platform-needs .needs-grid .need-card .card-content {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   padding: 15px 0px;
   width: 100%;
@@ -669,7 +651,7 @@ img {
   max-width: 268.25px;
   font-family: "Lato", sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   line-height: 26px;
   text-align: center;
@@ -700,4 +682,4 @@ img {
   background-color: rgb(70.9076433121, 90.6687898089, 111.5923566879);
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=main.css.map */
