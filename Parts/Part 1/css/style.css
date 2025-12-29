@@ -543,6 +543,8 @@ img {
   gap: 15px;
   width: 100%;
   max-width: 832px;
+  margin: 0 auto;
+  text-align: center;
 }
 .platform-needs .platform-header h2 {
   font-family: "Lato", sans-serif;
@@ -569,6 +571,8 @@ img {
 .platform-needs .needs-grid {
   width: 100%;
   margin-top: 30px;
+  margin-left: 0;
+  margin-right: 0;
 }
 .platform-needs .needs-grid .need-card {
   display: flex;
@@ -618,12 +622,12 @@ img {
   padding: 15px 0px;
   width: 100%;
   flex-grow: 1;
+  text-align: center;
 }
 .platform-needs .needs-grid .need-card .card-content h3 {
   width: 100%;
   max-width: 268px;
   font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
@@ -633,9 +637,8 @@ img {
 }
 .platform-needs .needs-grid .need-card .card-content p {
   width: 100%;
-  max-width: 268.25px;
+  max-width: 268px;
   font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 300;
   font-size: 16px;
   line-height: 26px;
@@ -656,7 +659,6 @@ img {
   border-radius: 6px;
   margin-bottom: 20px;
   font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 40px;

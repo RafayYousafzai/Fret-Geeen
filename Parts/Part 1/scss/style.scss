@@ -619,12 +619,11 @@ img {
 }
 
 // --- Platform Needs Section ---
-// Figma: "with expertise sec" (last one)
 .platform-needs {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; // Centers content horizontally
     padding: 70px;
     gap: 57px;
     width: 100%;
@@ -632,7 +631,7 @@ img {
     margin: 0 auto;
     background: #FFFFFF;
 
-    @media (max-width: $bp-max-1199) {
+    @media (max-width: 1199px) {
         padding: 50px 20px;
     }
 
@@ -645,25 +644,30 @@ img {
         width: 100%;
         max-width: 832px;
 
+        // --- FIX: Centers the header box and the text inside it ---
+        margin: 0 auto;
+        text-align: center;
+        // ---------------------------------------------------------
+
         h2 {
-            font-family: $font-lato;
+            font-family: 'Lato', sans-serif;
             font-style: normal;
             font-weight: 700;
             font-size: 36px;
             line-height: 42px;
-            text-align: center;
+            text-align: center; // Ensure text is centered
             color: #2A3541;
             margin: 0;
             width: 100%;
         }
 
         p {
-            font-family: $font-lato;
+            font-family: 'Lato', sans-serif;
             font-style: normal;
             font-weight: 700;
             font-size: 16px;
             line-height: 26px;
-            text-align: center;
+            text-align: center; // Ensure text is centered
             color: #546476;
             margin: 0;
             width: 100%;
@@ -673,6 +677,10 @@ img {
     .needs-grid {
         width: 100%;
         margin-top: 30px;
+
+        // Reset bootstrap row margin if using bootstrap class
+        margin-left: 0;
+        margin-right: 0;
 
         .need-card {
             display: flex;
@@ -687,13 +695,13 @@ img {
             box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
             border-radius: 12px;
             transition: transform 0.2s ease;
-            margin-bottom: 30px;
+            margin-bottom: 30px; // Spacing between rows
 
             &:hover {
                 transform: translateY(-5px);
             }
 
-            @media (max-width: $bp-max-767) {
+            @media (max-width: 767px) {
                 height: auto;
                 padding: 30px 15px;
             }
@@ -724,12 +732,12 @@ img {
                 padding: 15px 0px;
                 width: 100%;
                 flex-grow: 1;
+                text-align: center; // Centers text inside content area
 
                 h3 {
                     width: 100%;
                     max-width: 268px;
-                    font-family: $font-lato;
-                    font-style: normal;
+                    font-family: 'Lato', sans-serif;
                     font-weight: 700;
                     font-size: 24px;
                     line-height: 29px;
@@ -740,9 +748,8 @@ img {
 
                 p {
                     width: 100%;
-                    max-width: 268.25px;
-                    font-family: $font-lato;
-                    font-style: normal;
+                    max-width: 268px;
+                    font-family: 'Lato', sans-serif;
                     font-weight: 300;
                     font-size: 16px;
                     line-height: 26px;
@@ -765,8 +772,7 @@ img {
                 border-radius: 6px;
                 margin-bottom: 20px;
 
-                font-family: $font-lato;
-                font-style: normal;
+                font-family: 'Lato', sans-serif;
                 font-weight: 600;
                 font-size: 20px;
                 line-height: 40px;
