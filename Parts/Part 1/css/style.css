@@ -41,6 +41,7 @@ img {
   justify-content: flex-end;
   align-items: center;
   padding: 10px 70px;
+  margin: auto;
   gap: 23px;
   width: 100%;
   max-width: 1300px;
@@ -149,40 +150,65 @@ img {
   padding: 100px 0;
 }
 .payments-section .payments-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  gap: 10px;
 }
 .payments-section .payments-header h2 {
   font-weight: 700;
   font-size: 36px;
+  line-height: 43px;
   color: #2A3541;
-  margin-bottom: 15px;
+  margin: 0;
+  width: 100%;
+  max-width: 700px;
 }
 @media (max-width: 767px) {
   .payments-section .payments-header h2 {
     font-size: 28px;
+    line-height: 1.2;
   }
 }
 .payments-section .payments-header p {
+  font-weight: 700;
   font-size: 16px;
+  line-height: 26px;
   color: #546476;
-  max-width: 800px;
+  width: 100%;
+  max-width: 752px;
+  margin: 0;
+}
+.payments-section .payments-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   margin: 0 auto;
+  max-width: 1090px;
+  flex-wrap: wrap;
 }
 .payments-section .payment-card {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding: 40px;
+  gap: 20px;
   border-radius: 12px;
   color: #FFFFFF;
-  height: 100%;
-  min-height: 249px;
+  width: 525px;
+  height: 250px;
+  box-shadow: none;
 }
-@media (max-width: 767px) {
+@media (max-width: 1199px) {
   .payments-section .payment-card {
-    padding: 30px 20px;
+    width: 100%;
+    height: auto;
     min-height: auto;
-    margin-bottom: 20px;
   }
 }
 .payments-section .payment-card.stripe {
@@ -195,11 +221,13 @@ img {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  width: 100%;
 }
 .payments-section .payment-card .card-header h3 {
   font-weight: 700;
   font-size: 24px;
+  line-height: 34px;
   color: #FFFFFF;
   margin: 0;
 }
@@ -211,11 +239,18 @@ img {
 .payments-section .payment-card .card-header .logo-placeholder {
   flex-shrink: 0;
 }
+.payments-section .payment-card .card-header .logo-placeholder img,
+.payments-section .payment-card .card-header .logo-placeholder svg {
+  display: block;
+}
 .payments-section .payment-card p {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 34px;
   color: #FFFFFF;
-  opacity: 0.95;
+  opacity: 1;
   margin: 0;
 }
 
@@ -454,6 +489,24 @@ img {
 @media (max-width: 480px) {
   .platform-needs .need-card .btn-action {
     width: 100%;
+  }
+}
+
+@media (min-width: 1801px) and (max-width: 3440px) {
+  .fluid-page .container {
+    max-width: 80%;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .fluid-page .container {
+    max-width: 95%;
+    width: 100%;
+  }
+}
+@media (max-width: 1199px) {
+  .container {
+    width: auto;
   }
 }
 
