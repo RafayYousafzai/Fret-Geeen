@@ -1,54 +1,39 @@
-// Single SCSS File
-
 // =========================================
 // 1. Variables & Config
 // =========================================
 
-// Colors
+// Colors 
 $primary-color: #e11d48;
 $secondary-color: #0f172a;
 $accent-color: #16a34a;
 $bg-color: #ffffff;
 $text-color: #334155;
 $light-gray: #f8fafc;
-
-// Colors from Components (Merged)
 $color-h-dark: #3D4E60;
 $color-h-darker: #2A3541;
 $color-text-grey: #546476;
-$color-h2: #2A3541;
 $color-bg-section: #F5F5F5;
 $color-stripe: #625AFE;
 $color-floa: #009FFF;
-$color-btn: #EC495D; // Used in multiple places
-$color-h3: #2A3541;
-$color-p: #546476;
-$color-text: #546476;
+$color-btn: #EC495D;
 
 // Fonts
 $font-lato: 'Lato', sans-serif;
 $font-main: $font-lato;
 $font-heading: $font-lato;
 
-// Transitions & Layout
+// Transitions
 $transition-smooth: all 0.3s ease;
-$container-width: 1280px;
 
-// Breakpoints
+// Breakpoints (Aligning with Bootstrap)
 $bp-max-1199: 1199px;
+$bp-max-991: 991px;
 $bp-max-767: 767px;
+$bp-max-480: 480px;
 
 // =========================================
 // 2. Base Styles
 // =========================================
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: $font-main;
     color: $text-color;
@@ -64,7 +49,6 @@ h5,
 h6 {
     font-family: $font-heading;
     color: $secondary-color;
-    margin-bottom: 1rem;
 }
 
 a {
@@ -73,65 +57,9 @@ a {
     transition: $transition-smooth;
 }
 
-ul {
-    list-style: none;
-}
-
 img {
     max-width: 100%;
     display: block;
-}
-
-// Supervisor's Specific Container Rules
-@media (min-width: 1801px) and (max-width: 3440px) {
-    .fluid-page .container {
-        max-width: 80%;
-        width: 100%;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1800px) {
-    .fluid-page .container {
-        max-width: 95%;
-        width: 100%;
-    }
-}
-
-@media (max-width: 1199px) {
-    .container {
-        width: auto;
-    }
-}
-
-// Banner Styles (Placeholder)
-.banner-wrap {
-    width: 100%;
-}
-
-// Utility Classes for Background Pictures
-.bg-picture {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
-.gradient-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none; // Allow clicks to pass through if needed
 }
 
 // =========================================
@@ -139,21 +67,12 @@ img {
 // =========================================
 
 // --- Maximize Section ---
-// Figma: "with expertise sec" (first one)
 .maximize {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px;
-    gap: 50px;
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
     background: #FFFFFF;
+    padding: 100px 0;
 
     @media (max-width: $bp-max-1199) {
-        padding: 60px 20px;
+        padding: 60px 0;
     }
 
     .maximize-card {
@@ -171,39 +90,35 @@ img {
         background: linear-gradient(270deg, #FFFFFF 39.92%, rgba(255, 255, 255, 0) 85.42%), #FFFFFF;
         box-shadow: 0px -14px 34px rgba(0, 0, 0, 0.04), 0px 54px 54px -40px rgba(0, 0, 0, 0.35);
         border-radius: 12px;
-
         position: relative;
         overflow: hidden;
+        min-height: 420px;
 
         .bg-picture {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: auto;
             z-index: 0;
-            display: flex;
-            justify-content: flex-start;
 
             img {
-                width: auto;
                 height: 100%;
-                object-fit: contain;
+                width: auto;
+                object-fit: cover;
             }
-        }
 
-        .gradient-overlay {
-            display: none; // Handled by container background
+            @media (max-width: $bp-max-1199) {
+                display: none;
+            }
         }
 
         @media (max-width: $bp-max-1199) {
-            width: 100%;
-            height: auto;
-            flex-direction: column;
-            justify-content: center;
-            padding: 40px 30px;
+            min-height: auto;
             background: #FFFFFF;
-            border: 1px solid #eee;
             box-shadow: none;
-
-            .bg-picture {
-                display: none;
-            }
+            border: 1px solid #eee;
+            padding: 30px 20px !important;
         }
 
         .maximize-content {
@@ -220,65 +135,55 @@ img {
             z-index: 1;
 
             @media (max-width: $bp-max-1199) {
-                max-width: 100%;
-                align-items: center;
                 text-align: center;
             }
 
             h2 {
-                width: 100%;
                 font-family: $font-lato;
-                font-style: normal;
                 font-weight: 700;
                 font-size: 36px;
-                line-height: 43px;
+                line-height: 1.2;
                 color: #283C52;
-                margin: 0;
+                margin-bottom: 20px;
+
+                @media (max-width: $bp-max-767) {
+                    font-size: 28px;
+                }
             }
 
             p {
-                width: 100%;
                 font-family: $font-lato;
-                font-style: normal;
                 font-weight: 300;
                 font-size: 16px;
-                line-height: 36px;
-                /* or 225% */
+                line-height: 1.6;
                 color: #283C52;
-                margin: 0;
+                margin-bottom: 30px;
             }
 
             .btn-maximize {
-                // btn
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
+                display: inline-flex;
                 align-items: center;
+                justify-content: center;
                 padding: 0 30px;
-                gap: 10px;
-                min-width: 280px;
-                width: auto;
                 height: 66px;
-                background: #EC495D;
+                background: $color-btn;
                 border-radius: 6px;
-                white-space: nowrap;
-
                 font-family: $font-lato;
-                font-style: normal;
                 font-weight: 600;
                 font-size: 20px;
-                line-height: 40px;
                 color: #FFFFFF;
                 text-decoration: none;
                 transition: transform 0.2s;
 
                 &:hover {
                     transform: translateY(-2px);
+                    color: #FFFFFF;
                 }
 
                 @media (max-width: $bp-max-767) {
                     width: 100%;
-                    padding: 10px 20px;
+                    padding: 0 15px;
+                    height: 56px;
                 }
             }
         }
@@ -287,291 +192,189 @@ img {
 
 // --- Payments Section ---
 .payments-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 20px;
     background: #F5F5F5;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 100px 0;
 
     .payments-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         text-align: center;
-        gap: 10px;
-        margin-bottom: 50px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-bottom: 60px;
 
         h2 {
-            font-family: 'Lato', sans-serif;
             font-weight: 700;
             font-size: 36px;
-            line-height: 1.2;
-            color: #2A3541;
-            margin: 0;
+            color: $color-h-darker;
+            margin-bottom: 15px;
 
-            @media (max-width: 768px) {
+            @media (max-width: $bp-max-767) {
                 font-size: 28px;
             }
         }
 
         p {
-            font-family: 'Lato', sans-serif;
-            font-weight: 400;
             font-size: 16px;
-            line-height: 1.6;
-            color: #546476;
-            margin: 0;
+            color: $color-text-grey;
+            max-width: 800px;
+            margin: 0 auto;
         }
     }
 
-    .payments-grid {
+    .payment-card {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: stretch;
-        gap: 40px;
-        width: 100%;
-        max-width: 1140px;
-        margin: 0 auto;
-        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 40px;
+        border-radius: 12px;
+        color: #FFFFFF;
+        height: 100%;
+        min-height: 249px;
 
-        .payment-card {
+        @media (max-width: $bp-max-767) {
+            padding: 30px 20px;
+            min-height: auto;
+            margin-bottom: 20px;
+        }
+
+        &.stripe {
+            background: $color-stripe;
+        }
+
+        &.floa {
+            background: $color-floa;
+        }
+
+        .card-header {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 40px;
+            align-items: center;
             gap: 20px;
-            border-radius: 12px;
-            color: #FFFFFF;
-            flex: 1;
-            min-width: 300px;
-            max-width: 525px;
-            height: auto;
+            margin-bottom: 20px;
 
-            &.stripe {
-                background: #625AFE;
-            }
-
-            &.floa {
-                background: #009FFF;
-            }
-
-            .card-header {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                gap: 20px;
-                width: 100%;
-
-                .logo-placeholder {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: transparent;
-                    padding: 0;
-
-
-                }
-
-                h3 {
-                    font-family: 'Lato', sans-serif;
-                    font-weight: 700;
-                    font-size: 24px;
-                    line-height: 1.4;
-                    color: #FFFFFF;
-                    margin: 0;
-
-                    @media (max-width: 768px) {
-                        font-size: 20px;
-                    }
-                }
-            }
-
-            p {
-                font-family: 'Lato', sans-serif;
-                font-weight: 400;
-                font-size: 16px;
-                line-height: 1.6;
+            h3 {
+                font-weight: 700;
+                font-size: 24px;
                 color: #FFFFFF;
                 margin: 0;
-                opacity: 0.95;
+
+                @media (max-width: $bp-max-767) {
+                    font-size: 20px;
+                }
             }
+
+            .logo-placeholder {
+                flex-shrink: 0;
+            }
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #FFFFFF;
+            opacity: 0.95;
+            margin: 0;
         }
     }
 }
 
 // --- Groupage Section ---
 .groupage-section {
-    width: 100%;
-
     .groupage-intro {
-        // Figma: "with expertise sec" (white one)
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 70px;
-        gap: 50px;
-        width: 100%;
-        max-width: 1500px;
-        margin: 0 auto;
+        padding: 70px 0;
         background: #FFFFFF;
 
         @media (max-width: $bp-max-1199) {
-            padding: 50px 20px;
+            padding: 50px 0;
         }
 
         .intro-header {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            gap: 10px;
-            width: 100%;
-            max-width: 1360px;
             text-align: center;
 
             h2 {
-                font-family: $font-lato;
-                font-style: normal;
                 font-weight: 700;
                 font-size: 36px;
-                line-height: 43px;
-                text-align: center;
-                color: #3D4E60;
-                margin: 0;
-                max-width: 752px;
+                color: $color-h-dark;
+                margin-bottom: 15px;
+
+                @media (max-width: $bp-max-767) {
+                    font-size: 28px;
+                }
             }
 
             p {
-                font-family: $font-lato;
-                font-style: normal;
                 font-weight: 700;
                 font-size: 16px;
-                line-height: 26px;
-                text-align: center;
-                color: #546476;
-                margin: 0;
+                color: $color-text-grey;
                 max-width: 692px;
+                margin: 0 auto;
             }
         }
     }
 
     .groupage-benefits {
-        // Figma: "with expertise sec" (gray one, F5F5F5)
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 100px;
-        gap: 50px;
-        width: 100%;
-        // max-width: 1500px;
-        // margin: 0 auto;
         background: #F5F5F5;
+        padding: 100px 0;
 
         @media (max-width: $bp-max-1199) {
-            padding: 60px 20px;
-            width: 100%;
-        }
-
-        .benefit-card-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 0;
+            padding: 60px 0;
         }
 
         .benefit-card {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding: 10px 70px;
-            gap: 23px;
-            width: 100%;
-            max-width: 1300px;
-            height: 420px;
             background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%), #FFFFFF;
             box-shadow: 0px -3px 28px rgba(0, 0, 0, 0.09), 0px 124px 54px -110px rgba(0, 0, 0, 0.45);
             border-radius: 12px;
             position: relative;
             overflow: hidden;
+            min-height: 420px;
+            padding: 30px 50px;
 
             .bg-picture {
-                display: flex;
-                justify-content: flex-end;
+                position: absolute;
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: auto;
                 z-index: 0;
 
                 img {
-                    width: auto;
                     height: 100%;
+                    width: auto;
+                    object-fit: cover;
                 }
-            }
 
-            .gradient-overlay {
-                display: none;
-            }
-
-            @media (max-width: $bp-max-1199) {
-                height: auto;
-                flex-direction: column;
-                padding: 40px 30px;
-
-                .bg-picture {
+                @media (max-width: $bp-max-1199) {
                     display: none;
                 }
             }
 
+            @media (max-width: $bp-max-1199) {
+                min-height: auto;
+                padding: 40px 30px !important;
+            }
+
             .card-content {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 0px;
-                gap: 18px;
-                width: 100%;
-                max-width: 775px;
+                position: relative;
                 z-index: 1;
 
-                @media (max-width: $bp-max-1199) {
-                    align-items: center;
-                    text-align: center;
-                }
-
                 h3 {
-                    font-family: $font-lato;
-                    font-style: normal;
                     font-weight: 700;
                     font-size: 36px;
-                    line-height: 43px;
                     color: #283C52;
-                    margin: 0;
+                    margin-bottom: 20px;
+
+                    @media (max-width: $bp-max-767) {
+                        font-size: 28px;
+                    }
                 }
 
                 p {
-                    font-family: $font-lato;
-                    font-style: normal;
                     font-weight: 300;
                     font-size: 20px;
-                    line-height: 36px;
+                    line-height: 1.8;
                     color: #283C52;
-                    margin: 0;
-
-                    strong {
-                        font-weight: 700;
-                    }
+                    margin-bottom: 30px;
 
                     .benefits-details {
                         font-size: 16px;
                         display: block;
-                        line-height: 24px;
-                        font-weight: 700; // Making it bolder as requested
+                        line-height: 1.6;
+                        font-weight: 700;
                         margin-top: 15px;
 
                         strong {
@@ -581,36 +384,29 @@ img {
                 }
 
                 .btn-save-space {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
+                    display: inline-flex;
                     align-items: center;
+                    justify-content: center;
                     padding: 0 30px;
-                    gap: 10px;
-                    min-width: 382px;
-                    width: auto;
                     height: 66px;
-                    background: #EC495D;
+                    background: $color-btn;
                     border-radius: 6px;
-                    white-space: nowrap;
-                    margin-top: 10px;
-
                     font-family: $font-lato;
-                    font-style: normal;
                     font-weight: 600;
                     font-size: 20px;
-                    line-height: 40px;
                     color: #FFFFFF;
                     text-decoration: none;
                     transition: transform 0.2s;
 
                     &:hover {
                         transform: translateY(-2px);
+                        color: #FFFFFF;
                     }
 
                     @media (max-width: $bp-max-767) {
                         width: 100%;
-                        padding: 10px 20px;
+                        padding: 0 15px;
+                        height: 56px;
                     }
                 }
             }
@@ -620,168 +416,116 @@ img {
 
 // --- Platform Needs Section ---
 .platform-needs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; // Centers content horizontally
-    padding: 70px;
-    gap: 57px;
-    width: 100%;
-    max-width: 1500px;
-    margin: 0 auto;
-    background: #FFFFFF;
-
-    @media (max-width: 1199px) {
-        padding: 50px 20px;
-    }
+    padding: 100px 0;
 
     .platform-header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0px;
-        gap: 15px;
-        width: 100%;
-        max-width: 832px;
-
-        // --- FIX: Centers the header box and the text inside it ---
-        margin: 0 auto;
         text-align: center;
-        // ---------------------------------------------------------
+        margin-bottom: 50px;
 
         h2 {
-            font-family: 'Lato', sans-serif;
-            font-style: normal;
             font-weight: 700;
             font-size: 36px;
-            line-height: 42px;
-            text-align: center; // Ensure text is centered
-            color: #2A3541;
-            margin: 0;
-            width: 100%;
+            color: $color-h-darker;
+            margin-bottom: 15px;
+
+            @media (max-width: $bp-max-767) {
+                font-size: 28px;
+            }
         }
 
         p {
-            font-family: 'Lato', sans-serif;
-            font-style: normal;
             font-weight: 700;
             font-size: 16px;
-            line-height: 26px;
-            text-align: center; // Ensure text is centered
-            color: #546476;
-            margin: 0;
-            width: 100%;
+            color: $color-text-grey;
+            max-width: 832px;
+            margin: 0 auto;
         }
     }
 
     .needs-grid {
-        width: 100%;
         margin-top: 30px;
+    }
 
-        // Reset bootstrap row margin if using bootstrap class
-        margin-left: 0;
-        margin-right: 0;
+    .need-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 15px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+        height: 100%;
+        min-height: 488px;
+        transition: transform 0.2s ease;
 
-        .need-card {
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: $bp-max-1199) {
+            margin-bottom: 30px;
+            min-height: auto;
+        }
+
+        .card-icon {
+            height: 96px;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 30px 15px;
-            gap: 17px;
-            width: 100%;
-            height: 488px;
-            background: #FFFFFF;
-            box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
-            border-radius: 12px;
-            transition: transform 0.2s ease;
-            margin-bottom: 30px; // Spacing between rows
+            justify-content: center;
+            margin-bottom: 20px;
+
+            img,
+            svg {
+                max-width: 90px;
+                max-height: 63px;
+            }
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 15px 0;
+
+            h3 {
+                font-weight: 700;
+                font-size: 24px;
+                color: $color-h-darker;
+                margin-bottom: 15px;
+
+                @media (max-width: $bp-max-767) {
+                    font-size: 20px;
+                }
+            }
+
+            p {
+                font-weight: 300;
+                font-size: 16px;
+                color: $color-text-grey;
+                line-height: 1.6;
+                margin-bottom: 25px;
+            }
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 191px;
+            height: 48px;
+            background: $color-h-dark;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #FFFFFF;
+            text-decoration: none;
 
             &:hover {
-                transform: translateY(-5px);
-            }
-
-            @media (max-width: 767px) {
-                height: auto;
-                padding: 30px 15px;
-            }
-
-            .card-icon {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-                width: 100%;
-                height: 96px;
-
-                img,
-                svg {
-                    width: auto;
-                    height: auto;
-                    max-width: 90px;
-                    max-height: 63px;
-                }
-            }
-
-            .card-content {
-                display: flex;
-                flex-direction: column;
-                justify-content: start;
-                align-items: center;
-                padding: 15px 0px;
-                width: 100%;
-                flex-grow: 1;
-                text-align: center; // Centers text inside content area
-
-                h3 {
-                    width: 100%;
-                    max-width: 268px;
-                    font-family: 'Lato', sans-serif;
-                    font-weight: 700;
-                    font-size: 24px;
-                    line-height: 29px;
-                    text-align: center;
-                    color: #2A3541;
-                    margin-bottom: 10px;
-                }
-
-                p {
-                    width: 100%;
-                    max-width: 268px;
-                    font-family: 'Lato', sans-serif;
-                    font-weight: 300;
-                    font-size: 16px;
-                    line-height: 26px;
-                    text-align: center;
-                    color: #546476;
-                    margin: 0;
-                }
-            }
-
-            .btn-action {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                padding: 3px 18px;
-                gap: 10px;
-                width: 191px;
-                height: 48px;
-                background: #3D4E60;
-                border-radius: 6px;
-                margin-bottom: 20px;
-
-                font-family: 'Lato', sans-serif;
-                font-weight: 600;
-                font-size: 20px;
-                line-height: 40px;
+                background-color: lighten($color-h-dark, 5%);
                 color: #FFFFFF;
-                text-decoration: none;
+            }
 
-                &:hover {
-                    background-color: lighten(#3D4E60, 5%);
-                }
+            @media (max-width: $bp-max-480) {
+                width: 100%;
             }
         }
     }

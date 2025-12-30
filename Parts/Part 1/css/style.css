@@ -1,11 +1,3 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Lato", sans-serif;
   color: #334155;
@@ -21,7 +13,6 @@ h5,
 h6 {
   font-family: "Lato", sans-serif;
   color: #0f172a;
-  margin-bottom: 1rem;
 }
 
 a {
@@ -30,75 +21,18 @@ a {
   transition: all 0.3s ease;
 }
 
-ul {
-  list-style: none;
-}
-
 img {
   max-width: 100%;
   display: block;
 }
 
-@media (min-width: 1801px) and (max-width: 3440px) {
-  .fluid-page .container {
-    max-width: 80%;
-    width: 100%;
-  }
-}
-@media (min-width: 768px) and (max-width: 1800px) {
-  .fluid-page .container {
-    max-width: 95%;
-    width: 100%;
-  }
-}
-@media (max-width: 1199px) {
-  .container {
-    width: auto;
-  }
-}
-.banner-wrap {
-  width: 100%;
-}
-
-.bg-picture {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.bg-picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-}
-
 .maximize {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 100px;
-  gap: 50px;
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
   background: #FFFFFF;
+  padding: 100px 0;
 }
 @media (max-width: 1199px) {
   .maximize {
-    padding: 60px 20px;
+    padding: 60px 0;
   }
 }
 .maximize .maximize-card {
@@ -116,33 +50,33 @@ img {
   border-radius: 12px;
   position: relative;
   overflow: hidden;
+  min-height: 420px;
 }
 .maximize .maximize-card .bg-picture {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
   z-index: 0;
-  display: flex;
-  justify-content: flex-start;
 }
 .maximize .maximize-card .bg-picture img {
-  width: auto;
   height: 100%;
-  object-fit: contain;
+  width: auto;
+  object-fit: cover;
 }
-.maximize .maximize-card .gradient-overlay {
-  display: none;
+@media (max-width: 1199px) {
+  .maximize .maximize-card .bg-picture {
+    display: none;
+  }
 }
 @media (max-width: 1199px) {
   .maximize .maximize-card {
-    width: 100%;
-    height: auto;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px 30px;
+    min-height: auto;
     background: #FFFFFF;
-    border: 1px solid #eee;
     box-shadow: none;
-  }
-  .maximize .maximize-card .bg-picture {
-    display: none;
+    border: 1px solid #eee;
+    padding: 30px 20px !important;
   }
 }
 .maximize .maximize-card .maximize-content {
@@ -159,326 +93,230 @@ img {
 }
 @media (max-width: 1199px) {
   .maximize .maximize-card .maximize-content {
-    max-width: 100%;
-    align-items: center;
     text-align: center;
   }
 }
 .maximize .maximize-card .maximize-content h2 {
-  width: 100%;
   font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
-  line-height: 43px;
+  line-height: 1.2;
   color: #283C52;
-  margin: 0;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .maximize .maximize-card .maximize-content h2 {
+    font-size: 28px;
+  }
 }
 .maximize .maximize-card .maximize-content p {
-  width: 100%;
   font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 300;
   font-size: 16px;
-  line-height: 36px;
-  /* or 225% */
+  line-height: 1.6;
   color: #283C52;
-  margin: 0;
+  margin-bottom: 30px;
 }
 .maximize .maximize-card .maximize-content .btn-maximize {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0 30px;
-  gap: 10px;
-  min-width: 280px;
-  width: auto;
   height: 66px;
   background: #EC495D;
   border-radius: 6px;
-  white-space: nowrap;
   font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 40px;
   color: #FFFFFF;
   text-decoration: none;
   transition: transform 0.2s;
 }
 .maximize .maximize-card .maximize-content .btn-maximize:hover {
   transform: translateY(-2px);
+  color: #FFFFFF;
 }
 @media (max-width: 767px) {
   .maximize .maximize-card .maximize-content .btn-maximize {
     width: 100%;
-    padding: 10px 20px;
+    padding: 0 15px;
+    height: 56px;
   }
 }
 
 .payments-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 100px 20px;
   background: #F5F5F5;
-  width: 100%;
-  box-sizing: border-box;
+  padding: 100px 0;
 }
 .payments-section .payments-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  gap: 10px;
-  margin-bottom: 50px;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 60px;
 }
 .payments-section .payments-header h2 {
-  font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 36px;
-  line-height: 1.2;
   color: #2A3541;
-  margin: 0;
+  margin-bottom: 15px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .payments-section .payments-header h2 {
     font-size: 28px;
   }
 }
 .payments-section .payments-header p {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
   font-size: 16px;
-  line-height: 1.6;
   color: #546476;
-  margin: 0;
-}
-.payments-section .payments-grid {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  gap: 40px;
-  width: 100%;
-  max-width: 1140px;
+  max-width: 800px;
   margin: 0 auto;
-  flex-wrap: wrap;
 }
-.payments-section .payments-grid .payment-card {
+.payments-section .payment-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 40px;
-  gap: 20px;
   border-radius: 12px;
   color: #FFFFFF;
-  flex: 1;
-  min-width: 300px;
-  max-width: 525px;
-  height: auto;
+  height: 100%;
+  min-height: 249px;
 }
-.payments-section .payments-grid .payment-card.stripe {
+@media (max-width: 767px) {
+  .payments-section .payment-card {
+    padding: 30px 20px;
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+}
+.payments-section .payment-card.stripe {
   background: #625AFE;
 }
-.payments-section .payments-grid .payment-card.floa {
+.payments-section .payment-card.floa {
   background: #009FFF;
 }
-.payments-section .payments-grid .payment-card .card-header {
+.payments-section .payment-card .card-header {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 20px;
-  width: 100%;
+  margin-bottom: 20px;
 }
-.payments-section .payments-grid .payment-card .card-header .logo-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  padding: 0;
-}
-.payments-section .payments-grid .payment-card .card-header h3 {
-  font-family: "Lato", sans-serif;
+.payments-section .payment-card .card-header h3 {
   font-weight: 700;
   font-size: 24px;
-  line-height: 1.4;
   color: #FFFFFF;
   margin: 0;
 }
-@media (max-width: 768px) {
-  .payments-section .payments-grid .payment-card .card-header h3 {
+@media (max-width: 767px) {
+  .payments-section .payment-card .card-header h3 {
     font-size: 20px;
   }
 }
-.payments-section .payments-grid .payment-card p {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
+.payments-section .payment-card .card-header .logo-placeholder {
+  flex-shrink: 0;
+}
+.payments-section .payment-card p {
   font-size: 16px;
   line-height: 1.6;
   color: #FFFFFF;
-  margin: 0;
   opacity: 0.95;
+  margin: 0;
 }
 
-.groupage-section {
-  width: 100%;
-}
 .groupage-section .groupage-intro {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 70px;
-  gap: 50px;
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
+  padding: 70px 0;
   background: #FFFFFF;
 }
 @media (max-width: 1199px) {
   .groupage-section .groupage-intro {
-    padding: 50px 20px;
+    padding: 50px 0;
   }
 }
 .groupage-section .groupage-intro .intro-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  gap: 10px;
-  width: 100%;
-  max-width: 1360px;
   text-align: center;
 }
 .groupage-section .groupage-intro .intro-header h2 {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
-  line-height: 43px;
-  text-align: center;
   color: #3D4E60;
-  margin: 0;
-  max-width: 752px;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .groupage-section .groupage-intro .intro-header h2 {
+    font-size: 28px;
+  }
 }
 .groupage-section .groupage-intro .intro-header p {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  line-height: 26px;
-  text-align: center;
   color: #546476;
-  margin: 0;
   max-width: 692px;
+  margin: 0 auto;
 }
 .groupage-section .groupage-benefits {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 100px;
-  gap: 50px;
-  width: 100%;
   background: #F5F5F5;
+  padding: 100px 0;
 }
 @media (max-width: 1199px) {
   .groupage-section .groupage-benefits {
-    padding: 60px 20px;
-    width: 100%;
+    padding: 60px 0;
   }
 }
-.groupage-section .groupage-benefits .benefit-card-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-}
 .groupage-section .groupage-benefits .benefit-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 10px 70px;
-  gap: 23px;
-  width: 100%;
-  max-width: 1300px;
-  height: 420px;
   background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%), #FFFFFF;
   box-shadow: 0px -3px 28px rgba(0, 0, 0, 0.09), 0px 124px 54px -110px rgba(0, 0, 0, 0.45);
   border-radius: 12px;
   position: relative;
   overflow: hidden;
+  min-height: 420px;
+  padding: 30px 50px;
 }
 .groupage-section .groupage-benefits .benefit-card .bg-picture {
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
   z-index: 0;
 }
 .groupage-section .groupage-benefits .benefit-card .bg-picture img {
-  width: auto;
   height: 100%;
-}
-.groupage-section .groupage-benefits .benefit-card .gradient-overlay {
-  display: none;
+  width: auto;
+  object-fit: cover;
 }
 @media (max-width: 1199px) {
-  .groupage-section .groupage-benefits .benefit-card {
-    height: auto;
-    flex-direction: column;
-    padding: 40px 30px;
-  }
   .groupage-section .groupage-benefits .benefit-card .bg-picture {
     display: none;
   }
 }
-.groupage-section .groupage-benefits .benefit-card .card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 18px;
-  width: 100%;
-  max-width: 775px;
-  z-index: 1;
-}
 @media (max-width: 1199px) {
-  .groupage-section .groupage-benefits .benefit-card .card-content {
-    align-items: center;
-    text-align: center;
+  .groupage-section .groupage-benefits .benefit-card {
+    min-height: auto;
+    padding: 40px 30px !important;
   }
 }
+.groupage-section .groupage-benefits .benefit-card .card-content {
+  position: relative;
+  z-index: 1;
+}
 .groupage-section .groupage-benefits .benefit-card .card-content h3 {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
-  line-height: 43px;
   color: #283C52;
-  margin: 0;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .groupage-section .groupage-benefits .benefit-card .card-content h3 {
+    font-size: 28px;
+  }
 }
 .groupage-section .groupage-benefits .benefit-card .card-content p {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 300;
   font-size: 20px;
-  line-height: 36px;
+  line-height: 1.8;
   color: #283C52;
-  margin: 0;
-}
-.groupage-section .groupage-benefits .benefit-card .card-content p strong {
-  font-weight: 700;
+  margin-bottom: 30px;
 }
 .groupage-section .groupage-benefits .benefit-card .card-content p .benefits-details {
   font-size: 16px;
   display: block;
-  line-height: 24px;
+  line-height: 1.6;
   font-weight: 700;
   margin-top: 15px;
 }
@@ -486,187 +324,137 @@ img {
   color: #00D084;
 }
 .groupage-section .groupage-benefits .benefit-card .card-content .btn-save-space {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   padding: 0 30px;
-  gap: 10px;
-  min-width: 382px;
-  width: auto;
   height: 66px;
   background: #EC495D;
   border-radius: 6px;
-  white-space: nowrap;
-  margin-top: 10px;
   font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  line-height: 40px;
   color: #FFFFFF;
   text-decoration: none;
   transition: transform 0.2s;
 }
 .groupage-section .groupage-benefits .benefit-card .card-content .btn-save-space:hover {
   transform: translateY(-2px);
+  color: #FFFFFF;
 }
 @media (max-width: 767px) {
   .groupage-section .groupage-benefits .benefit-card .card-content .btn-save-space {
     width: 100%;
-    padding: 10px 20px;
+    padding: 0 15px;
+    height: 56px;
   }
 }
 
 .platform-needs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 70px;
-  gap: 57px;
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  background: #FFFFFF;
-}
-@media (max-width: 1199px) {
-  .platform-needs {
-    padding: 50px 20px;
-  }
+  padding: 100px 0;
 }
 .platform-needs .platform-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-  gap: 15px;
-  width: 100%;
-  max-width: 832px;
-  margin: 0 auto;
   text-align: center;
+  margin-bottom: 50px;
 }
 .platform-needs .platform-header h2 {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 36px;
-  line-height: 42px;
-  text-align: center;
   color: #2A3541;
-  margin: 0;
-  width: 100%;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .platform-needs .platform-header h2 {
+    font-size: 28px;
+  }
 }
 .platform-needs .platform-header p {
-  font-family: "Lato", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  line-height: 26px;
-  text-align: center;
   color: #546476;
-  margin: 0;
-  width: 100%;
+  max-width: 832px;
+  margin: 0 auto;
 }
 .platform-needs .needs-grid {
-  width: 100%;
   margin-top: 30px;
-  margin-left: 0;
-  margin-right: 0;
 }
-.platform-needs .needs-grid .need-card {
+.platform-needs .need-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 30px 15px;
-  gap: 17px;
-  width: 100%;
-  height: 488px;
   background: #FFFFFF;
   box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
   border-radius: 12px;
+  height: 100%;
+  min-height: 488px;
   transition: transform 0.2s ease;
-  margin-bottom: 30px;
 }
-.platform-needs .needs-grid .need-card:hover {
+.platform-needs .need-card:hover {
   transform: translateY(-5px);
 }
-@media (max-width: 767px) {
-  .platform-needs .needs-grid .need-card {
-    height: auto;
-    padding: 30px 15px;
+@media (max-width: 1199px) {
+  .platform-needs .need-card {
+    margin-bottom: 30px;
+    min-height: auto;
   }
 }
-.platform-needs .needs-grid .need-card .card-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  width: 100%;
+.platform-needs .need-card .card-icon {
   height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 }
-.platform-needs .needs-grid .need-card .card-icon img,
-.platform-needs .needs-grid .need-card .card-icon svg {
-  width: auto;
-  height: auto;
+.platform-needs .need-card .card-icon img,
+.platform-needs .need-card .card-icon svg {
   max-width: 90px;
   max-height: 63px;
 }
-.platform-needs .needs-grid .need-card .card-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  padding: 15px 0px;
-  width: 100%;
-  flex-grow: 1;
-  text-align: center;
+.platform-needs .need-card .card-content {
+  flex: 1;
+  padding: 15px 0;
 }
-.platform-needs .needs-grid .need-card .card-content h3 {
-  width: 100%;
-  max-width: 268px;
-  font-family: "Lato", sans-serif;
+.platform-needs .need-card .card-content h3 {
   font-weight: 700;
   font-size: 24px;
-  line-height: 29px;
-  text-align: center;
   color: #2A3541;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
-.platform-needs .needs-grid .need-card .card-content p {
-  width: 100%;
-  max-width: 268px;
-  font-family: "Lato", sans-serif;
+@media (max-width: 767px) {
+  .platform-needs .need-card .card-content h3 {
+    font-size: 20px;
+  }
+}
+.platform-needs .need-card .card-content p {
   font-weight: 300;
   font-size: 16px;
-  line-height: 26px;
-  text-align: center;
   color: #546476;
-  margin: 0;
+  line-height: 1.6;
+  margin-bottom: 25px;
 }
-.platform-needs .needs-grid .need-card .btn-action {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.platform-needs .need-card .btn-action {
+  display: inline-flex;
   align-items: center;
-  padding: 3px 18px;
-  gap: 10px;
+  justify-content: center;
   width: 191px;
   height: 48px;
   background: #3D4E60;
   border-radius: 6px;
-  margin-bottom: 20px;
-  font-family: "Lato", sans-serif;
   font-weight: 600;
   font-size: 20px;
-  line-height: 40px;
   color: #FFFFFF;
   text-decoration: none;
 }
-.platform-needs .needs-grid .need-card .btn-action:hover {
+.platform-needs .need-card .btn-action:hover {
   background-color: rgb(70.9076433121, 90.6687898089, 111.5923566879);
+  color: #FFFFFF;
+}
+@media (max-width: 480px) {
+  .platform-needs .need-card .btn-action {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
