@@ -1,0 +1,146 @@
+$primary-text: #2A3541;
+$secondary-text: #3D4E60;
+$accent-red: #EC495D;
+$white: #FFFFFF;
+$font-lato: 'Lato', sans-serif;
+
+// Global container resets
+.container {
+    padding: 0;
+    margin: 0 auto;
+}
+
+// Ultra-wide Fluid Range (1801px to 3440px)
+@media (min-width: 1801px) and (max-width: 3440px) {
+    .fluid-page .container {
+        max-width: 80%;
+        width: 100%;
+    }
+}
+
+// Wide Range (768px to 1800px)
+@media (min-width: 768px) and (max-width: 1800px) {
+    .fluid-page .container {
+        max-width: 95%;
+        width: 100%;
+    }
+
+    .frame-5874 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 50px;
+        gap: 70px;
+        width: 1200px;
+        height: 408px;
+        background: $white;
+        margin: 0 auto;
+    }
+
+    .expertise-content-frame {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 20px;
+        width: 515px;
+        height: 408px;
+    }
+
+    .h3-text {
+        width: 515px;
+        height: 147px;
+        font-family: $font-lato;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 49px;
+        color: $primary-text;
+    }
+
+    .p-text {
+        width: 515px;
+        height: 130px;
+        font-family: $font-lato;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: $secondary-text;
+    }
+
+    .btn-frame {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 3px 65px;
+        width: 340px;
+        height: 66px;
+        background: $accent-red;
+        border-radius: 6px;
+        border: none;
+        color: $white;
+        font-family: $font-lato;
+        font-size: 24px;
+        line-height: 40px;
+    }
+
+    .image-104 {
+        width: 515px;
+        height: 261.32px;
+        background: url('/placeholder.svg?height=261&width=515') no-repeat center center;
+        background-size: contain;
+    }
+}
+
+// Tablet Range (Up to 1199px)
+@media (max-width: 1199px) {
+    .container {
+        width: auto;
+    }
+
+    .frame-5874 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 50px;
+        gap: 70px;
+        width: 1080px;
+        height: 458px;
+        background: $white;
+        margin: 0 auto;
+    }
+
+    .expertise-content-frame {
+        width: 455px;
+        height: 408px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .h3-text {
+        width: 455px;
+        height: 147px;
+        font-family: $font-lato;
+        font-size: 42px;
+        line-height: 49px;
+    }
+
+    .p-text {
+        width: 455px;
+        height: 130px;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    .image-104 {
+        width: 555px;
+        height: 282px;
+        background: url('/placeholder.svg?height=282&width=555') no-repeat center center;
+        background-size: contain;
+    }
+}

@@ -1,640 +1,223 @@
-// =========================================
-// 1. Variables & Config
-// =========================================
+/* =========================================
+   1. VARIABLES & CONFIG
+   ========================================= */
+$font-primary: 'Inter', sans-serif;
+$font-secondary: 'Lato', sans-serif;
+$font-heading: 'Outfit', sans-serif;
 
-// Colors 
-$primary-color: #e11d48;
-$secondary-color: #0f172a;
-$accent-color: #16a34a;
-$bg-color: #ffffff;
-$text-color: #334155;
-$light-gray: #f8fafc;
-$color-h-dark: #3D4E60;
-$color-h-darker: #2A3541;
-$color-text-grey: #546476;
-$color-bg-section: #F5F5F5;
-$color-stripe: #625AFE;
-$color-floa: #009FFF;
-$color-btn: #EC495D;
+// Colors (Matches Figma)
+$color-primary-red: #EC495D;
+$color-text-dark: #2A3541;
+$color-text-light: #3D4E60;
+$color-bg-gray: #f9f9f9;
 
-// Fonts
-$font-lato: 'Lato', sans-serif;
-$font-main: $font-lato;
-$font-heading: $font-lato;
+/* =========================================
+   2. MIXINS (Supervisor Rules)
+   ========================================= */
+@mixin screen-ultra-wide {
+    @media (min-width: 1801px) and (max-width: 3440px) {
+        @content;
+    }
+}
 
-// Transitions
-$transition-smooth: all 0.3s ease;
+@mixin screen-desktop {
+    @media (min-width: 768px) and (max-width: 1800px) {
+        @content;
+    }
+}
 
-// Breakpoints (Aligning with Bootstrap)
-$bp-max-1199: 1199px;
-$bp-max-991: 991px;
-$bp-max-767: 767px;
-$bp-max-480: 480px;
+@mixin screen-tablet-down {
+    @media (max-width: 1199px) {
+        @content;
+    }
+}
 
-// =========================================
-// 2. Base Styles
-// =========================================
+@mixin screen-mobile {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+/* =========================================
+   3. BASE STYLES
+   ========================================= */
 body {
-    font-family: $font-main;
-    color: $text-color;
-    background-color: $bg-color;
-    line-height: 1.6;
+    font-family: $font-primary;
+    color: $color-text-dark;
+    -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: $font-heading;
-    color: $secondary-color;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: $transition-smooth;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-// =========================================
-// 3. Components
-// =========================================
-
-// --- Maximize Section ---
-.maximize {
-    background: #FFFFFF;
-    padding: 100px 0;
-
-    @media (max-width: $bp-max-1199) {
-        padding: 60px 0;
-    }
-
-    .maximize-card {
-        // h2 container / card
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: center;
-        padding: 10px 70px;
-        margin: auto;
-        gap: 23px;
-        width: 100%;
-        max-width: 1300px;
-        height: 420px;
-
-        background: #FFFFFF; // Base background
-        box-shadow: 0px -14px 34px rgba(0, 0, 0, 0.04), 0px 54px 54px -40px rgba(0, 0, 0, 0.35);
-        border-radius: 12px;
-        position: relative;
-        overflow: hidden;
-        min-height: 420px;
-
-        .bg-picture {
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: auto;
-            z-index: 0;
-
-            img {
-                height: 100%;
-                width: auto;
-                object-fit: cover;
-            }
-
-            @media (max-width: $bp-max-1199) {
-                display: none;
-            }
-        }
-
-        .gradient-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(270deg, #FFFFFF 39.92%, rgba(255, 255, 255, 0) 85.42%);
-            z-index: 1;
-            pointer-events: none; // Allow clicks to pass through if needed, though content is on top
-
-            @media (max-width: $bp-max-1199) {
-                display: none; // Hide overlay on mobile where image is hidden
-            }
-        }
-
-        @media (max-width: $bp-max-1199) {
-            min-height: auto;
-            background: #FFFFFF;
-            box-shadow: none;
-            border: 1px solid #eee;
-            padding: 30px 20px !important;
-        }
-
-        .maximize-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 0px;
-            gap: 18px;
-            width: 100%;
-            max-width: 752px; // Increased to match h2 width
-            height: auto;
-            z-index: 2;
-
-            @media (max-width: $bp-max-1199) {
-                text-align: center;
-                align-items: center; // Center content on mobile
-            }
-
-            h2 {
-                font-family: $font-lato;
-                font-weight: 700;
-                font-size: 36px;
-                line-height: 43px; // From Figma
-                color: #283C52;
-                margin-bottom: 0; // Handled by gap
-                width: 100%;
-                max-width: 752px; // From Figma
-
-                @media (max-width: $bp-max-767) {
-                    font-size: 28px;
-                    line-height: 1.2;
-                }
-            }
-
-            p {
-                font-family: $font-lato;
-                font-weight: 300;
-                font-size: 16px;
-                line-height: 36px; // From Figma (225%)
-                color: #283C52;
-                margin-bottom: 0; // Handled by gap
-                width: 100%;
-                max-width: 652px; // From Figma
-            }
-
-            .btn-maximize {
-                display: flex; // From Figma
-                flex-direction: row; // From Figma
-                align-items: center;
-                justify-content: center;
-                padding: 0; // Removing large padding to fit text within 280px width
-                gap: 10px; // From Figma
-                width: 280px; // From Figma
-                height: 66px; // From Figma
-                background: #EC495D; // From Figma ($color-btn likely same)
-                border-radius: 6px;
-                font-family: $font-lato;
-                font-weight: 600;
-                font-size: 20px;
-                line-height: 40px; // From Figma
-                color: #FFFFFF;
-                text-decoration: none;
-                transition: transform 0.2s;
-
-                &:hover {
-                    transform: translateY(-2px);
-                    color: #FFFFFF;
-                }
-
-                @media (max-width: $bp-max-767) {
-                    width: 100%;
-                    padding: 0 15px;
-                    height: 56px;
-                }
-            }
-        }
-    }
-}
-
-// --- Payments Section ---
-.payments-section {
-    background: #F5F5F5;
-    padding: 100px 0;
-
-    .payments-header {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-bottom: 40px; // Adjusted for gaps
-        gap: 10px;
-
-        h2 {
-            font-weight: 700;
-            font-size: 36px;
-            line-height: 43px;
-            color: $color-h-darker;
-            margin: 0;
-            width: 100%;
-            max-width: 700px; // From Figma
-
-            @media (max-width: $bp-max-767) {
-                font-size: 28px;
-                line-height: 1.2;
-            }
-        }
-
-        p {
-            font-weight: 700; // From Figma
-            font-size: 16px;
-            line-height: 26px;
-            color: #546476;
-            width: 100%;
-            max-width: 752px; // From Figma
-            margin: 0;
-        }
-    }
-
-    .payments-grid {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-        margin: 0 auto;
-        max-width: 1090px;
-        flex-wrap: wrap;
-
-
-    }
-
-    .payment-card {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 40px;
-        gap: 20px;
-        border-radius: 12px;
-        color: #FFFFFF;
-        width: 525px; // From Figma
-        height: 250px; // From Figma (rounded from 249.66)
-
-        box-shadow: none; // Reset if any
-
-        @media (max-width: $bp-max-1199) {
-            width: 100%;
-            height: auto;
-            min-height: auto;
-        }
-
-        &.stripe {
-            background: $color-stripe;
-        }
-
-        &.floa {
-            background: $color-floa;
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 0; // handled by parent gap
-            width: 100%;
-
-            h3 {
-                font-weight: 700;
-                font-size: 24px;
-                line-height: 34px;
-                color: #FFFFFF;
-                margin: 0;
-
-                @media (max-width: $bp-max-767) {
-                    font-size: 20px;
-                }
-            }
-
-            .logo-placeholder {
-                flex-shrink: 0;
-
-                // Ensure SVGs/Images behave nicely
-                img,
-                svg {
-                    display: block; // Remove line-height gaps
-                }
-            }
-        }
-
-        p {
-            font-family: 'Lato';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 34px; // From Figma
-            color: #FFFFFF;
-            opacity: 1;
-            margin: 0;
-        }
-    }
-}
-
-// --- Groupage Section ---
-.groupage-section {
-    .groupage-intro {
-        padding: 70px 0;
-        background: #FFFFFF;
-
-        @media (max-width: $bp-max-1199) {
-            padding: 50px 0;
-        }
-
-        .intro-header {
-            text-align: center;
-
-            h2 {
-                font-weight: 700;
-                font-size: 36px;
-                color: $color-h-dark;
-                margin-bottom: 15px;
-
-                @media (max-width: $bp-max-767) {
-                    font-size: 28px;
-                }
-            }
-
-            p {
-                font-weight: 700;
-                font-size: 16px;
-                color: $color-text-grey;
-                max-width: 692px;
-                margin: 0 auto;
-            }
-        }
-    }
-
-    .groupage-benefits {
-        background: #F5F5F5;
-        padding: 100px 0;
-
-        @media (max-width: $bp-max-1199) {
-            padding: 60px 0;
-        }
-
-        .benefit-card {
-            background: #FFFFFF;
-            box-shadow: 0px -3px 28px rgba(0, 0, 0, 0.09), 0px 124px 54px -110px rgba(0, 0, 0, 0.45);
-            border-radius: 12px;
-            position: relative;
-            overflow: hidden;
-            min-height: 420px;
-            padding: 30px 50px;
-
-            .bg-picture {
-                position: absolute;
-                right: 0;
-                top: 0;
-                height: 100%;
-                width: auto;
-                z-index: 0;
-
-                img {
-                    height: 100%;
-                    width: auto;
-                    object-fit: cover;
-                }
-
-                @media (max-width: $bp-max-1199) {
-                    display: none;
-                }
-            }
-
-            .gradient-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%);
-                z-index: 1;
-                pointer-events: none;
-
-                @media (max-width: $bp-max-1199) {
-                    display: none;
-                }
-            }
-
-            @media (max-width: $bp-max-1199) {
-                min-height: auto;
-                padding: 40px 30px !important;
-            }
-
-            .card-content {
-                position: relative;
-                z-index: 2;
-
-                h3 {
-                    font-weight: 700;
-                    font-size: 36px;
-                    color: #283C52;
-                    margin-bottom: 20px;
-
-                    @media (max-width: $bp-max-767) {
-                        font-size: 28px;
-                    }
-                }
-
-                p {
-                    font-weight: 300;
-                    font-size: 20px;
-                    line-height: 1.8;
-                    color: #283C52;
-                    margin-bottom: 30px;
-
-                    .benefits-details {
-                        font-size: 16px;
-                        display: block;
-                        line-height: 1.6;
-                        font-weight: 700;
-                        margin-top: 15px;
-
-                        strong {
-                            color: #00D084;
-                        }
-                    }
-                }
-
-                .btn-save-space {
-                    display: inline-flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 0 30px;
-                    height: 66px;
-                    background: $color-btn;
-                    border-radius: 6px;
-                    font-family: $font-lato;
-                    font-weight: 600;
-                    font-size: 20px;
-                    color: #FFFFFF;
-                    text-decoration: none;
-                    transition: transform 0.2s;
-
-                    &:hover {
-                        transform: translateY(-2px);
-                        color: #FFFFFF;
-                    }
-
-                    @media (max-width: $bp-max-767) {
-                        width: 100%;
-                        padding: 0 15px;
-                        height: 56px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// --- Platform Needs Section ---
-.platform-needs {
-    padding: 100px 0;
-
-    .platform-header {
-        text-align: center;
-        margin-bottom: 50px;
-
-        h2 {
-            font-weight: 700;
-            font-size: 36px;
-            color: $color-h-darker;
-            margin-bottom: 15px;
-
-            @media (max-width: $bp-max-767) {
-                font-size: 28px;
-            }
-        }
-
-        p {
-            font-weight: 700;
-            font-size: 16px;
-            color: $color-text-grey;
-            max-width: 832px;
-            margin: 0 auto;
-        }
-    }
-
-    .needs-grid {
-        margin-top: 30px;
-        max-width: 1309px;
-        max-height: 488px;
-        margin: 0 auto;
-    }
-
-    .need-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px 15px;
-        background: #FFFFFF;
-        box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
-        border-radius: 12px;
-        height: 100%;
-        min-height: 488px;
-        transition: transform 0.2s ease;
-
-        &:hover {
-            transform: translateY(-5px);
-        }
-
-        @media (max-width: $bp-max-1199) {
-            margin-bottom: 30px;
-            min-height: auto;
-        }
-
-        .card-icon {
-            height: 96px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-
-            img,
-            svg {
-                max-width: 90px;
-                max-height: 63px;
-            }
-        }
-
-        .card-content {
-            flex: 1;
-            padding: 15px 0;
-
-            h3 {
-                font-weight: 700;
-                font-size: 24px;
-                color: $color-h-darker;
-                margin-bottom: 15px;
-
-                @media (max-width: $bp-max-767) {
-                    font-size: 20px;
-                }
-            }
-
-            p {
-                font-weight: 300;
-                font-size: 16px;
-                color: $color-text-grey;
-                line-height: 1.6;
-                margin-bottom: 25px;
-            }
-        }
-
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 191px;
-            height: 48px;
-            background: $color-h-dark;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 20px;
-            color: #FFFFFF;
-            text-decoration: none;
-
-            &:hover {
-                background-color: lighten($color-h-dark, 5%);
-                color: #FFFFFF;
-            }
-
-            @media (max-width: $bp-max-480) {
-                width: 100%;
-            }
-        }
-    }
-}
-
-// =========================================
-// 4. Custom Grid/Container Overrides
-// =========================================
-
-// Ensure media queries are applied exactly as requested
-@media (min-width: 1801px) and (max-width: 3440px) {
-    .fluid-page .container {
+/* =========================================
+   4. CONTAINER OVERRIDES (Supervisor Strict)
+   ========================================= */
+.fluid-page .container {
+    @include screen-ultra-wide {
         max-width: 80%;
         width: 100%;
     }
-}
 
-@media (min-width: 768px) and (max-width: 1800px) {
-    .fluid-page .container {
+    @include screen-desktop {
         max-width: 95%;
         width: 100%;
     }
 }
 
-@media (max-width: 1199px) {
+@include screen-tablet-down {
     .container {
         width: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* =========================================
+   5. SECTION STYLES (Strict Figma Pixel Perfect)
+   ========================================= */
+.maximize {
+    background-color: #fff;
+    padding: 60px 0;
+
+    /* --- The Row Wrapper --- */
+    .maximize-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        gap: 70px;
+        width: 100%;
+
+        @include screen-ultra-wide {
+            margin: auto;
+            max-width: 1300px;
+            height: 333px;
+        }
+
+        @include screen-desktop {
+            margin: auto;
+            max-width: 1200px;
+            height: 408px;
+        }
+
+        @include screen-tablet-down {
+            margin: auto;
+            max-width: 1080px;
+            height: 458px;
+        }
+
+        @include screen-mobile {
+            flex-direction: column-reverse;
+            gap: 30px;
+            padding: 25px 0;
+        }
+
+        // Mobile Override (Screen 4)
+        @include screen-mobile {
+            flex-direction: column-reverse;
+            /* Image Top, Text Bottom */
+            gap: 30px;
+            padding: 25px 0;
+        }
+    }
+
+    /* --- The Columns --- */
+    .maximize-col {
+        flex: 0 0 calc(50% - 35px);
+        max-width: calc(50% - 35px);
+
+        @include screen-mobile {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    /* --- Image Styles --- */
+    .img-responsive-custom {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* --- Content Typography --- */
+    .maximize-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include screen-mobile {
+            align-items: center;
+        }
+
+        h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: $color-text-dark;
+            margin: 0;
+
+            // Desktop Size (Screen 1 & 2)
+            font-size: 42px;
+            line-height: 49px;
+            color: #2A3541;
+
+            // Mobile Size (Screen 4)
+            @include screen-mobile {
+                font-size: 32px;
+                line-height: 36px;
+                margin-bottom: 5px;
+            }
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: #3D4E60;
+            margin: 0;
+        }
+
+        // Button Styles
+        .btn-wrapper {
+            margin-top: 5px;
+        }
+
+        .btn-red {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            // Figma Dimensions
+            padding: 3px 30px;
+            height: 66px;
+            max-width: 340px;
+
+            background-color: $color-primary-red;
+            color: #fff;
+            border-radius: 6px;
+
+            // Text
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 40px;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.9;
+                color: #fff;
+            }
+
+            // Mobile Button Adjustments
+            @include screen-mobile {
+                width: 100%;
+                min-width: unset;
+                padding: 12px 20px;
+                height: auto;
+                font-size: 20px;
+            }
+        }
     }
 }

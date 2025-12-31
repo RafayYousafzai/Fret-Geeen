@@ -1,0 +1,123 @@
+// Main JavaScript File
+console.log('Project Script Initialized');
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Inlining translations to work without a local server (avoids CORS issues on file://)
+    const translations = {
+        "MAXIMIZE_SECTION": {
+            "str1": "Optimisez chaque chargement",
+            "str2": "Simplifiez vos opérations de transport : itinéraires plus intelligents, chargements complets et revenus plus rapides avec FretBay.",
+            "str3": "Économisez de l’espace"
+        },
+        "PAYMENTS_SECTION": {
+            "HEADER": {
+                "str1": "Paiements rapides et sécurisés",
+                "str2": "Profitez de dépôts standard ACH sans frais et d'options de paiement rapide pour des virements quasi instantanés. Recevez vos paiements en toute sécurité, sans retard, directement sur votre compte après chaque livraison effectuée."
+            },
+            "CARD_STRIPE": {
+                "str1": "Paiement instantané sécurisé",
+                "str2": "Pour des transactions instantanées et fiables, FretBay utilise Stripe, l'une des passerelles de paiement en ligne les plus fiables au monde."
+            },
+            "CARD_FLOA": {
+                "str1": "Payer plus tard ou en plusieurs fois",
+                "str2": "Floa vous permet de finaliser votre réservation et de payer facilement en 3 ou 4 versements. Paiements différés pour confirmer votre transporteur dès maintenant et régler plus tard."
+            }
+        },
+        "GROUPAGE_SECTION": {
+            "INTRO": {
+                "str1": "Gagnez de l’espace avec le groupage de chargements",
+                "str2": "Optimisez chaque trajet, maximisez chaque chargement"
+            },
+            "BENEFITS_CARD": {
+                "str1": "Avantages du groupage de chargements",
+                "str2": "Moins de kilomètres à vide : regroupez plusieurs livraisons en un seul trajet.",
+                "str3": "Plus de profits : remplissez l’espace inutilisé de vos camions et gagnez plus par kilomètre.",
+                "str4": "Transport écologique : ",
+                "str5": "réduisez les émissions de CO₂ grâce à la",
+                "str6": " logistique partagée.",
+                "str7": "Planning flexible : choisissez les itinéraires les plus efficaces selon la taille et la capacité de votre véhicule.",
+                "str8": "Commencez à économiser de l’espace"
+            }
+        },
+        "PLATFORM_NEEDS_SECTION": {
+            "HEADER": {
+                "str1": "Une seule plateforme. Tous vos besoins.",
+                "str2": "Des livraisons personnelles à la logistique professionnelle — FretBay connecte expéditeurs et transporteurs via un système simple, sécurisé et éco-responsable."
+            },
+            "cards": [
+                {
+                    "id": "individual_sender",
+                    "str1": "Je suis un expéditeur particulier",
+                    "str2": "Publiez votre annonce en quelques minutes, recevez des devis de transporteurs vérifiés et choisissez la meilleure offre.",
+                    "str3": "Post My Listing"
+                },
+                {
+                    "id": "business_sender",
+                    "str1": "Je suis un expéditeur professionnel",
+                    "str2": "Transport écologique : réduisez les émissions de CO₂ grâce à la logistique partagée.",
+                    "str3": "Start Sending"
+                },
+                {
+                    "id": "mover",
+                    "str1": "Je suis un déménageur",
+                    "str2": "Planning flexible : choisissez les itinéraires les plus efficaces selon la taille et la capacité de votre véhicule.",
+                    "str3": "Find Shipments"
+                },
+                {
+                    "id": "transporter",
+                    "str1": "Je suis un transporteur professionnel",
+                    "str2": "Développez votre activité avec la marketplace de FretBay. Accédez à des milliers de demandes d’expédition vérifiées et construisez des relations clients durables.",
+                    "str3": "Join the FretBay"
+                }
+            ]
+        }
+    };
+
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let translation = translations;
+
+        for (let k of keys) {
+            if (translation[k]) {
+                translation = translation[k];
+            } else {
+                translation = null;
+                break;
+            }
+        }
+
+        if (translation) {
+            element.innerHTML = translation; // Using innerHTML to preserve span styling if any
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+            // Toggle current item
+            const isExpanded = item.classList.contains('expanded');
+
+            // Optional: Collapse others (Accordion style) - User said "however you like", 
+            // this usually feels cleaner for expansions lists.
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('expanded');
+                const toggle = otherItem.querySelector('.toggle-icon');
+                if (toggle) toggle.textContent = '+';
+            });
+
+            if (!isExpanded) {
+                item.classList.add('expanded');
+                const toggle = item.querySelector('.toggle-icon');
+                if (toggle) toggle.textContent = '−'; // Using minus sign
+            }
+        });
+    });
+});
