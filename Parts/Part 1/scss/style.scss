@@ -1168,3 +1168,94 @@ body {
         }
     }
 }
+
+/* =========================================
+   13. MEDIA SECTION (Dans les médias)
+   ========================================= */
+.media-section {
+    background-color: #FFFFFF;
+    // Padding: 50px Top/Bottom (Figma)
+    padding: 50px 0;
+
+    /* --- Header --- */
+    .media-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        // Margin bottom 62px (Figma Desktop)
+        margin-bottom: 62px;
+
+        .media-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #546476;
+        }
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            text-align: center;
+            color: #3D4E60;
+            margin: 0;
+
+            font-size: 36px;
+            line-height: 43px;
+
+            @include screen-mobile {
+                font-size: 32px;
+                line-height: 38px;
+                max-width: 390px;
+            }
+        }
+    }
+
+    /* --- Logos Container --- */
+    .media-logos-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        // STRICT FIGMA GAP: 76px (Desktop)
+        gap: 76px;
+        width: 100%;
+
+        @include screen-mobile {
+            gap: 40px; // Mobile Gap
+            padding: 0 15px;
+        }
+
+        // Specific Logo Sizing (Based on Figma Heights)
+        .media-logo {
+            display: block;
+            width: auto; // Maintain aspect ratio
+
+            &.logo-tf1 {
+                height: 38px;
+            }
+
+            &.logo-ftv {
+                height: 32px;
+            }
+
+            // France 2 & 3
+            &.logo-m6 {
+                height: 63px;
+            }
+
+            &.logo-bfm {
+                height: 26px;
+            }
+
+            &.logo-europe {
+                height: 50px;
+            }
+        }
+    }
+}
