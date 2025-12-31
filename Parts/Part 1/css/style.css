@@ -1177,4 +1177,221 @@ body {
   height: 50px;
 }
 
+/* =========================================
+   14. PLATFORM SECTION (Une seule plateforme...)
+   ========================================= */
+.platform-section {
+  background-color: #FFFFFF;
+  padding: 70px 0;
+}
+@media (max-width: 767px) {
+  .platform-section {
+    padding: 50px 0;
+  }
+}
+.platform-section {
+  /* --- Header --- */
+}
+.platform-section .platform-header {
+  text-align: center;
+  margin-bottom: 57px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 21px;
+}
+.platform-section .platform-header h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #2A3541;
+  font-size: 42px;
+  line-height: 42px;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .platform-section .platform-header h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+.platform-section .platform-header p {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  color: #546476;
+  margin: 0;
+  max-width: 832px;
+}
+@media (max-width: 767px) {
+  .platform-section .platform-header {
+    max-width: 390px;
+    margin: auto;
+  }
+}
+.platform-section {
+  /* --- Grid Container --- */
+}
+.platform-section .platform-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 33px;
+  margin: auto;
+}
+@media (min-width: 1801px) and (max-width: 3440px) {
+  .platform-section .platform-grid {
+    max-width: 1292px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .platform-section .platform-grid {
+    max-width: 1100px;
+    gap: 15px;
+  }
+}
+@media (max-width: 1199px) {
+  .platform-section .platform-grid {
+    max-width: 980px;
+  }
+}
+@media (max-width: 767px) {
+  .platform-section .platform-grid {
+    max-width: 390px;
+    gap: 12px;
+  }
+}
+.platform-section {
+  /* --- The Card --- */
+}
+.platform-section .platform-card {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 298px;
+  height: 469px;
+  padding: 0 15px;
+  justify-content: space-evenly;
+}
+@media (min-width: 1801px) and (max-width: 3440px) {
+  .platform-section .platform-card {
+    max-width: 298px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .platform-section .platform-card {
+    max-width: 263px;
+  }
+}
+@media (max-width: 1199px) {
+  .platform-section .platform-card {
+    max-width: 237px;
+    width: 45%;
+    max-width: 350px;
+    margin-bottom: 20px;
+    height: auto;
+    min-height: 469px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .platform-section .platform-card {
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    padding: 25px 15px;
+  }
+}
+.platform-section .platform-card {
+  /* Icon */
+}
+.platform-section .platform-card .icon-wrapper {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.platform-section .platform-card .icon-wrapper .card-icon {
+  max-width: 90px;
+  max-height: 70px;
+  display: block;
+}
+.platform-section .platform-card {
+  /* Title */
+}
+.platform-section .platform-card h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #2A3541;
+  margin: 0;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .platform-section .platform-card h3 {
+    font-size: 18px;
+    line-height: 22px;
+    min-height: auto;
+  }
+}
+.platform-section .platform-card {
+  /* Description (ADDED) */
+}
+.platform-section .platform-card .card-desc {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #546476;
+  margin: 0;
+  min-height: 104px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .platform-section .platform-card .card-desc {
+    display: none;
+  }
+}
+.platform-section .platform-card {
+  /* Button */
+}
+.platform-section .platform-card .btn-dark {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #3D4E60;
+  color: #FFFFFF;
+  border-radius: 6px;
+  text-decoration: none;
+  width: 191px;
+  height: 48px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  transition: opacity 0.3s;
+  margin-top: 10px;
+}
+.platform-section .platform-card .btn-dark:hover {
+  opacity: 0.9;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .platform-section .platform-card .btn-dark {
+    width: 150px;
+    font-size: 16px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

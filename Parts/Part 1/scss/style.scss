@@ -1117,7 +1117,7 @@ body {
             .bold-text {
                 font-weight: 700;
                 font-size: 16px;
-                line-height: 26px; // Fix line height for bold text
+                line-height: 26px;
             }
 
             @include screen-mobile {
@@ -1255,6 +1255,219 @@ body {
 
             &.logo-europe {
                 height: 50px;
+            }
+        }
+    }
+}
+
+/* =========================================
+   14. PLATFORM SECTION (Une seule plateforme...)
+   ========================================= */
+.platform-section {
+    background-color: #FFFFFF;
+    padding: 70px 0;
+
+    @include screen-mobile {
+        padding: 50px 0;
+    }
+
+    /* --- Header --- */
+    .platform-header {
+        text-align: center;
+        margin-bottom: 57px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 21px;
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: #2A3541;
+            font-size: 42px;
+            line-height: 42px;
+            margin: 0;
+
+            @include screen-mobile {
+                font-size: 32px;
+                line-height: 42px;
+            }
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 26px;
+            color: #546476;
+            margin: 0;
+            max-width: 832px;
+        }
+
+        @include screen-mobile {
+            max-width: 390px;
+            margin: auto;
+        }
+    }
+
+    /* --- Grid Container --- */
+    .platform-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 33px;
+        margin: auto;
+
+        @include screen-ultra-wide {
+            max-width: 1292px;
+        }
+
+        @include screen-desktop {
+            max-width: 1100px;
+            gap: 15px; // Screen 2 Gap
+        }
+
+        @include screen-tablet-down {
+            max-width: 980px;
+        }
+
+        @include screen-mobile {
+            max-width: 390px;
+            gap: 12px; // Screen 4 Gap
+        }
+    }
+
+    /* --- The Card --- */
+    .platform-card {
+        background: #FFFFFF;
+        box-shadow: 0px 4px 84px rgba(0, 0, 0, 0.06);
+        border-radius: 12px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        // Dimensions Desktop (Screen 1)
+        width: 298px;
+        height: 469px; // Fixed height per Figma
+        padding: 0 15px; // Side padding
+
+        // Flex logic to space out elements evenly vertically
+        justify-content: space-evenly;
+
+
+        @include screen-ultra-wide {
+            max-width: 298px;
+        }
+
+        @include screen-desktop {
+            max-width: 263px;
+        }
+
+        @include screen-tablet-down {
+            max-width: 237px;
+            width: 45%;
+            max-width: 350px;
+            margin-bottom: 20px;
+            height: auto; // Allow growing on tablet if text wraps
+            min-height: 469px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+
+
+
+        // Mobile (Screen 4)
+        @include screen-mobile {
+            max-width: 180px;
+            width: 100%;
+            height: auto;
+            min-height: 400px;
+            padding: 25px 15px;
+        }
+
+        /* Icon */
+        .icon-wrapper {
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+
+            .card-icon {
+                max-width: 90px;
+                max-height: 70px;
+                display: block;
+            }
+        }
+
+        /* Title */
+        h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 29px;
+            color: #2A3541;
+            margin: 0;
+            min-height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include screen-mobile {
+                font-size: 18px;
+                line-height: 22px;
+                min-height: auto;
+            }
+        }
+
+        /* Description (ADDED) */
+        .card-desc {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: #546476; // Grey color from Figma
+            margin: 0;
+
+            min-height: 104px; // Ensures buttons align at bottom
+            display: flex;
+            align-items: center; // Center text vertically in its block
+
+            @include screen-mobile {
+                display: none;
+            }
+        }
+
+        /* Button */
+        .btn-dark {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: #3D4E60;
+            color: #FFFFFF;
+            border-radius: 6px;
+            text-decoration: none;
+
+            width: 191px;
+            height: 48px;
+
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            transition: opacity 0.3s;
+            margin-top: 10px; // Space above button
+
+            &:hover {
+                opacity: 0.9;
+                color: #fff;
+            }
+
+            @include screen-mobile {
+                width: 150px;
+                font-size: 16px;
             }
         }
     }
