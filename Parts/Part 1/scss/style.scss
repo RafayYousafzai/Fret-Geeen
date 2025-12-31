@@ -1472,3 +1472,177 @@ body {
         }
     }
 }
+
+
+/* =========================================
+   15. APP DOWNLOAD SECTION (Obtenez l'application...)
+   ========================================= */
+.app-section {
+    background-color: #F0F7FF; // Light Blue Background
+    padding: 90px 0; // Screen 1 Padding
+
+    @include screen-mobile {
+        padding: 40px 0; // Screen 4 Padding
+    }
+
+    /* --- Header --- */
+    .app-header {
+        text-align: center;
+        margin-bottom: 62px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: #009FFF; // Brand Blue
+            margin: 0;
+
+            // Desktop
+            font-size: 36px;
+            line-height: 43px;
+
+            // Mobile
+            @include screen-mobile {
+                font-size: 36px;
+                line-height: 43px;
+                // Note: Dump says 36px for mobile too, 
+                // but usually smaller is better. Keep 36px if strict.
+            }
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: #3D4E60;
+            margin: 0;
+            max-width: 638px;
+        }
+    }
+
+    /* --- Content Row --- */
+    .app-content-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        // STRICT FIGMA GAP: 62px (Desktop)
+        gap: 62px;
+        width: 100%;
+        margin: auto;
+
+
+        @include screen-ultra-wide {
+            max-width: 1400px;
+        }
+
+        @include screen-desktop {
+            max-width: 1100px;
+        }
+
+        @include screen-tablet-down {
+            max-width: 980px;
+
+        }
+
+        @include screen-mobile {
+            flex-direction: column; // Image Top, Text Bottom
+            gap: 20px;
+            padding: 0 15px;
+            max-width: 260px;
+        }
+    }
+
+    /* --- Columns --- */
+    .app-col {
+        // Desktop Width: Roughly 50/50 split minus gap
+        flex: 0 0 calc(50% - 31px);
+        max-width: calc(50% - 31px);
+
+        @include screen-mobile {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    /* --- Image Styles --- */
+    .app-img-wrapper {
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            // Add subtle shadow or filter if needed based on "image 58"
+        }
+    }
+
+    /* --- Text Content --- */
+    .app-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 25px; // Figma Gap
+
+        @include screen-mobile {
+            align-items: center; // Center text on mobile
+            text-align: center;
+        }
+
+        h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 500; // Medium weight per dump
+            font-size: 26px;
+            line-height: 35px;
+            color: #009FFF;
+            margin: 0;
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: #3D4E60;
+            margin: 0;
+            max-width: 583px;
+        }
+
+        /* Store Buttons */
+        .store-buttons {
+            display: flex;
+            flex-direction: row; // Always row unless screen is tiny
+            gap: 25px; // Gap between buttons
+            margin-top: 10px;
+
+            @include screen-mobile {
+                flex-direction: column; // Stack buttons on mobile
+                gap: 15px;
+                width: 100%;
+                align-items: center;
+            }
+
+            .store-btn {
+                display: block;
+                transition: opacity 0.3s;
+
+                img {
+                    height: 54px; // Standard height from dump
+                    width: auto;
+                }
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}

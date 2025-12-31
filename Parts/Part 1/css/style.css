@@ -1394,4 +1394,173 @@ body {
   }
 }
 
+/* =========================================
+   15. APP DOWNLOAD SECTION (Obtenez l'application...)
+   ========================================= */
+.app-section {
+  background-color: #F0F7FF;
+  padding: 90px 0;
+}
+@media (max-width: 767px) {
+  .app-section {
+    padding: 40px 0;
+  }
+}
+.app-section {
+  /* --- Header --- */
+}
+.app-section .app-header {
+  text-align: center;
+  margin-bottom: 62px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.app-section .app-header h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #009FFF;
+  margin: 0;
+  font-size: 36px;
+  line-height: 43px;
+}
+@media (max-width: 767px) {
+  .app-section .app-header h2 {
+    font-size: 36px;
+    line-height: 43px;
+  }
+}
+.app-section .app-header p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #3D4E60;
+  margin: 0;
+  max-width: 638px;
+}
+.app-section {
+  /* --- Content Row --- */
+}
+.app-section .app-content-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 62px;
+  width: 100%;
+  margin: auto;
+}
+@media (min-width: 1801px) and (max-width: 3440px) {
+  .app-section .app-content-row {
+    max-width: 1400px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .app-section .app-content-row {
+    max-width: 1100px;
+  }
+}
+@media (max-width: 1199px) {
+  .app-section .app-content-row {
+    max-width: 980px;
+  }
+}
+@media (max-width: 767px) {
+  .app-section .app-content-row {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 15px;
+    max-width: 260px;
+  }
+}
+.app-section {
+  /* --- Columns --- */
+}
+.app-section .app-col {
+  flex: 0 0 calc(50% - 31px);
+  max-width: calc(50% - 31px);
+}
+@media (max-width: 767px) {
+  .app-section .app-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+.app-section {
+  /* --- Image Styles --- */
+}
+.app-section .app-img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.app-section .app-img-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.app-section {
+  /* --- Text Content --- */
+}
+.app-section .app-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+}
+@media (max-width: 767px) {
+  .app-section .app-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+.app-section .app-content h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 35px;
+  color: #009FFF;
+  margin: 0;
+}
+.app-section .app-content p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #3D4E60;
+  margin: 0;
+  max-width: 583px;
+}
+.app-section .app-content {
+  /* Store Buttons */
+}
+.app-section .app-content .store-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .app-section .app-content .store-buttons {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+  }
+}
+.app-section .app-content .store-buttons .store-btn {
+  display: block;
+  transition: opacity 0.3s;
+}
+.app-section .app-content .store-buttons .store-btn img {
+  height: 54px;
+  width: auto;
+}
+.app-section .app-content .store-buttons .store-btn:hover {
+  opacity: 0.8;
+}
+
 /*# sourceMappingURL=style.css.map */
