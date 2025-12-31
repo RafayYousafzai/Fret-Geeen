@@ -894,4 +894,208 @@ body {
   }
 }
 
+/* =========================================
+   12. ADVANTAGES SECTION (Avantages du groupage)
+   ========================================= */
+.advantages-section {
+  background-color: #F5F5F5;
+  padding: 100px 0;
+}
+@media (max-width: 767px) {
+  .advantages-section {
+    padding: 50px 0;
+  }
+}
+.advantages-section .advantages-card {
+  width: 100%;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+  box-shadow: 0px -3px 28px rgba(0, 0, 0, 0.09), 0px 124px 54px -110px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-left: 70px;
+  margin: auto;
+}
+@media (min-width: 1801px) and (max-width: 3440px) {
+  .advantages-section .advantages-card {
+    max-width: 1300px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .advantages-section .advantages-card {
+    max-width: 1100px;
+  }
+}
+@media (max-width: 1199px) {
+  .advantages-section .advantages-card {
+    max-width: 980px;
+  }
+}
+@media (max-width: 767px) {
+  .advantages-section .advantages-card {
+    display: block;
+    height: auto;
+    padding: 0;
+    background-color: #fff;
+    align-items: unset;
+    justify-content: unset;
+    max-width: 390px;
+    margin: auto;
+  }
+}
+.advantages-section {
+  /* --- LAYER 1: The Image --- */
+}
+.advantages-section .card-bg-wrapper {
+  position: absolute;
+  top: 0;
+  right: 70;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 767px) {
+  .advantages-section .card-bg-wrapper {
+    position: relative;
+    height: 300px;
+    right: auto;
+    justify-content: center;
+  }
+}
+.advantages-section .card-bg-wrapper .bg-img-fit {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+}
+@media (max-width: 767px) {
+  .advantages-section .card-bg-wrapper .bg-img-fit {
+    width: 100%;
+    height: 100%;
+    object-position: top center;
+  }
+}
+.advantages-section {
+  /* --- LAYER 2: The Gradient Overlay --- */
+}
+.advantages-section .card-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%);
+}
+@media (max-width: 767px) {
+  .advantages-section .card-gradient-overlay {
+    display: none;
+  }
+}
+.advantages-section {
+  /* --- LAYER 3: The Content --- */
+}
+.advantages-section .card-content {
+  position: relative;
+  z-index: 3;
+  width: 775px;
+  max-width: 775px;
+  height: 298;
+}
+@media (max-width: 767px) {
+  .advantages-section .card-content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 30px 20px;
+  }
+}
+.advantages-section .card-content h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #283C52;
+  margin: 0 0 18px 0;
+  font-size: 42px;
+  line-height: 50px;
+}
+@media (max-width: 767px) {
+  .advantages-section .card-content h3 {
+    font-size: 32px;
+    line-height: 38px;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+.advantages-section .card-content .benefits-list p {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  color: #283C52;
+  margin: 0;
+  font-size: 20px;
+  line-height: 36px;
+}
+.advantages-section .card-content .benefits-list p .green-text {
+  color: #00A651;
+  font-weight: 700;
+}
+.advantages-section .card-content .benefits-list p .bold-text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+@media (max-width: 767px) {
+  .advantages-section .card-content .benefits-list p {
+    font-size: 16px;
+    line-height: 26px;
+    width: 100%;
+  }
+}
+.advantages-section .card-content .btn-wrapper {
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .advantages-section .card-content .btn-wrapper {
+    width: 100%;
+    margin-top: 25px;
+  }
+}
+.advantages-section .card-content .btn-red {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #EC495D;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  height: 66px;
+  width: 382px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 40px;
+  transition: opacity 0.3s;
+}
+.advantages-section .card-content .btn-red:hover {
+  opacity: 0.9;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .advantages-section .card-content .btn-red {
+    width: 100%;
+    height: 55px;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
