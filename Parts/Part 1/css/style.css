@@ -320,4 +320,174 @@ body {
   color: #fff;
 }
 
+/* =========================================
+   8. MISSION SECTION (Acceptation des missions...)
+   ========================================= */
+.mission-section {
+  background-color: #fff;
+  padding: 50px 0;
+}
+@media (max-width: 767px) {
+  .mission-section {
+    padding: 50px 0;
+  }
+}
+.mission-section {
+  /* --- The Row Wrapper --- */
+}
+.mission-section .mission-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+  width: 100%;
+}
+@media (min-width: 1801px) and (max-width: 3440px) {
+  .mission-section .mission-row {
+    margin: auto;
+    max-width: 1292px;
+    height: 525px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .mission-section .mission-row {
+    margin: auto;
+    max-width: 1060px;
+    height: 496px;
+  }
+}
+@media (max-width: 1199px) {
+  .mission-section .mission-row {
+    margin: auto;
+    max-width: 1020px;
+    height: 434px;
+  }
+}
+@media (max-width: 767px) {
+  .mission-section .mission-row {
+    flex-direction: column;
+    gap: 30px;
+    padding: 25px 0;
+    height: auto;
+    margin: auto;
+    max-width: 360px;
+  }
+}
+.mission-section {
+  /* --- Columns --- */
+}
+.mission-section .mission-col {
+  flex: 0 0 calc(50% - 35px);
+  max-width: calc(50% - 35px);
+}
+@media (max-width: 767px) {
+  .mission-section .mission-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+.mission-section {
+  /* --- Image Styles --- */
+}
+.mission-section .mission-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .mission-section .mission-img-wrapper {
+    margin-bottom: 0;
+  }
+}
+.mission-section .mission-img-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.mission-section {
+  /* --- Text Content --- */
+}
+.mission-section .mission-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  .mission-section .mission-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+.mission-section .mission-content {
+  /* Typography */
+}
+.mission-section .mission-content h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #2A3541;
+  margin: 0;
+  font-size: 42px;
+  line-height: 42px;
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .mission-section .mission-content h3 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+@media (max-width: 767px) {
+  .mission-section .mission-content h3 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+.mission-section .mission-content p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #546476;
+  margin: 0;
+  max-width: 656px;
+}
+.mission-section .mission-content {
+  /* Button */
+}
+@media (max-width: 767px) {
+  .mission-section .mission-content .btn-wrapper {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+.mission-section .mission-content .btn-red {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #EC495D;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  width: 300px;
+  height: 64px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+}
+.mission-section .mission-content .btn-red:hover {
+  opacity: 0.9;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .mission-section .mission-content .btn-red {
+    width: 100%;
+    padding: 9px 40px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
