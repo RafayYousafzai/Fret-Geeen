@@ -490,4 +490,168 @@ body {
   }
 }
 
+/* =========================================
+   9. ADAPTATION SECTION (Recevez des chargements...)
+   ========================================= */
+.adaptation-section {
+  background-color: #fff;
+  padding-bottom: 70px;
+  padding-top: 0;
+}
+@media (max-width: 767px) {
+  .adaptation-section {
+    padding: 0 0 70px 0;
+  }
+}
+.adaptation-section {
+  /* --- Row Wrapper --- */
+}
+.adaptation-section .adaptation-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 116px;
+  width: 100%;
+}
+@media (min-width: 1801px) and (max-width: 3440px) {
+  .adaptation-section .adaptation-row {
+    margin: auto;
+    max-width: 1292px;
+    height: 369px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .adaptation-section .adaptation-row {
+    margin: auto;
+    max-width: 1100px;
+    height: 349px;
+  }
+}
+@media (max-width: 1199px) {
+  .adaptation-section .adaptation-row {
+    margin: auto;
+    max-width: 1020px;
+    height: 349px;
+  }
+}
+@media (max-width: 767px) {
+  .adaptation-section .adaptation-row {
+    flex-direction: column-reverse;
+    gap: 30px;
+    padding: 25px 0;
+    margin: auto;
+    max-width: 360px;
+    height: auto;
+  }
+}
+.adaptation-section {
+  /* --- Columns --- */
+}
+.adaptation-section .adaptation-col {
+  flex: 0 0 calc(50% - 58px);
+  max-width: calc(50% - 58px);
+}
+@media (max-width: 767px) {
+  .adaptation-section .adaptation-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+.adaptation-section {
+  /* --- Image Styles --- */
+}
+.adaptation-section .adaptation-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.adaptation-section .adaptation-img-wrapper img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.adaptation-section {
+  /* --- Text Content --- */
+}
+.adaptation-section .adaptation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  .adaptation-section .adaptation-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+.adaptation-section .adaptation-content {
+  /* Typography */
+}
+.adaptation-section .adaptation-content h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #2A3541;
+  margin: 0;
+  font-size: 42px;
+  line-height: 42px;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .adaptation-section .adaptation-content h3 {
+    font-size: 36px;
+    line-height: 52px;
+  }
+}
+@media (max-width: 767px) {
+  .adaptation-section .adaptation-content h3 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+.adaptation-section .adaptation-content p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #546476;
+  margin: 0;
+}
+.adaptation-section .adaptation-content {
+  /* Button */
+}
+@media (max-width: 767px) {
+  .adaptation-section .adaptation-content .btn-wrapper {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+.adaptation-section .adaptation-content .btn-red {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: #EC495D;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.3s;
+  width: 409px;
+  height: 64px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 40px;
+}
+.adaptation-section .adaptation-content .btn-red:hover {
+  opacity: 0.9;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .adaptation-section .adaptation-content .btn-red {
+    width: 100%;
+    font-size: 22px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

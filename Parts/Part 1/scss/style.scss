@@ -549,3 +549,178 @@ body {
         }
     }
 }
+
+/* =========================================
+   9. ADAPTATION SECTION (Recevez des chargements...)
+   ========================================= */
+.adaptation-section {
+    background-color: #fff;
+    // Padding Bottom 70px per Figma all screens
+    padding-bottom: 70px;
+
+    // Top padding seems to be 0 based on breakdown, 
+    // but usually needs some separation from previous section.
+    // Figma says "padding: 0px 70px 70px" (Screen 1)
+    padding-top: 0;
+
+    @include screen-mobile {
+        padding: 0 0 70px 0; // Screen 4 padding
+    }
+
+    /* --- Row Wrapper --- */
+    .adaptation-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        // STRICT FIGMA GAP: 116px (Desktop/Tablet)
+        gap: 116px;
+        width: 100%;
+
+        @include screen-ultra-wide {
+            margin: auto;
+            max-width: 1292px;
+            height: 369px;
+        }
+
+        @include screen-desktop {
+            margin: auto;
+            max-width: 1100px;
+            height: 349px;
+        }
+
+        @include screen-tablet-down {
+            margin: auto;
+            max-width: 1020px;
+            height: 349px;
+        }
+
+        @include screen-mobile {
+            flex-direction: column-reverse;
+            gap: 30px;
+            padding: 25px 0;
+            margin: auto;
+            max-width: 360px;
+            height: auto;
+        }
+
+    }
+
+    /* --- Columns --- */
+    .adaptation-col {
+        // DESKTOP/TABLET LOGIC:
+        // Gap is 116px. Half gap is 58px.
+        // Width = calc(50% - 58px).
+        flex: 0 0 calc(50% - 58px);
+        max-width: calc(50% - 58px);
+
+        // MOBILE LOGIC:
+        @include screen-mobile {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    /* --- Image Styles --- */
+    .adaptation-img-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    /* --- Text Content --- */
+    .adaptation-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px; // Figma Gap
+
+        // Mobile Alignment
+        @include screen-mobile {
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Typography */
+        h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: $color-text-dark;
+            margin: 0;
+
+            // Screen 1 & 2 (Desktop)
+            font-size: 42px;
+            line-height: 42px; // Screen 1 line-height (Screen 2 says 52px, staying consistent with 42px unless needed)
+
+            // Screen 3 (Tablet - 1080px width)
+            @media (min-width: 768px) and (max-width: 1199px) {
+                font-size: 36px;
+                line-height: 52px;
+            }
+
+            // Screen 4 (Mobile)
+            @include screen-mobile {
+                font-size: 32px;
+                line-height: 36px;
+            }
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: #546476;
+            margin: 0;
+        }
+
+        /* Button */
+        .btn-wrapper {
+            @include screen-mobile {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+        .btn-red {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: $color-primary-red;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+
+            // STRICT FIGMA WIDTH (Desktop)
+            width: 409px;
+            height: 64px;
+
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 40px;
+
+            &:hover {
+                opacity: 0.9;
+                color: #fff;
+            }
+
+            // Mobile Dimensions (Screen 4)
+            @include screen-mobile {
+                width: 100%;
+
+                // Figma Screen 4 specifies 22px font for this button
+                font-size: 22px;
+            }
+        }
+    }
+}
