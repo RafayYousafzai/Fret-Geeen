@@ -1646,3 +1646,98 @@ body {
         }
     }
 }
+
+
+/* =========================================
+   16. ECOLOGY SECTION (Agissez pour l'écologie...)
+   ========================================= */
+.ecology-section {
+    background-color: #FFFFFF;
+    // Padding: Screen 1 (40px)
+    padding: 40px 0;
+
+    .ecology-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 34px; // Desktop Gap
+        max-width: 1080px; // Constraint width
+        margin: 0 auto;
+
+        @include screen-mobile {
+            flex-direction: column; // Stack on mobile
+            gap: 34px;
+            padding: 0 25px; // Side padding from Screen 4
+        }
+    }
+
+    /* --- Icon --- */
+    .ecology-icon {
+        flex: 0 0 auto;
+
+        // Frame size from Figma
+        width: 102px;
+        height: 103px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    /* --- Text --- */
+    .ecology-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 11px;
+
+        // Screen 1 Width: 867px
+        // We let it be fluid but max-out for readability
+        flex: 1;
+
+        @include screen-mobile {
+            align-items: center; // Center text on mobile
+            text-align: center;
+            width: 100%;
+        }
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: #3D4E60;
+            margin: 0;
+
+            // Desktop
+            font-size: 36px;
+            line-height: 43px;
+
+            // Mobile (Screen 4)
+            @include screen-mobile {
+                // Mobile dump explicitly says 36px/43px too
+                font-size: 36px;
+                line-height: 43px;
+            }
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            color: #546476;
+            margin: 0;
+
+            .calc-link {
+                color: #EC495D; // Red link color
+                text-decoration: none;
+                font-weight: 700; // Usually bold for links
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
