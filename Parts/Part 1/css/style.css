@@ -46,7 +46,7 @@ img {
   width: 100%;
   max-width: 1300px;
   height: 420px;
-  background: linear-gradient(270deg, #FFFFFF 39.92%, rgba(255, 255, 255, 0) 85.42%), #FFFFFF;
+  background: #FFFFFF;
   box-shadow: 0px -14px 34px rgba(0, 0, 0, 0.04), 0px 54px 54px -40px rgba(0, 0, 0, 0.35);
   border-radius: 12px;
   position: relative;
@@ -71,6 +71,21 @@ img {
     display: none;
   }
 }
+.maximize .maximize-card .gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #FFFFFF 39.92%, rgba(255, 255, 255, 0) 85.42%);
+  z-index: 1;
+  pointer-events: none;
+}
+@media (max-width: 1199px) {
+  .maximize .maximize-card .gradient-overlay {
+    display: none;
+  }
+}
 @media (max-width: 1199px) {
   .maximize .maximize-card {
     min-height: auto;
@@ -88,47 +103,57 @@ img {
   padding: 0px;
   gap: 18px;
   width: 100%;
-  max-width: 652px;
+  max-width: 752px;
   height: auto;
-  z-index: 1;
+  z-index: 2;
 }
 @media (max-width: 1199px) {
   .maximize .maximize-card .maximize-content {
     text-align: center;
+    align-items: center;
   }
 }
 .maximize .maximize-card .maximize-content h2 {
   font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 36px;
-  line-height: 1.2;
+  line-height: 43px;
   color: #283C52;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 752px;
 }
 @media (max-width: 767px) {
   .maximize .maximize-card .maximize-content h2 {
     font-size: 28px;
+    line-height: 1.2;
   }
 }
 .maximize .maximize-card .maximize-content p {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 36px;
   color: #283C52;
-  margin-bottom: 30px;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 652px;
 }
 .maximize .maximize-card .maximize-content .btn-maximize {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0 30px;
+  padding: 0;
+  gap: 10px;
+  width: 280px;
   height: 66px;
   background: #EC495D;
   border-radius: 6px;
   font-family: "Lato", sans-serif;
   font-weight: 600;
   font-size: 20px;
+  line-height: 40px;
   color: #FFFFFF;
   text-decoration: none;
   transition: transform 0.2s;
@@ -294,7 +319,7 @@ img {
   }
 }
 .groupage-section .groupage-benefits .benefit-card {
-  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%), #FFFFFF;
+  background: #FFFFFF;
   box-shadow: 0px -3px 28px rgba(0, 0, 0, 0.09), 0px 124px 54px -110px rgba(0, 0, 0, 0.45);
   border-radius: 12px;
   position: relative;
@@ -320,6 +345,21 @@ img {
     display: none;
   }
 }
+.groupage-section .groupage-benefits .benefit-card .gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%);
+  z-index: 1;
+  pointer-events: none;
+}
+@media (max-width: 1199px) {
+  .groupage-section .groupage-benefits .benefit-card .gradient-overlay {
+    display: none;
+  }
+}
 @media (max-width: 1199px) {
   .groupage-section .groupage-benefits .benefit-card {
     min-height: auto;
@@ -328,7 +368,7 @@ img {
 }
 .groupage-section .groupage-benefits .benefit-card .card-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 .groupage-section .groupage-benefits .benefit-card .card-content h3 {
   font-weight: 700;
@@ -412,6 +452,9 @@ img {
 }
 .platform-needs .needs-grid {
   margin-top: 30px;
+  max-width: 1309px;
+  max-height: 488px;
+  margin: 0 auto;
 }
 .platform-needs .need-card {
   display: flex;

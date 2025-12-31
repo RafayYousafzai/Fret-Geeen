@@ -88,7 +88,7 @@ img {
         max-width: 1300px;
         height: 420px;
 
-        background: linear-gradient(270deg, #FFFFFF 39.92%, rgba(255, 255, 255, 0) 85.42%), #FFFFFF;
+        background: #FFFFFF; // Base background
         box-shadow: 0px -14px 34px rgba(0, 0, 0, 0.04), 0px 54px 54px -40px rgba(0, 0, 0, 0.35);
         border-radius: 12px;
         position: relative;
@@ -114,6 +114,21 @@ img {
             }
         }
 
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(270deg, #FFFFFF 39.92%, rgba(255, 255, 255, 0) 85.42%);
+            z-index: 1;
+            pointer-events: none; // Allow clicks to pass through if needed, though content is on top
+
+            @media (max-width: $bp-max-1199) {
+                display: none; // Hide overlay on mobile where image is hidden
+            }
+        }
+
         @media (max-width: $bp-max-1199) {
             min-height: auto;
             background: #FFFFFF;
@@ -123,7 +138,6 @@ img {
         }
 
         .maximize-content {
-            // Frame 5926
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -131,24 +145,28 @@ img {
             padding: 0px;
             gap: 18px;
             width: 100%;
-            max-width: 652px;
+            max-width: 752px; // Increased to match h2 width
             height: auto;
-            z-index: 1;
+            z-index: 2;
 
             @media (max-width: $bp-max-1199) {
                 text-align: center;
+                align-items: center; // Center content on mobile
             }
 
             h2 {
                 font-family: $font-lato;
                 font-weight: 700;
                 font-size: 36px;
-                line-height: 1.2;
+                line-height: 43px; // From Figma
                 color: #283C52;
-                margin-bottom: 20px;
+                margin-bottom: 0; // Handled by gap
+                width: 100%;
+                max-width: 752px; // From Figma
 
                 @media (max-width: $bp-max-767) {
                     font-size: 28px;
+                    line-height: 1.2;
                 }
             }
 
@@ -156,22 +174,28 @@ img {
                 font-family: $font-lato;
                 font-weight: 300;
                 font-size: 16px;
-                line-height: 1.6;
+                line-height: 36px; // From Figma (225%)
                 color: #283C52;
-                margin-bottom: 30px;
+                margin-bottom: 0; // Handled by gap
+                width: 100%;
+                max-width: 652px; // From Figma
             }
 
             .btn-maximize {
-                display: inline-flex;
+                display: flex; // From Figma
+                flex-direction: row; // From Figma
                 align-items: center;
                 justify-content: center;
-                padding: 0 30px;
-                height: 66px;
-                background: $color-btn;
+                padding: 0; // Removing large padding to fit text within 280px width
+                gap: 10px; // From Figma
+                width: 280px; // From Figma
+                height: 66px; // From Figma
+                background: #EC495D; // From Figma ($color-btn likely same)
                 border-radius: 6px;
                 font-family: $font-lato;
                 font-weight: 600;
                 font-size: 20px;
+                line-height: 40px; // From Figma
                 color: #FFFFFF;
                 text-decoration: none;
                 transition: transform 0.2s;
@@ -357,7 +381,7 @@ img {
         }
 
         .benefit-card {
-            background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%), #FFFFFF;
+            background: #FFFFFF;
             box-shadow: 0px -3px 28px rgba(0, 0, 0, 0.09), 0px 124px 54px -110px rgba(0, 0, 0, 0.45);
             border-radius: 12px;
             position: relative;
@@ -384,6 +408,21 @@ img {
                 }
             }
 
+            .gradient-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(270deg, rgba(255, 255, 255, 0) 17%, #FFFFFF 46%);
+                z-index: 1;
+                pointer-events: none;
+
+                @media (max-width: $bp-max-1199) {
+                    display: none;
+                }
+            }
+
             @media (max-width: $bp-max-1199) {
                 min-height: auto;
                 padding: 40px 30px !important;
@@ -391,7 +430,7 @@ img {
 
             .card-content {
                 position: relative;
-                z-index: 1;
+                z-index: 2;
 
                 h3 {
                     font-weight: 700;
@@ -485,6 +524,9 @@ img {
 
     .needs-grid {
         margin-top: 30px;
+        max-width: 1309px;
+        max-height: 488px;
+        margin: 0 auto;
     }
 
     .need-card {
