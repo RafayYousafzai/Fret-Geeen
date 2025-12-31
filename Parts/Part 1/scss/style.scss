@@ -766,3 +766,198 @@ body {
         }
     }
 }
+
+
+/* =========================================
+   10. GROUPAGE SECTION (Partagez la charge)
+   ========================================= */
+.groupage-section {
+    background-color: #fff;
+    // Figma Screen 1 Padding: 70px
+    padding: 70px 0;
+
+    @include screen-mobile {
+        // Figma Screen 4 Padding: 50px 15px
+        padding: 50px 0;
+    }
+
+    /* --- 1. Section Header --- */
+    .groupage-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+        gap: 10px;
+
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: #3D4E60;
+            margin: 0;
+
+            // Desktop (Screen 1)
+            font-size: 36px;
+            line-height: 43px;
+
+            // Mobile (Screen 4)
+            @include screen-mobile {
+                font-size: 32px;
+                line-height: 36px;
+                max-width: 390px; // Width constraint from dump
+            }
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700; // Bold per Figma dump
+            font-size: 16px;
+            line-height: 26px;
+            color: #546476;
+            margin: 0;
+        }
+
+        @include screen-mobile {
+            max-width: 390px;
+            margin: auto;
+        }
+    }
+
+    /* --- 2. Split Row --- */
+    .groupage-split-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        // STRICT FIGMA GAP: 80px (Desktop)
+        gap: 80px;
+        width: 100%;
+
+
+        @include screen-ultra-wide {
+            margin: auto;
+            max-width: 1292px;
+            height: 441px;
+        }
+
+        @include screen-desktop {
+            margin: auto;
+            max-width: 1100px;
+            height: 441px;
+        }
+
+        @include screen-tablet-down {
+            margin: auto;
+            max-width: 980px;
+            height: 441px;
+        }
+
+
+
+        // MOBILE OVERRIDE (Screen 4)
+        @include screen-mobile {
+            flex-direction: column-reverse;
+            gap: 40px;
+            padding: 0 15px;
+            max-width: 390px;
+        }
+    }
+
+    /* --- Columns --- */
+    .split-col {
+        // Desktop Width Calculation: 
+        // 50% width minus half the gap (40px)
+        flex: 0 0 calc(50% - 40px);
+        max-width: calc(50% - 40px);
+
+        @include screen-mobile {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    /* --- Content Styles --- */
+    .split-content {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin: auto;
+        max-width: 572px;
+
+        h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: #3D4E60;
+            margin: 0;
+
+            // Desktop (Screen 1)
+            font-size: 36px;
+            line-height: 43px;
+
+            // Mobile (Screen 4)
+            @include screen-mobile {
+                // Mobile dump explicitly lists 36px for H3 as well
+                font-size: 36px;
+                line-height: 43px;
+                text-align: center;
+            }
+
+            z-index: 2;
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: #546476;
+            margin: 0;
+
+            @include screen-mobile {
+                text-align: center;
+            }
+
+            z-index: 2;
+        }
+    }
+
+    overflow: hidden;
+
+    /* --- Image Styles --- */
+    .split-img-wrapper {
+        display: flex;
+
+        img {
+            display: block;
+            margin: auto;
+
+            z-index: 1;
+
+            @include screen-ultra-wide {
+                width: 1292px;
+                height: 441px;
+                margin-left: -280px;
+            }
+
+            @include screen-desktop {
+                width: 900px;
+                height: 441px;
+                margin-left: -230px;
+            }
+
+            @include screen-tablet-down {
+                width: 900px;
+                height: 441px;
+                margin-left: -270px;
+            }
+
+        }
+
+        @include screen-mobile {
+            display: none;
+        }
+    }
+}

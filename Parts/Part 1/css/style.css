@@ -705,4 +705,193 @@ body {
   }
 }
 
+/* =========================================
+   10. GROUPAGE SECTION (Partagez la charge)
+   ========================================= */
+.groupage-section {
+  background-color: #fff;
+  padding: 70px 0;
+}
+@media (max-width: 767px) {
+  .groupage-section {
+    padding: 50px 0;
+  }
+}
+.groupage-section {
+  /* --- 1. Section Header --- */
+}
+.groupage-section .groupage-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+  gap: 10px;
+}
+.groupage-section .groupage-header h2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #3D4E60;
+  margin: 0;
+  font-size: 36px;
+  line-height: 43px;
+}
+@media (max-width: 767px) {
+  .groupage-section .groupage-header h2 {
+    font-size: 32px;
+    line-height: 36px;
+    max-width: 390px;
+  }
+}
+.groupage-section .groupage-header p {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+  color: #546476;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .groupage-section .groupage-header {
+    max-width: 390px;
+    margin: auto;
+  }
+}
+.groupage-section {
+  /* --- 2. Split Row --- */
+}
+.groupage-section .groupage-split-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  width: 100%;
+}
+@media (min-width: 1801px) and (max-width: 3440px) {
+  .groupage-section .groupage-split-row {
+    margin: auto;
+    max-width: 1292px;
+    height: 441px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .groupage-section .groupage-split-row {
+    margin: auto;
+    max-width: 1100px;
+    height: 441px;
+  }
+}
+@media (max-width: 1199px) {
+  .groupage-section .groupage-split-row {
+    margin: auto;
+    max-width: 980px;
+    height: 441px;
+  }
+}
+@media (max-width: 767px) {
+  .groupage-section .groupage-split-row {
+    flex-direction: column-reverse;
+    gap: 40px;
+    padding: 0 15px;
+    max-width: 390px;
+  }
+}
+.groupage-section {
+  /* --- Columns --- */
+}
+.groupage-section .split-col {
+  flex: 0 0 calc(50% - 40px);
+  max-width: calc(50% - 40px);
+}
+@media (max-width: 767px) {
+  .groupage-section .split-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+.groupage-section {
+  /* --- Content Styles --- */
+}
+.groupage-section .split-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: auto;
+  max-width: 572px;
+}
+.groupage-section .split-content h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  color: #3D4E60;
+  margin: 0;
+  font-size: 36px;
+  line-height: 43px;
+}
+@media (max-width: 767px) {
+  .groupage-section .split-content h3 {
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+  }
+}
+.groupage-section .split-content h3 {
+  z-index: 2;
+}
+.groupage-section .split-content p {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #546476;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .groupage-section .split-content p {
+    text-align: center;
+  }
+}
+.groupage-section .split-content p {
+  z-index: 2;
+}
+.groupage-section {
+  overflow: hidden;
+  /* --- Image Styles --- */
+}
+.groupage-section .split-img-wrapper {
+  display: flex;
+}
+.groupage-section .split-img-wrapper img {
+  display: block;
+  margin: auto;
+  z-index: 1;
+}
+@media (min-width: 1801px) and (max-width: 3440px) {
+  .groupage-section .split-img-wrapper img {
+    width: 1292px;
+    height: 441px;
+    margin-left: -280px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1800px) {
+  .groupage-section .split-img-wrapper img {
+    width: 900px;
+    height: 441px;
+    margin-left: -230px;
+  }
+}
+@media (max-width: 1199px) {
+  .groupage-section .split-img-wrapper img {
+    width: 900px;
+    height: 441px;
+    margin-left: -270px;
+  }
+}
+@media (max-width: 767px) {
+  .groupage-section .split-img-wrapper {
+    display: none;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
