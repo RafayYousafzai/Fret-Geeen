@@ -105,18 +105,13 @@ body {
             height: 458px;
         }
 
-        @include screen-mobile {
-            flex-direction: column-reverse;
-            gap: 30px;
-            padding: 25px 0;
-        }
-
         // Mobile Override (Screen 4)
         @include screen-mobile {
             flex-direction: column-reverse;
             /* Image Top, Text Bottom */
             gap: 30px;
             padding: 25px 0;
+            height: auto;
         }
     }
 
@@ -138,6 +133,11 @@ body {
         max-width: 100%;
         height: auto;
         margin: 0 auto;
+
+        @include screen-mobile {
+            max-width: 320px;
+            max-height: 204px;
+        }
     }
 
     /* --- Content Typography --- */
@@ -148,6 +148,8 @@ body {
 
         @include screen-mobile {
             align-items: center;
+            max-width: 370px;
+            max-height: 395px;
         }
 
         h3 {
@@ -217,6 +219,332 @@ body {
                 padding: 12px 20px;
                 height: auto;
                 font-size: 20px;
+            }
+        }
+    }
+}
+
+
+
+
+
+/* =========================================
+   7. EXPERTISE SECTION (Optimisez chaque...)
+   ========================================= */
+.expertise-section {
+    background-color: #fff;
+    padding: 100px 0;
+
+    // HIDE ON MOBILE (Strict instruction)
+    @include screen-mobile {
+        display: none;
+    }
+
+    /* --- The Main Card Container --- */
+    .expertise-card {
+        width: 100%;
+        height: 420px;
+
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0px -14px 34px rgba(0, 0, 0, 0.04), 0px 54px 54px -40px rgba(0, 0, 0, 0.35);
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: auto;
+
+        @include screen-ultra-wide {
+            max-width: 1300px;
+            height: 420px;
+        }
+
+        @include screen-desktop {
+            max-width: 1200px;
+            height: 384px;
+        }
+
+        @include screen-tablet-down {
+            max-width: 1080px;
+            height: 384px;
+        }
+
+    }
+
+    .card-bg-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        .bg-img-fit {
+            width: auto;
+            height: 100%;
+
+            object-fit: cover;
+        }
+    }
+
+    .card-gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2; // Middle Layer
+
+        // The gradient from Figma: Transparent on left -> White on right
+        background: linear-gradient(270deg, #FFFFFF 39.92%, rgba(255, 255, 255, 0) 85.42%);
+    }
+
+    /* --- LAYER 3: Text Content --- */
+    .expertise-content {
+        position: relative;
+        z-index: 3;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+
+        padding-right: 70px;
+        width: 652px;
+
+        @include screen-ultra-wide {
+            width: 652px;
+            height: 260;
+        }
+
+        @include screen-desktop {
+            width: 652px;
+            height: 260;
+            padding-right: 50px;
+        }
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: $color-text-dark;
+            margin: 0;
+            font-size: 42px;
+            line-height: 50px;
+
+            @media (min-width: 992px) and (max-width: 1199px) {
+                font-size: 36px;
+                line-height: 43px;
+            }
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            color: $color-text-dark;
+            margin: 0;
+            font-size: 24px;
+            line-height: 36px;
+        }
+
+        .btn-red {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: $color-primary-red;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+
+            width: 280px;
+            height: 66px;
+
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 40px;
+
+            &:hover {
+                opacity: 0.9;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+/* =========================================
+   8. MISSION SECTION (Acceptation des missions...)
+   ========================================= */
+.mission-section {
+    background-color: #fff;
+
+    // Padding Logic
+    padding: 50px 0; // Standard vertical padding
+
+    @include screen-mobile {
+        padding: 50px 0; // Matches Figma vertical padding
+        // Note: Side padding is handled by the container/row logic
+    }
+
+    /* --- The Row Wrapper --- */
+    .mission-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        gap: 70px;
+        width: 100%;
+
+
+        @include screen-ultra-wide {
+            margin: auto;
+            max-width: 1292px;
+            height: 525px;
+        }
+
+        @include screen-desktop {
+            margin: auto;
+            max-width: 1060px;
+            height: 496px;
+        }
+
+        @include screen-tablet-down {
+            margin: auto;
+            max-width: 1020px;
+            height: 434px;
+        }
+
+        @include screen-mobile {
+            flex-direction: column;
+            gap: 30px;
+            padding: 25px 0;
+            height: auto;
+            margin: auto;
+            max-width: 360px;
+        }
+    }
+
+    /* --- Columns --- */
+    .mission-col {
+        flex: 0 0 calc(50% - 35px);
+        max-width: calc(50% - 35px);
+
+        // MOBILE LOGIC:
+        @include screen-mobile {
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center; // Center alignment per Screen 4
+        }
+    }
+
+    /* --- Image Styles --- */
+    .mission-img-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center; // Center image in its column
+
+        // Screen 4 Mobile
+        @include screen-mobile {
+            margin-bottom: 0; // Gap is handled by parent
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    /* --- Text Content --- */
+    .mission-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px; // Figma Gap
+
+        // Mobile Alignment
+        @include screen-mobile {
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Typography */
+        h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            color: $color-text-dark; // #2A3541
+            margin: 0;
+
+            font-size: 42px;
+            line-height: 42px;
+
+            @include screen-desktop() {
+                font-size: 36px;
+                line-height: 42px;
+            }
+
+
+
+            // Screen 4 (Mobile)
+            @include screen-mobile {
+                font-size: 32px;
+                line-height: 36px;
+            }
+        }
+
+        p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: #546476; // Grey specific to this section
+            margin: 0;
+
+            // Width constraint from Figma Screen 1/2 to prevent text stretching too wide
+            max-width: 656px;
+        }
+
+        /* Button */
+        .btn-wrapper {
+            @include screen-mobile {
+                width: 100%; // Full width container
+                margin-top: 10px;
+            }
+        }
+
+        .btn-red {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: $color-primary-red;
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: opacity 0.3s;
+
+            // Desktop Dimensions (Screen 1 & 2 & 3)
+            width: 300px; // Note: This is smaller than the 340px in previous section
+            height: 64px;
+
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 40px;
+
+            &:hover {
+                opacity: 0.9;
+                color: #fff;
+            }
+
+            // Mobile Dimensions (Screen 4)
+            @include screen-mobile {
+                width: 100%; // Fill container
+                padding: 9px 40px; // Figma padding
             }
         }
     }
